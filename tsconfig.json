@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "jsx": "react",
+    "paths": {
+      "@app/*": ["app/javascript/*"],
+      "test-utils": ["app/javascript/tests/utils/"]
+    },
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "include": ["app/javascript", "custom.d.ts"],
+  "exclude": ["node_modules"]
+}

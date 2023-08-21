@@ -1,0 +1,31 @@
+Document strategy for setting up tests using yarn
+	Setup Babel
+	Setup Jest
+	Setup unmet peer dependencies
+	Configure jest to not use import react
+	setup code coverage
+Use describe block
+Use it for tests
+Use skip, and only for it, test, describe
+render without props
+render with props
+render different states
+Use roleBy query
+	heading
+	button
+	checkbox
+	combocheckbox
+	link
+	heading with levels
+	labels with same names
+	hidden
+	selected
+	pressed
+	checked
+Use labelText
+	same label for different input elements
+Use PlaceholderText
+Use DisplayValue
+Use text
+Use testid
+
