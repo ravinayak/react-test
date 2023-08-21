@@ -183,6 +183,9 @@ module.exports = {
   // transform: {
     // '\\.svg$': '<rootDir>/app/javascript/tests/jest/transformers/jest-svg-transformer.js',
   // },
+  transform: {
+    "^.+\\.[jt]sx?$": "babel-jest",
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   transformIgnorePatterns: [
