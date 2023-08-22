@@ -1,10 +1,10 @@
 import React, { useState, ReactElement } from 'react';
 import { logger } from '@app/lib/Logger';
 import { useUserContext } from './UserContext';
-import { Child } from './Child';
 
 interface IProps {
   initialValue?: number;
+  children: () => ReactElement;
 }
 
 const childrenArr: ReactElement[] = [];
@@ -19,11 +19,12 @@ const printChildrenArray = (child) => {
   });
 };
 
-export function Parent({ initialValue }: IProps) {
+export function Parent({ initialValue, children }: IProps) {
   const [counter, setCounter] = useState<number>(0);
   const user = useUserContext();
 
-  const child = <Child />;
+  const child = children();
+
   printChildrenArray(child);
 
   const increment = () => {

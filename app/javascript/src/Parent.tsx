@@ -1,5 +1,5 @@
-import React, { ReactElement, useState } from "react";
-import { logger } from "@app/lib/Logger";
+import React, { ReactElement, useState } from 'react';
+import { logger } from '@app/lib/Logger';
 
 interface IProps {
   children: ReactElement;
@@ -19,12 +19,12 @@ export function Parent({ children }: IProps) {
       logger.info(Object.is(childrenArr[index], childrenArr[index - 1]));
     }
   });
-  logger.info("Parent Component Rendered");
+  logger.info('Parent Component Rendered');
   return (
     <>
       <div>Counter - Parent Component :: {counter}</div>
       <div> {children} </div>
-      <button id="button" onClick={() => increment()} type="button">
+      <button id='button' onClick={() => increment()} type='button'>
         Increment Parent Component
       </button>
     </>

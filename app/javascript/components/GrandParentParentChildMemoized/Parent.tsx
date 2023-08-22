@@ -1,15 +1,16 @@
-import React, { useState, ReactElement } from 'react';
+import React, { useState, ReactElement, useContext, useCallback } from 'react';
 import { logger } from '@app/lib/Logger';
 import { useUserContext } from './UserContext';
 import { Child } from './Child';
 
 interface IProps {
   initialValue?: number;
+  children: ReactElement;
 }
 
 const childrenArr: ReactElement[] = [];
 
-const printChildrenArray = (child) => {
+const printChildrenArray = (child): void => {
   childrenArr.push(child);
   logger.info(childrenArr);
   childrenArr.forEach((_value, index) => {
@@ -19,12 +20,24 @@ const printChildrenArray = (child) => {
   });
 };
 
-export function Parent({ initialValue }: IProps) {
+// const ChildMemoized = React.memo(Child);
+
+export function Parent() {
+  // export function Parent({ children }: IProps) {
+  // export function Parent({ initialValue, children }: IProps) {
+  // const [counter, setCounter] = useState<number>(initialValue);
   const [counter, setCounter] = useState<number>(0);
   const user = useUserContext();
 
-  const child = <Child />;
-  printChildrenArray(child);
+  let parentProp: number;
+  if (counter > 5) {
+    parentProp = counter;
+  }
+
+  // printChildrenArray(children);
+  // printChildrenArray(ChildMemoized);
+
+  const children = useCallback(() => <Child parentProp={parentProp} />, []);
 
   const increment = () => {
     setCounter(counter + 1);
@@ -35,12 +48,13 @@ export function Parent({ initialValue }: IProps) {
   };
 
   const reset = () => {
-    setCounter(initialValue);
+    // setCounter(initialValue);
+    setCounter(0);
   };
 
-  const name = () => `${user.parentFirstName} ${user.parentLastName}`;
-
   logger.info('Parent Component Rendered');
+
+  const name = () => `${user.parentFirstName} ${user.parentLastName}`;
 
   return (
     <>
@@ -67,7 +81,8 @@ export function Parent({ initialValue }: IProps) {
           <div id='parent-user-name'> Parent User Name :: {name()}</div>
           <div id='parent-user-email'> Parent User Email :: {user.parentEmail}</div>
         </div>
-        {child}
+        {/* <ChildMemoized parentProp={parentProp} /> */}
+        {children()}
       </div>
     </>
   );

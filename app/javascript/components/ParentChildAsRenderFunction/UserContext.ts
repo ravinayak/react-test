@@ -6,7 +6,7 @@ export const UserContext = createContext<User | undefined>(undefined);
 export const useUserContext = () => {
   const user = useContext(UserContext);
   if (user === undefined) {
-    throw new Error('UserContextProvider should wrap the compoonent to get correct value');
+    throw new Error('UserContext should wrap the compoonent to get correct value');
   }
   return user;
 };

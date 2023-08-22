@@ -1,4 +1,4 @@
-import React, { useState, ReactElement } from 'react';
+import React, { useState, ReactElement, useContext } from 'react';
 import { logger } from '@app/lib/Logger';
 import { useUserContext } from './UserContext';
 import { Child } from './Child';
@@ -18,13 +18,14 @@ const printChildrenArray = (child) => {
     }
   });
 };
+const ChildMemoized = React.memo(Child);
 
 export function Parent({ initialValue }: IProps) {
-  const [counter, setCounter] = useState<number>(0);
+  const [counter, setCounter] = useState<number>(initialValue);
   const user = useUserContext();
+  let parentProp: number;
 
-  const child = <Child />;
-  printChildrenArray(child);
+  printChildrenArray(ChildMemoized);
 
   const increment = () => {
     setCounter(counter + 1);
@@ -34,13 +35,17 @@ export function Parent({ initialValue }: IProps) {
     setCounter(counter - 1);
   };
 
+  if (counter > 5) {
+    parentProp = counter;
+  }
+
   const reset = () => {
     setCounter(initialValue);
   };
 
-  const name = () => `${user.parentFirstName} ${user.parentLastName}`;
-
   logger.info('Parent Component Rendered');
+
+  const name = () => `${user.parentFirstName} ${user.parentLastName}`;
 
   return (
     <>
@@ -67,7 +72,7 @@ export function Parent({ initialValue }: IProps) {
           <div id='parent-user-name'> Parent User Name :: {name()}</div>
           <div id='parent-user-email'> Parent User Email :: {user.parentEmail}</div>
         </div>
-        {child}
+        <ChildMemoized parentProp={parentProp} />
       </div>
     </>
   );
