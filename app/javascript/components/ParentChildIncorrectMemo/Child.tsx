@@ -6,8 +6,9 @@ import { useUserContext } from './UserContext';
 interface IProps {
   arrayProp?: Array<Number>;
   carProp?: Car;
+  handleClick?: Function;
 }
-export function Child({ arrayProp, carProp }: IProps) {
+export function Child({ arrayProp, carProp, handleClick }: IProps) {
   const user = useUserContext();
   const date = new Date();
   let arrayElements: string = '';
@@ -32,10 +33,10 @@ export function Child({ arrayProp, carProp }: IProps) {
       <div>Child Component :: Current Date And Time :: {dateAndTime()}</div>
       <br /> <br />
       <div>Child Component Props :: Array Prop - {arrayElements}</div>
-      <br /> <br />
       <div>
         Child Component Props :: Car Props - {carProp?.name}:{carProp?.model}
       </div>
+      <div>Child Component Props :: Function Props - {handleClick()}</div>
     </>
   );
 }

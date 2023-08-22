@@ -1,4 +1,4 @@
-import React, { useState, ReactElement } from 'react';
+import React, { useState, ReactElement, MemoExoticComponent } from 'react';
 import { logger } from '@app/lib/Logger';
 import { useUserContext } from './UserContext';
 import { Car } from '@app/types/Car';
@@ -8,16 +8,33 @@ interface IProps {
   initialValue?: number;
 }
 
-const childrenArr: ReactElement[] = [];
+const childrenArr: MemoExoticComponent<any>[] = [];
+const childPropArr: Array<any> = [];
 
-const printChildrenArray = (child) => {
-  childrenArr.push(child);
-  logger.info(childrenArr);
-  childrenArr.forEach((_value, index) => {
+const printPropArray = (arr) => {
+  if (arr.length === 3) {
+    return;
+  }
+  for (let index = 3; index < arr.length; index = index + 3) {
+    logger.info(index);
+    let res: string = `${Object.is(arr[index - 3], arr[index])} - ${Object.is(
+      arr[index - 2],
+      arr[index + 1],
+    )} - ${Object.is(arr[index - 1], arr[index + 2])}`;
+    logger.info(`Index being compared :: ${index - 3} - ${index} :: `, res);
+  }
+};
+
+const printArray = (arr, isProp = false) => {
+  logger.info(arr);
+  if (isProp) {
+    return printPropArray(arr);
+  }
+  arr.forEach((_value, index) => {
     if (index > 0) {
       logger.info(
         `Index being compared :: ${index - 1} - ${index} :: `,
-        Object.is(childrenArr[index], childrenArr[index - 1]),
+        Object.is(arr[index], arr[index - 1]),
       );
     }
   });
@@ -33,8 +50,13 @@ export function Parent({ initialValue }: IProps) {
     model: 'Civic 2005',
   };
   const arrayProp: Array<number> = [1, 2, 3, 4, 5];
+  const handleClick: Function = () => '"I am return of function being called"';
 
-  printChildrenArray(ChildMemoized);
+  childPropArr.push(carProp, arrayProp, handleClick);
+  printArray(childPropArr, true);
+
+  childrenArr.push(ChildMemoized);
+  printArray(childrenArr);
 
   const increment = () => {
     setCounter(counter + 1);
@@ -77,7 +99,7 @@ export function Parent({ initialValue }: IProps) {
           <div id='parent-user-name'> Parent User Name :: {name()}</div>
           <div id='parent-user-email'> Parent User Email :: {user.parentEmail}</div>
         </div>
-        <ChildMemoized carProp={carProp} arrayProp={arrayProp} />
+        <ChildMemoized carProp={carProp} arrayProp={arrayProp} handleClick={handleClick} />
         {/* <ChildMemoized /> */}
       </div>
     </>
