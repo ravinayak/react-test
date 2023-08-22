@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 // import { GrandParent } from './GrandParent';
-import { Parent } from '@app/components/ParentChildAsProp/Parent';
-import { Child } from '@app/components/ParentChildAsProp/Child';
-import { UserContext } from '@app/components/ParentChildAsProp/UserContext';
+// import { Parent } from '@app/components/ParentChildAsProp/Parent';
+// import { Child } from '@app/components/ParentChildAsProp/Child';
+// import { UserContext } from '@app/components/ParentChildAsProp/UserContext';
 // import { Parent } from '@app/components/ParentChild/Parent';
 // import { Child } from '@app/components/ParentChild/Child';
 // import { UserContext } from '@app/components/ParentChild/UserContext';
@@ -13,11 +13,15 @@ import { UserContext } from '@app/components/ParentChildAsProp/UserContext';
 // import { UserContext } from '@app/components/ParentChildMemoized/UserContext';
 // import { GrandParent } from '@app/components/GrandParentParentMemoizedChild/GrandParent';
 // import { UserContext } from '@app/components/GrandParentParentMemoizedChild/UserContext';
-import { GrandParent } from '@app/components/GrandParentParentChildMemoized/GrandParent';
+// import { GrandParent } from '@app/components/GrandParentParentChildMemoized/GrandParent';
 // import { UserContext } from '@app/components/GrandParentParentChildMemoized/UserContext';
 // import { User } from '@app/types/User';
+// import { Parent } from '@app/components/ParentChildMemoizedSubTree/Parent';
+// import { UserContext } from '@app/components/ParentChildMemoizedSubTree/UserContext';
+import { Parent } from '@app/components/ParentChildIncorrectMemo/Parent';
+import { UserContext } from '@app/components/ParentChildIncorrectMemo/UserContext';
 import { logger } from '@app/lib/Logger';
-// import { UserObject } from '@app/shared/UserObject';
+import { UserObject } from '@app/shared/UserObject';
 
 export function AppTest() {
   // const [userDetails, setUserDetails] = useState<User | undefined>(undefined);
@@ -39,7 +43,7 @@ export function AppTest() {
   // }
 
   return (
-    <GrandParent />
+    // <GrandParent />
     // <UserContext.Provider value={userDetails}>
     //   <div
     //     style={{
@@ -69,6 +73,9 @@ export function AppTest() {
     // a. Pass children as a render function
     //   <Parent children={() => <Child />} />
     // </UserContext.Provider>
+    <UserContext.Provider value={UserObject}>
+      <Parent initialValue={0} />
+    </UserContext.Provider>
   );
   // return <GrandParent />;
 }
