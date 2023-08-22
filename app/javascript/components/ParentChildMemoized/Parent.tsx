@@ -14,7 +14,10 @@ const printChildrenArray = (child) => {
   logger.info(childrenArr);
   childrenArr.forEach((_value, index) => {
     if (index > 0) {
-      logger.info(Object.is(childrenArr[index], childrenArr[index - 1]));
+      logger.info(
+        `Index being compared :: ${index - 1} - ${index} :: `,
+        Object.is(childrenArr[index], childrenArr[index - 1]),
+      );
     }
   });
 };

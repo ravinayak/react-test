@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 // import { GrandParent } from './GrandParent';
-// import { Parent } from '@app/components/ParentChildAsProp/Parent';
-// import { Child } from '@app/components/ParentChildAsProp/Child';
-// import { UserContext } from '@app/components/ParentChildAsProp/UserContext';
+import { Parent } from '@app/components/ParentChildAsProp/Parent';
+import { Child } from '@app/components/ParentChildAsProp/Child';
+import { UserContext } from '@app/components/ParentChildAsProp/UserContext';
 // import { Parent } from '@app/components/ParentChild/Parent';
 // import { Child } from '@app/components/ParentChild/Child';
 // import { UserContext } from '@app/components/ParentChild/UserContext';
@@ -17,11 +17,13 @@ import { GrandParent } from '@app/components/GrandParentParentChildMemoized/Gran
 // import { UserContext } from '@app/components/GrandParentParentChildMemoized/UserContext';
 // import { User } from '@app/types/User';
 import { logger } from '@app/lib/Logger';
-// import { UserObject } from '@app/shared/UserObject';
+// import { UserObject } from '@app/shared/UserObject';
 
 export function AppTest() {
   // const [userDetails, setUserDetails] = useState<User | undefined>(undefined);
   // const [counter, setCounter] = useState<number>(0);
+
+  // let initialValue: number;
 
   // if (userDetails === undefined) {
   //   setUserDetails(UserObject);
@@ -31,6 +33,10 @@ export function AppTest() {
   // const increment = () => {
   //   setCounter(counter + 1);
   // };
+
+  // if (counter > 5) {
+  //   initialValue = counter;
+  // }
 
   return (
     <GrandParent />
@@ -47,7 +53,9 @@ export function AppTest() {
     //       Increment
     //     </button>
     //   </div>
-    //   <Parent initialValue={counter} />
+    //   <Parent initialValue={initialValue}>
+    //     <Child />
+    //   </Parent>
     // </UserContext.Provider>
     // <UserContext.Provider value={userDetails}>
     // a. Pass Child component as a prop explicitly
