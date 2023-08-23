@@ -1,16 +1,17 @@
 import React from 'react';
 import { logger } from '@app/lib/Logger';
-import { useUserContext } from './UserContext';
+
+import { ChildSubTree1 } from './ChildSubtree1';
+import { ChildSubTree2 } from './ChildSubTree2';
 
 export function Child() {
-  const user = useUserContext();
-
-  // const name = `${user.childFirstName} ${user.childLastName}`;
   logger.info('Child Component Rendered');
 
   return (
     <>
       <div>Child Component</div>
+      <ChildSubTree1 />
+      <ChildSubTree2 />
     </>
   );
 }

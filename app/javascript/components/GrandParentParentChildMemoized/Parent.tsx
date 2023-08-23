@@ -40,6 +40,7 @@ export function Parent() {
   // printChildrenArray(children);
   // printChildrenArray(ChildMemoized);
 
+  // console.log(<Child parentProp={parentProp} />);
   const children = useCallback(() => <Child parentProp={parentProp} />, []);
 
   const increment = () => {

@@ -10,7 +10,7 @@ export function Child() {
 
   return (
     <>
-      <div>child Component</div>
+      <div>Child Component</div>
     </>
   );
 }

@@ -13,38 +13,44 @@ import React, { useState } from 'react';
 // import { UserContext } from '@app/components/ParentChildMemoized/UserContext';
 // import { GrandParent } from '@app/components/GrandParentParentMemoizedChild/GrandParent';
 // import { UserContext } from '@app/components/GrandParentParentMemoizedChild/UserContext';
-// import { GrandParent } from '@app/components/GrandParentParentChildMemoized/GrandParent';
+import { GrandParent } from '@app/components/GrandParentParentChildMemoized/GrandParent';
 // import { UserContext } from '@app/components/GrandParentParentChildMemoized/UserContext';
 // import { User } from '@app/types/User';
 // import { Parent } from '@app/components/ParentChildMemoizedSubTree/Parent';
 // import { UserContext } from '@app/components/ParentChildMemoizedSubTree/UserContext';
-import { Parent } from '@app/components/ParentChildIncorrectMemo/Parent';
-import { UserContext } from '@app/components/ParentChildIncorrectMemo/UserContext';
+// import { Parent } from '@app/components/ParentChildIncorrectMemo/Parent';
+// import { UserContext } from '@app/components/ParentChildIncorrectMemo/UserContext';
 import { logger } from '@app/lib/Logger';
-import { UserObject } from '@app/shared/UserObject';
+// import { Parent } from '@app/components/ParentChildContext/Parent';
+// import { CounterContext } from '@app/components/ParentChildContext/CounterContext';
+// import { Child } from '@app/components/ParentChildContext/Child';
+// import { UserObject } from '@app/shared/UserObject';
+
+// const ParentMemoized = React.memo(Parent);
 
 export function AppTest() {
   // const [userDetails, setUserDetails] = useState<User | undefined>(undefined);
-  // const [counter, setCounter] = useState<number>(0);
+  const [counter, setCounter] = useState<number>(0);
 
   // let initialValue: number;
+  let counterContext: number;
 
   // if (userDetails === undefined) {
   //   setUserDetails(UserObject);
   // }
   logger.info('AppTest is being rendered');
 
-  // const increment = () => {
-  //   setCounter(counter + 1);
-  // };
+  const increment = () => {
+    setCounter(counter + 1);
+  };
 
-  // if (counter > 5) {
-  //   initialValue = counter;
-  // }
+  if (counter > 5) {
+    // initialValue = counter;
+    counterContext = counter;
+  }
 
   return (
-    // <GrandParent />
-    // <UserContext.Provider value={userDetails}>
+    // <CounterContext.Provider value={counterContext}>
     //   <div
     //     style={{
     //       margin: 'auto',
@@ -57,6 +63,25 @@ export function AppTest() {
     //       Increment
     //     </button>
     //   </div>
+    //   <ParentMemoized />
+    // </CounterContext.Provider>
+    // <Parent>
+    //   <Child />
+    // </Parent>
+    <GrandParent />
+    // <UserContext.Provider value={userDetails}>
+    // <div
+    //   style={{
+    //     margin: 'auto',
+    //     textAlign: 'center',
+    //   }}
+    // >
+    //   <div id='counter'>GrandParent Counter :: {counter} </div>
+    //   <br /> <br />
+    //   <button id='increment-button' type='button' onClick={() => increment()}>
+    //     Increment
+    //   </button>
+    // </div>
     //   <Parent initialValue={initialValue}>
     //     <Child />
     //   </Parent>
@@ -73,9 +98,9 @@ export function AppTest() {
     // a. Pass children as a render function
     //   <Parent children={() => <Child />} />
     // </UserContext.Provider>
-    <UserContext.Provider value={UserObject}>
-      <Parent initialValue={0} />
-    </UserContext.Provider>
+    // <UserContext.Provider value={UserObject}>
+    //   <Parent initialValue={0} />
+    // </UserContext.Provider>
   );
   // return <GrandParent />;
 }

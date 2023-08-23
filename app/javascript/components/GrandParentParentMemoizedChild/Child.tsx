@@ -50,7 +50,7 @@ export function Child({ parentProp }) {
       <br /> <br />
       <div id='parentProp'> Parent Props :: {parentProp} </div>
       <br /> <br />
-      <div>child Component</div>
+      <div>Child Component</div>
     </>
   );
 }
