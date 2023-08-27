@@ -27,6 +27,7 @@ import { logger } from '@app/lib/Logger';
 // import { UserObject } from '@app/shared/UserObject';
 
 // const ParentMemoized = React.memo(Parent);
+import { UseStateRender } from '@app/components/StateHooksImplementation/UseStateRender';
 
 export function AppTest() {
   // const [userDetails, setUserDetails] = useState<User | undefined>(undefined);
@@ -50,6 +51,7 @@ export function AppTest() {
   }
 
   return (
+    <UseStateRender />
     // <CounterContext.Provider value={counterContext}>
     //   <div
     //     style={{
@@ -68,7 +70,7 @@ export function AppTest() {
     // <Parent>
     //   <Child />
     // </Parent>
-    <GrandParent />
+    // <GrandParent />
     // <UserContext.Provider value={userDetails}>
     // <div
     //   style={{
