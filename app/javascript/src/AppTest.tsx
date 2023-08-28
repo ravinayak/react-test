@@ -13,7 +13,7 @@ import React, { useState } from 'react';
 // import { UserContext } from '@app/components/ParentChildMemoized/UserContext';
 // import { GrandParent } from '@app/components/GrandParentParentMemoizedChild/GrandParent';
 // import { UserContext } from '@app/components/GrandParentParentMemoizedChild/UserContext';
-import { GrandParent } from '@app/components/GrandParentParentChildMemoized/GrandParent';
+// import { GrandParent } from '@app/components/GrandParentParentChildMemoized/GrandParent';
 // import { UserContext } from '@app/components/GrandParentParentChildMemoized/UserContext';
 // import { User } from '@app/types/User';
 // import { Parent } from '@app/components/ParentChildMemoizedSubTree/Parent';
@@ -25,6 +25,7 @@ import { logger } from '@app/lib/Logger';
 // import { CounterContext } from '@app/components/ParentChildContext/CounterContext';
 // import { Child } from '@app/components/ParentChildContext/Child';
 // import { UserObject } from '@app/shared/UserObject';
+import { MountingLifecycleMethodsImplementation } from '@app/components/LifeCycleMethodsImplementation/MountingLIfecycleMethodsImplementation';
 
 // const ParentMemoized = React.memo(Parent);
 import { UseStateRender } from '@app/components/StateHooksImplementation/UseStateRender';
@@ -51,7 +52,8 @@ export function AppTest() {
   }
 
   return (
-    <UseStateRender />
+    <MountingLifecycleMethodsImplementation />
+    // <UseStateRender />
     // <CounterContext.Provider value={counterContext}>
     //   <div
     //     style={{
