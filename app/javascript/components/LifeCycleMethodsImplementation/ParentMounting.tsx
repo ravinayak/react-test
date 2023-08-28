@@ -23,9 +23,37 @@ export class ParentMounting extends Component {
     };
   }
 
+  // For deciding whether a component should update or not, it must have latest props and state
+  // Latest props and state is represented by nextProps, nextState
+  // For a component to update, this method must return true
+  //
+  shouldComponentUpdate(nextProps, nextState) {
+    logger.info('ParentMounting :: shouldComponentUpdate');
+    return true;
+  }
+
+  // To get snapshot of previous state of a component before update, method must have handle of
+  // previous props and previous state before it gets updated to new props and new state
+  // This method must return null or value
+  //
+  getSnapshotBeforeUpdate(prevProps: Readonly<{}>, prevState: Readonly<{}>) {
+    logger.info('ParentMounting :: getSnapshotBeforeUpdate');
+    return null;
+  }
+
+  componentDidUpdate() {
+    logger.info('ParentMounting :: componentDidUpdate');
+  }
+
   componentDidMount() {
     logger.info('ParentMounting - componentDidMount');
     logger.info('Verify if state was updatated - State in ParentMounting Component :: ', this.state);
+  }
+
+  changeState() {
+    this.setState({
+      name: 'ParentMounting Component State has been updated upon button click ',
+    });
   }
 
   render() {
@@ -33,6 +61,11 @@ export class ParentMounting extends Component {
     return (
       <div>
         <div>ParentMounting Component Rendered</div>
+        <br />
+        <br />
+        <button onClick={this.changeState}>Click Me to Update State!!</button>
+        <br />
+        <br />
         <ChildMounting />
       </div>
     );

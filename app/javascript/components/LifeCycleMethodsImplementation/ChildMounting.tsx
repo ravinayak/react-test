@@ -15,6 +15,20 @@ export class ChildMounting extends Component {
     return null;
   }
 
+  shouldComponentUpdate(nextProps: Readonly<{}>, nextState: Readonly<{}>, nextContext: any): boolean {
+    logger.info('ChildMounting :: shouldComponentUpdate');
+    return true;
+  }
+
+  getSnapshotBeforeUpdate(prevProps: Readonly<{}>, prevState: Readonly<{}>) {
+    logger.info('ChildMounting :: getSnapshotBeforeUpdate');
+    return null;
+  }
+
+  componentDidUpdate() {
+    logger.info('ChildMounting :: componentDidUpdate');
+  }
+
   componentDidMount() {
     logger.info('ChildMounting - componentDidMount');
   }
