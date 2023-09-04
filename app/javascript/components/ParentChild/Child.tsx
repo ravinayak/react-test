@@ -14,3 +14,4 @@ export function Child() {
     </>
   );
 }
+Child.whyDidYouRender = true;

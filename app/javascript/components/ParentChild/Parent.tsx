@@ -14,10 +14,7 @@ const printChildrenArray = (child) => {
   logger.info(childrenArr);
   childrenArr.forEach((_value, index) => {
     if (index > 0) {
-      logger.info(
-        `Index being compared :: ${index - 1} - ${index} :: `,
-        Object.is(childrenArr[index], childrenArr[index - 1]),
-      );
+      logger.info(`Index being compared :: ${index - 1} - ${index} :: `, Object.is(childrenArr[index], childrenArr[index - 1]));
     }
   });
 };
@@ -43,6 +40,15 @@ export function Parent({ initialValue }: IProps) {
 
   const name = () => `${user.parentFirstName} ${user.parentLastName}`;
 
+  const value = { name: 'faisal' };
+  const getUs = () => ({
+    name: 'faisal',
+  });
+  const [_us, setUs] = useState(value);
+  const handleClick = () => {
+    setUs(getUs());
+  };
+
   logger.info('Parent Component Rendered');
 
   return (
@@ -56,14 +62,20 @@ export function Parent({ initialValue }: IProps) {
         <br /> <br />
         <div id='counter'>Parent Counter :: {counter} </div>
         <br /> <br />
-        <button id='increment-button' type='button' onClick={() => increment()}>
+        <button id='increment-button' type='button' onClick={() => increment()} style={{ marginRight: '5px' }}>
           Increment
         </button>
-        <button id='decrement-button' type='button' onClick={() => decrement()}>
+        <button id='decrement-button' type='button' onClick={() => decrement()} style={{ marginRight: '5px' }}>
           Decrement
         </button>
         <button id='reset-button' type='button' onClick={() => reset()}>
           Reset
+        </button>
+        <br /> <br />
+        <div id='parent-why-did-you-render'> Click button below to see logs of why did you render library</div>
+        <br />
+        <button onClick={handleClick} type='button'>
+          whyDidYouRender in Action
         </button>
         <br /> <br />
         <div>
@@ -79,3 +91,4 @@ export function Parent({ initialValue }: IProps) {
 Parent.defaultProps = {
   initialValue: 0,
 };
+Parent.whyDidYouRender = true;
