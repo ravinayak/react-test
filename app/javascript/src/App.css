@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  /* height: 40vmin; */
   pointer-events: none;
 }
 
@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +35,89 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.flex-container {
+  border: 6px solid black;
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: space-between;
+  /* flex-wrap: wrap; */
+  /* height: 900px; */
+}
+.flex-item {
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem;
+  /* flex-grow: 1; */
+  /* flex-basis: 135px; */
+  order: 0;
+  flex-shrink: 0;
+  /* text-align: center; */
+  /* width: 250px; */
+  /* height: 900px; */
+}
+.item-1 {
+  background-color: #B4BF35;
+  flex-basis: 175px;
+  flex-shrink: 2;
+  /* height: 25px; */
+  /* padding-bottom: 3rem; */
+  /* font-size:15px; */
+}
+.item-2 {
+  background-color: #B92F21;
+  /* flex-grow: 2; */
+  order: 1;
+  flex-shrink: 1;
+  /* height: 50px; */
+  /* padding-bottom: 25rem; */
+  /* font-size:25px; */
+}
+.item-3 {
+  background-color: #1C4C56;
+  flex-shrink: 4;
+  order: 5;
+  /* height: 75px; */
+  /* font-size:55px; */
+  /* padding-bottom: 25rem; */
+}
+.item-4 {
+  background-color: #CFb276;
+  /* height: 95px; */
+  /* font-size:75px; */
+  /* padding-bottom: 25rem; */
+}
+.item-5 {
+  background-color: #6B0803;
+  /* height: 100px; */
+  /* font-size:65px; */
+  /* padding-bottom: 25rem; */
+}
+.item-6 {
+  background-color: #1C4C56;
+  /* height: 15px; */
+  /* font-size:45px; */
+  /* padding-bottom: 25rem; */
+}
+.item-7 {
+  background-color: #b95f21;
+  /* height: 45px; */
+  /* font-size:95px; */
+  /* padding-bottom: 25rem; */
+}
+.item-8 {
+  background-color: #01243a;
+  order: 1;
+  /* height: 65px; */
+  /* font-size:155px; */
+  /* padding-bottom: 25rem; */
+}
+.item-9 {
+  background-color: #aad041;
+  /* height: 145px; */
+  /* font-size:95px; */
+  /* padding-bottom: 25rem; */
 }

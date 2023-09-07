@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 // import { Parent } from '@app/components/ParentChildAsProp/Parent';
 // import { Child } from '@app/components/ParentChildAsProp/Child';
 // import { UserContext } from '@app/components/ParentChildAsProp/UserContext';
-import { Parent } from '@app/components/ParentChild/Parent';
-import { Child } from '@app/components/ParentChild/Child';
-import { UserContext } from '@app/components/ParentChild/UserContext';
+// import { Parent } from '@app/components/ParentChild/Parent';
+// import { Child } from '@app/components/ParentChild/Child';
+// import { UserContext } from '@app/components/ParentChild/UserContext';
 // import { Parent } from '@app/components/ParentChildAsRenderFunction/Parent';
 // import { Child } from '@app/components/ParentChildAsRenderFunction/Child';
 // import { UserContext } from '@app/components/ParentChildAsRenderFunction/UserContext';
@@ -16,7 +16,7 @@ import { UserContext } from '@app/components/ParentChild/UserContext';
 // import { UserContext } from '@app/components/GrandParentParentMemoizedChild/UserContext';
 // import { GrandParent } from '@app/components/GrandParentParentChildMemoized/GrandParent';
 // import { UserContext } from '@app/components/GrandParentParentChildMemoized/UserContext';
-import { User } from '@app/types/User';
+// import { User } from '@app/types/User';
 // import { Parent } from '@app/components/ParentChildMemoizedSubTree/Parent';
 // import { UserContext } from '@app/components/ParentChildMemoizedSubTree/UserContext';
 // import { Parent } from '@app/components/ParentChildIncorrectMemo/Parent';
@@ -25,40 +25,42 @@ import { logger } from '@app/lib/Logger';
 // import { Parent } from '@app/components/ParentChildContext/Parent';
 // import { CounterContext } from '@app/components/ParentChildContext/CounterContext';
 // import { Child } from '@app/components/ParentChildContext/Child';
-import { UserObject } from '@app/shared/UserObject';
+// import { UserObject } from '@app/shared/UserObject';
 // import { MountingLifecycleMethodsImplementation } from '@app/components/LifeCycleMethodsImplementation/MountingLIfecycleMethodsImplementation';
 // import { ParentErrorComponent } from '@app/components/ErrorBoundaryImplementation/ParentErrorComponent';
 
 // const ParentMemoized = React.memo(Parent);
 // import { UseStateRender } from '@app/components/StateHooksImplementation/UseStateRender';
+import { FlexContainer } from '@app/components/FlexDisplay/FlexContainer';
 
 export function AppTest() {
-  const [userDetails, setUserDetails] = useState<User | undefined>(undefined);
-  const [counter, setCounter] = useState<number>(0);
+  // const [userDetails, setUserDetails] = useState<User | undefined>(undefined);
+  // const [counter, setCounter] = useState<number>(0);
 
   // let initialValue: number;
-  let counterContext: number;
+  // let counterContext: number;
 
-  if (userDetails === undefined) {
-    setUserDetails(UserObject);
-  }
+  // if (userDetails === undefined) {
+  //   setUserDetails(UserObject);
+  // }
   logger.info('AppTest is being rendered');
 
-  const increment = () => {
-    setCounter(counter + 1);
-  };
+  // const increment = () => {
+  //   setCounter(counter + 1);
+  // };
 
-  if (counter > 5) {
-    // initialValue = counter;
-    counterContext = counter;
-  }
+  // if (counter > 5) {
+  //   // initialValue = counter;
+  //   counterContext = counter;
+  // }
 
   return (
-    <UserContext.Provider value={userDetails}>
-      <Parent>
-        <Child />
-      </Parent>
-    </UserContext.Provider>
+    <FlexContainer />
+    // <UserContext.Provider value={userDetails}>
+    //   <Parent>
+    //     <Child />
+    //   </Parent>
+    // </UserContext.Provider>
     // <ParentErrorComponent />
     // <MountingLifecycleMethodsImplementation />
     // <UseStateRender />
