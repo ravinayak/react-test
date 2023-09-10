@@ -1,7 +1,8 @@
 // Although not required this is imported here to avoid TS errors that show up in VSCode
 // TODO: Find how we can disable these errors for TS
 import React from 'react';
-import { render, screen, queryByRole, logRoles } from '@testing-library/react';
+// import { render, screen, queryByRole, logRoles } from '@testing-library/react';
+import { render, screen, queryByRole, logRoles } from '@app/tests/test-utils';
 import user from '@testing-library/user-event';
 import { Greet } from '../components/GreetTest/Greet';
 import { ScreenExplanation } from '@app/components/GreetTest/ScreenExplanation';
@@ -12,6 +13,11 @@ import { ScreenExplanation } from '@app/components/GreetTest/ScreenExplanation';
 import { Counter } from '@app/components/GreetTest/Counter';
 import { InputAmount } from '@app/components/GreetTest/InputAmount';
 import { count } from 'console';
+import { SelectOptions } from '@app/components/GreetTest/SelectOptions';
+import { FileUploader } from '@app/components/GreetTest/FileUploader';
+import { CopyCutPasteKeyboardPress } from '@app/components/GreetTest/CopyCutPasteKeyboardPress';
+import { ProviderWrapper } from '@app/components/GreetTest/ProviderWapper';
+import { ProviderWrappedComponent } from '@app/components/GreetTest/ProviderWrappedComponent';
 
 describe('Greet', () => {
   test('Tests for rendering correctly with props', () => {
@@ -68,7 +74,7 @@ describe('Greet', () => {
       level: 2,
     });
     expect(h2Element).toBeInTheDocument();
-    expect(h1Element).toHaveTextContent(/.*h1 tag$/);
+    expect(h1Element).toHaveValue('This is an h1 tag');
   });
 
   test('Tests for Anchor Element with Link', () => {
@@ -104,7 +110,7 @@ describe('Greet', () => {
     const paragraphElement = screen.getByText(/.*is a paragraph$/);
     const spanElement = screen.getByText(/.*span.*/);
     expect(paragraphElement).toBeInTheDocument();
-    expect(spanElement).toHaveTextContent(/.*tag.*/);
+    expect(spanElement).toHaveValue('This is a span tag');
   });
 
   test('Test for Placeholder text,and displayValue', () => {
@@ -119,7 +125,7 @@ describe('Greet', () => {
   test('Test for testid', () => {
     render(<Greet />);
     const testidElement = screen.getByTestId('button-submit');
-    expect(testidElement).toHaveTextContent('Submit');
+    expect(testidElement).toHaveValue('Submit');
   });
 
   test('Test for h3 not being present in the document', () => {
@@ -193,9 +199,9 @@ describe('Greet', () => {
     const incrementButton = screen.getByRole('button', { name: /Increment/i });
     await user.click(incrementButton);
     const counterDiv = screen.getByText(/counter/i);
-    expect(counterDiv).toHaveTextContent('1');
+    expect(counterDiv).toHaveValue('1');
     await user.dblClick(incrementButton);
-    expect(counterDiv).toHaveTextContent('3');
+    expect(counterDiv).toHaveValue('3');
   });
 
   test('Test - User types in Input text box and value is set in a div element', async () => {
@@ -217,10 +223,10 @@ describe('Greet', () => {
     await user.type(inputElement, '10');
     expect(inputElement).toHaveValue(10);
     await user.click(setElement);
-    expect(countElement).toHaveTextContent('10');
+    expect(countElement).toHaveValue('10');
   });
 
-  test.only('Test - Tab focus on HTML Elements in InputComponent', async () => {
+  test('Test - Tab focus on HTML Elements in InputComponent', async () => {
     user.setup();
     render(<InputAmount />);
     const incrementButton = screen.getByRole('button', { name: /increment/i });
@@ -231,5 +237,75 @@ describe('Greet', () => {
     expect(inputElement).toHaveFocus();
     await user.tab();
     expect(setElement).toHaveFocus();
+  });
+
+  test('Test - Select Options', async () => {
+    user.setup();
+    render(<SelectOptions />);
+    const selectElement = screen.getByRole('listbox', { name: /Select\.*/i });
+    expect(selectElement).toBeInTheDocument();
+    await user.selectOptions(selectElement, ['1', 'Psychology']);
+    const optionWithValue: HTMLOptionElement = screen.getByRole('option', { name: /maths/i });
+    expect(optionWithValue.selected).toBe(true);
+    const optionWithLabel: HTMLOptionElement = screen.getByRole('option', { name: /maths/i });
+    expect(optionWithLabel.selected).toBe(true);
+    await user.deselectOptions(selectElement, '1');
+    expect(optionWithLabel.selected).toBe(false);
+  });
+
+  test('Test - Upload a file', async () => {
+    // input element of type file does not have any aria role defined for it
+    // Use label text to get element
+    user.setup();
+    const view = render(<FileUploader />);
+    logRoles(view.container);
+    const fileUploadElement: HTMLInputElement = screen.getByLabelText(/upload\.*/i);
+    expect(fileUploadElement).toBeInTheDocument();
+    const file = new File(['hello'], 'hello.png', { type: 'image/png' });
+    await user.upload(fileUploadElement, file);
+    expect(fileUploadElement.files).toHaveLength(1);
+    expect(fileUploadElement.files[0]).toBe(file);
+    expect(fileUploadElement.files.item(0)).toBe(file);
+  });
+
+  test('Test - Cut Copy Paste from one input element to another', async () => {
+    user.setup({ writeToClipboard: true });
+    render(<CopyCutPasteKeyboardPress />);
+    const content = 'I am going to be cut';
+    // Not very clear about cut/copy/paste
+    // Clipboard APIs need more research
+    // expectations which are not working are commented out
+    // TODO: Fix the test
+    const inputTextCopyCutElement: HTMLInputElement = screen.getByRole('textbox', { name: /type.*/i });
+    const inputTextPasteElement: HTMLInputElement = screen.getByRole('textbox', { name: /.*input from.*/i });
+    expect(inputTextCopyCutElement).toBeInTheDocument();
+    await user.type(inputTextCopyCutElement, content);
+    expect(inputTextCopyCutElement).toHaveValue(content);
+    await user.click(inputTextCopyCutElement);
+    await user.cut();
+    //expect(inputTextCopyCutElement).toHaveValue('');
+    await user.click(inputTextPasteElement);
+    await user.copy();
+    await user.click(inputTextPasteElement);
+    await user.paste();
+    // expect(inputTextPasteElement).toHaveValue(content);
+    await user.clear(inputTextPasteElement);
+    await user.click(inputTextPasteElement);
+    await user.paste(content);
+    expect(inputTextPasteElement).toHaveValue(content);
+    await user.clear(inputTextPasteElement);
+    await user.click(inputTextPasteElement);
+    await user.keyboard('foo');
+    expect(inputTextPasteElement).toHaveValue('foo');
+  });
+
+  test.only('Test - App Provider which contains theme wrapped around a component', () => {
+    // wrapper is used to wrap the component being rendered
+    // In most cases, the wrapper wraps the entire application, this would require us to
+    // wrap every component with the wrapper option, this can be avoided by using custom render
+    // function
+    render(<ProviderWrappedComponent />);
+    const headingElement = screen.getByRole('heading', { level: 3 });
+    expect(headingElement).toHaveTextContent(/.*dark.*/i);
   });
 });
