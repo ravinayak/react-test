@@ -1,6 +1,5 @@
 import React from 'react';
 import { ThemeProvider, CssBaseline, createTheme } from '@mui/material';
-import { ProviderWrappedComponent } from './ProviderWrappedComponent';
 
 const theme = createTheme({
   palette: {

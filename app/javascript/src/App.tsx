@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
-import { CopyCutPasteKeyboardPress } from '@app/components/GreetTest/CopyCutPasteKeyboardPress';
-import { ProviderWrappedComponent } from '@app/components/GreetTest/ProviderWrappedComponent';
+// import { CopyCutPasteKeyboardPress } from '@app/components/GreetTest/CopyCutPasteKeyboardPress';
+// import { ProviderWrappedComponent } from '@app/components/GreetTest/ProviderWrappedComponent';
 //import { Greet } from '@app/components/GreetTest/Greet';
 // import { Counter } from '@app/components/GreetTest/Counter';
 // import { InputAmount } from '@app/components/GreetTest/InputAmount';
 // import { SelectOptions } from '@app/components/GreetTest/SelectOptions';
 // import { FileUploader } from '@app/components/GreetTest/FileUploader';
+import { Profile } from '@app/components/ModernReactWithRouterUdemyCourse/Section 3/Profile';
 
 export function App() {
   return (
@@ -21,7 +22,8 @@ export function App() {
       {/* <SelectOptions /> */}
       {/* <FileUploader /> */}
       {/* <CopyCutPasteKeyboardPress /> */}
-      <ProviderWrappedComponent />
+      {/* <ProviderWrappedComponent /> */}
+      <Profile />
     </div>
   );
 }

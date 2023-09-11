@@ -276,8 +276,12 @@ describe('Greet', () => {
     // Clipboard APIs need more research
     // expectations which are not working are commented out
     // TODO: Fix the test
-    const inputTextCopyCutElement: HTMLInputElement = screen.getByRole('textbox', { name: /type.*/i });
-    const inputTextPasteElement: HTMLInputElement = screen.getByRole('textbox', { name: /.*input from.*/i });
+    const inputTextCopyCutElement: HTMLInputElement = screen.getByRole('textbox', {
+      name: /type.*/i,
+    });
+    const inputTextPasteElement: HTMLInputElement = screen.getByRole('textbox', {
+      name: /.*input from.*/i,
+    });
     expect(inputTextCopyCutElement).toBeInTheDocument();
     await user.type(inputTextCopyCutElement, content);
     expect(inputTextCopyCutElement).toHaveValue(content);

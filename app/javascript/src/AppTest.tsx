@@ -50,7 +50,7 @@ export function AppTest() {
   // };
 
   // if (counter > 5) {
-  //   // initialValue = counter;
+  // initialValue = counter;
   //   counterContext = counter;
   // }
 
