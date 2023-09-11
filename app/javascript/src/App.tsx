@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { ParentCounterWithProps } from '@app/components/RenderHooksTest/ParentCounterWithProps';
 // import { CopyCutPasteKeyboardPress } from '@app/components/GreetTest/CopyCutPasteKeyboardPress';
 // import { ProviderWrappedComponent } from '@app/components/GreetTest/ProviderWrappedComponent';
 //import { Greet } from '@app/components/GreetTest/Greet';
@@ -7,7 +8,7 @@ import './App.css';
 // import { InputAmount } from '@app/components/GreetTest/InputAmount';
 // import { SelectOptions } from '@app/components/GreetTest/SelectOptions';
 // import { FileUploader } from '@app/components/GreetTest/FileUploader';
-import { Profile } from '@app/components/ModernReactWithRouterUdemyCourse/Section-3/Profile';
+// import { Profile } from '@app/components/ModernReactWithRouterUdemyCourse/Section-3/Profile';
 
 export function App() {
   return (
@@ -23,7 +24,8 @@ export function App() {
       {/* <FileUploader /> */}
       {/* <CopyCutPasteKeyboardPress /> */}
       {/* <ProviderWrappedComponent /> */}
-      <Profile />
+      {/* <Profile /> */}
+      <ParentCounterWithProps />
     </div>
   );
 }

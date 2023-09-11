@@ -2,7 +2,7 @@
 // TODO: Find how we can disable these errors for TS
 import React from 'react';
 // import { render, screen, queryByRole, logRoles } from '@testing-library/react';
-import { render, screen, queryByRole, logRoles } from '@app/tests/test-utils';
+import { render, screen, queryByRole, logRoles, renderHook, act } from '@app/tests/test-utils';
 import user from '@testing-library/user-event';
 import { Greet } from '../components/GreetTest/Greet';
 import { ScreenExplanation } from '@app/components/GreetTest/ScreenExplanation';
@@ -18,6 +18,9 @@ import { FileUploader } from '@app/components/GreetTest/FileUploader';
 import { CopyCutPasteKeyboardPress } from '@app/components/GreetTest/CopyCutPasteKeyboardPress';
 import { ProviderWrapper } from '@app/components/GreetTest/ProviderWapper';
 import { ProviderWrappedComponent } from '@app/components/GreetTest/ProviderWrappedComponent';
+import { ParentCounterWithProps } from '@app/components/RenderHooksTest/ParentCounterWithProps';
+import { useCounterWithProps } from '@app/hooks/useCounterWithProps';
+import { CounterWithProps } from '@app/components/RenderHooksTest/CounterWithProps';
 
 describe('Greet', () => {
   test('Tests for rendering correctly with props', () => {
@@ -303,7 +306,7 @@ describe('Greet', () => {
     expect(inputTextPasteElement).toHaveValue('foo');
   });
 
-  test.only('Test - App Provider which contains theme wrapped around a component', () => {
+  test('Test - App Provider which contains theme wrapped around a component', () => {
     // wrapper is used to wrap the component being rendered
     // In most cases, the wrapper wraps the entire application, this would require us to
     // wrap every component with the wrapper option, this can be avoided by using custom render
@@ -311,5 +314,59 @@ describe('Greet', () => {
     render(<ProviderWrappedComponent />);
     const headingElement = screen.getByRole('heading', { level: 3 });
     expect(headingElement).toHaveTextContent(/.*dark.*/i);
+  });
+
+  test('Test - Render Hook', () => {
+    const initialCounter = 0;
+    // renderHook returns result object which contains object returned by hook, becasue a hook does not
+    // return JSX, it cannot be called with render function
+    // renderHook function returns an Object with the following properties
+    //      {
+    //        result: { current: <Object returned from hook> },
+    //        rerender: [Function: rerender],
+    //        unmount: [Function: unmount]
+    //      }
+    // const res = renderHook(useCounterWithProps, {
+    //   initialProps: {
+    //     counter: initialCounter,
+    //   },
+    // });
+    // console.log(res);
+    const { result } = renderHook(useCounterWithProps, {
+      initialProps: {
+        counter: initialCounter,
+      },
+    });
+    // console.log(result.current);
+    expect(result.current.counter).toBe(initialCounter);
+    // Activities like rendering, data fetching, user actions are considered as units of interaction with UserInterface
+    // We must wrap the state changes caused by any of these actions in act before making any assertions. This is to ensure
+    // that the state changes are processed and applied to DOM. If we make assertions before state changes are processed and
+    // applied to DOM, tests will fail
+    // renderHook unlike render method is not wrapped in act
+    act(() => {
+      result.current.increment();
+    });
+    expect(result.current.counter).toBe(initialCounter + 1);
+  });
+
+  test.only('Test - Mock functions', async () => {
+    const counter = 0;
+    const handleIncrement = jest.fn();
+    const handleDecrement = jest.fn();
+    user.setup();
+    render(
+      <CounterWithProps
+        counter={counter}
+        handleIncrement={handleIncrement}
+        handleDecrement={handleDecrement}
+      />,
+    );
+    const incrementButton = screen.getByRole('button', { name: /increment/i });
+    const decrementButton = screen.getByRole('button', { name: /decrement/i });
+    await user.click(incrementButton);
+    expect(handleIncrement).toHaveBeenCalledTimes(1);
+    await user.click(decrementButton);
+    expect(handleDecrement).toHaveBeenCalledTimes(1);
   });
 });
