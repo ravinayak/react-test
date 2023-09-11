@@ -7,7 +7,7 @@ import './App.css';
 // import { InputAmount } from '@app/components/GreetTest/InputAmount';
 // import { SelectOptions } from '@app/components/GreetTest/SelectOptions';
 // import { FileUploader } from '@app/components/GreetTest/FileUploader';
-import { Profile } from '@app/components/ModernReactWithRouterUdemyCourse/Section 3/Profile';
+import { Profile } from '@app/components/ModernReactWithRouterUdemyCourse/Section-3/Profile';
 
 export function App() {
   return (
