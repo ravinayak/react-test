@@ -1,0 +1,60 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 95vh;
+}
+#holy-grail {
+	border: 5px solid orchid;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+.flex-main {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+}
+.flex-header {
+	margin: 5px;
+	border: 5px solid firebrick;
+	background-color: burlywood;
+	font-size: x-large;
+	font-weight: bold;
+	color: white;
+	height: 5vh;
+}
+.flex-nav {
+	margin: 0 5px 0 5px;
+	border: 5px solid firebrick;
+	background-color: burlywood;
+	font-size: x-large;
+	font-weight: bold;
+	color: white;
+	flex-grow: 1;
+}
+.flex-article {
+	border: 5px solid firebrick;
+	background-color: burlywood;
+	font-size: x-large;
+	font-weight: bold;
+	color: white;
+	flex-grow: 1;
+}
+.flex-aside {
+	margin: 0 5px 0 5px;
+	border: 5px solid firebrick;
+	background-color: burlywood;
+	font-size: x-large;
+	font-weight: bold;
+	color: white;
+	flex-grow: 1;
+}
+.flex-footer {
+	margin: 5px;
+	border: 5px solid firebrick;
+	background-color: burlywood;
+	font-size: x-large;
+	font-weight: bold;
+	color: white;
+	height: 5vh;
+}

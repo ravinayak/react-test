@@ -1,0 +1,9 @@
+.container {
+	display: flex;
+}
+.item1 {
+	background-color: firebrick;
+}
+.item2 {
+	background-color: forestgreen;
+}
