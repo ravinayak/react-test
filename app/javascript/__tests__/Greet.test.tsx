@@ -12,15 +12,16 @@ import { ScreenExplanation } from '@app/components/GreetTest/ScreenExplanation';
 // import { App } from '../src/App';
 import { Counter } from '@app/components/GreetTest/Counter';
 import { InputAmount } from '@app/components/GreetTest/InputAmount';
-import { count } from 'console';
 import { SelectOptions } from '@app/components/GreetTest/SelectOptions';
 import { FileUploader } from '@app/components/GreetTest/FileUploader';
 import { CopyCutPasteKeyboardPress } from '@app/components/GreetTest/CopyCutPasteKeyboardPress';
-import { ProviderWrapper } from '@app/components/GreetTest/ProviderWapper';
+// import { ProviderWrapper } from '@app/components/GreetTest/ProviderWapper';
 import { ProviderWrappedComponent } from '@app/components/GreetTest/ProviderWrappedComponent';
-import { ParentCounterWithProps } from '@app/components/RenderHooksTest/ParentCounterWithProps';
+// import { ParentCounterWithProps } from '@app/components/RenderHooksTest/ParentCounterWithProps';
 import { useCounterWithProps } from '@app/hooks/useCounterWithProps';
 import { CounterWithProps } from '@app/components/RenderHooksTest/CounterWithProps';
+import { UsersApi } from '@app/components/MockingHttpRequests/UsersApi';
+import { USERS_JSON } from '@app/shared/Constants';
 
 describe('Greet', () => {
   test('Tests for rendering correctly with props', () => {
@@ -350,7 +351,7 @@ describe('Greet', () => {
     expect(result.current.counter).toBe(initialCounter + 1);
   });
 
-  test.only('Test - Mock functions', async () => {
+  test('Test - Mock functions', async () => {
     const counter = 0;
     const handleIncrement = jest.fn();
     const handleDecrement = jest.fn();
@@ -368,5 +369,13 @@ describe('Greet', () => {
     expect(handleIncrement).toHaveBeenCalledTimes(1);
     await user.click(decrementButton);
     expect(handleDecrement).toHaveBeenCalledTimes(1);
+  });
+
+  test.only('Test - Mock HTTP Request using MSW', async () => {
+    render(<UsersApi />);
+    const usersList = await screen.findByRole('list');
+    expect(usersList).toBeInTheDocument();
+    const usersListItems = await screen.findAllByRole('listitem');
+    expect(usersListItems).toHaveLength(USERS_JSON.length);
   });
 });

@@ -41,6 +41,8 @@ module.exports = {
       devServer.app.use('/public/', express.static(path.resolve(__dirname, 'public')));
       return middlewares;
     },
+    liveReload: true,
+    port: 8080,
   },
   entry: path.resolve(__dirname, 'app/javascript/src/index.tsx'),
   output: {

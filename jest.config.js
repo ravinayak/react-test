@@ -89,10 +89,10 @@ module.exports = {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    "\\.(svg|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-    '<rootDir>/app/javascript/tests/__mocks__/fileMock.ts',
-  "\\.(css|less|scss|sass)$": '<rootDir>/app/javascript/tests/__mocks__/styleMock.ts',
-  "@app/(.*)": "<rootDir>/app/javascript/$1"
+    '\\.(svg|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/app/javascript/tests/__mocks__/fileMock.ts',
+    '\\.(css|less|scss|sass)$': '<rootDir>/app/javascript/tests/__mocks__/styleMock.ts',
+    '@app/(.*)': '<rootDir>/app/javascript/$1',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -140,9 +140,7 @@ module.exports = {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  setupFilesAfterEnv: [
-    "./app/javascript/tests/setupTests.ts"
-  ],
+  setupFilesAfterEnv: ['./app/javascript/tests/setupTests.ts'],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
@@ -151,7 +149,7 @@ module.exports = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -161,9 +159,10 @@ module.exports = {
 
   // The glob patterns Jest uses to detect test files
   testMatch: [
-    "**/__tests__/**/*.[jt]s?(x)",
-    "**/?(*.)+(spec|test).[tj]s?(x)",
-    "!**/__ex_tests__/**/*.[jt]s?(x)"
+    '**/__tests__/**/*.[jt]s?(x)',
+    '!**/__tests__/mocks/*.[jt]s?(x)',
+    '**/?(*.)+(spec|test).[tj]s?(x)',
+    '!**/__ex_tests__/**/*.[jt]s?(x)',
   ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
@@ -182,15 +181,14 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   // transform: {
-    // '\\.svg$': '<rootDir>/app/javascript/tests/jest/transformers/jest-svg-transformer.js',
+  // '\\.svg$': '<rootDir>/app/javascript/tests/jest/transformers/jest-svg-transformer.js',
   // },
   transform: {
-    "^.+\\.[jt]sx?$": "babel-jest",
+    '^.+\\.[jt]sx?$': 'babel-jest',
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  transformIgnorePatterns: [
-  ],
+  transformIgnorePatterns: [],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,

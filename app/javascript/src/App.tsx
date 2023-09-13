@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import { ParentCounterWithProps } from '@app/components/RenderHooksTest/ParentCounterWithProps';
-import { HolyGrail } from '@app/components/FlexDisplay/HolyGrail';
+// import { ParentCounterWithProps } from '@app/components/RenderHooksTest/ParentCounterWithProps';
+// import { HolyGrail } from '@app/components/FlexDisplay/HolyGrail';
 // import { CopyCutPasteKeyboardPress } from '@app/components/GreetTest/CopyCutPasteKeyboardPress';
 // import { ProviderWrappedComponent } from '@app/components/GreetTest/ProviderWrappedComponent';
 // import { Greet } from '@app/components/GreetTest/Greet';
@@ -14,6 +14,7 @@ import { HolyGrail } from '@app/components/FlexDisplay/HolyGrail';
 // import { CenteringItem } from '@app/components/FlexDisplay/CenteringItem';
 // import { VariableHeights } from '@app/components/FlexDisplay/VariableHeights';
 // import { CardsFooter } from '@app/components/FlexDisplay/CardsFooter';
+import { UsersApi } from '@app/components/MockingHttpRequests/UsersApi';
 export function App() {
   return (
     <div className='App'>
@@ -34,7 +35,8 @@ export function App() {
       {/* <CenteringItem /> */}
       {/* <VariableHeights /> */}
       {/* <CardsFooter /> */}
-      <HolyGrail />
+      {/* <HolyGrail /> */}
+      <UsersApi />
     </div>
   );
 }
