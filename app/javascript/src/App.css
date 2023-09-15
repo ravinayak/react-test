@@ -121,3 +121,40 @@
   /* font-size:95px; */
   /* padding-bottom: 25rem; */
 }
+.separator {
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 11.24px;
+  font-family: 'Untitled Sans';
+  width: 336px;
+  height: 11px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+  position: relative;
+  text-align: center;
+}
+.separator:before {
+  content: "";
+  display: block;
+  width: 148px;
+  height: 1px;
+  background: #E3E3E3;
+  left: 0;
+  top: 50%;
+  position: absolute;
+  z-index: -2;
+}
+.separator:after {
+  content: "";
+  display: block;
+  width: 148px;
+  height: 1px;
+  background: #E3E3E3;
+  right: 0;
+  top: 50%;
+  position: absolute;
+  z-index: -2;
+}
+.separator span {
+  background: #313E48;
+}
