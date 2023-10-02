@@ -8,6 +8,7 @@ import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 import { CircularColor } from '@app/components/ProgressIndicator/CircularColor';
 import { ErrorMessage, Form, Field, Formik, FormikValues } from 'formik';
 import { FormikErrorsTouched } from '@app/types/axiosLearningForm';
@@ -246,6 +247,14 @@ export function AxiosLearning() {
                 </Stack>
               </CardContent>
               <CardActions className='card-actions'>
+                <Button
+                  variant='outlined'
+                  type='submit'
+                  id='btn-back-button'
+                  onClick={() => navigate(routes.ROOT)}
+                >
+                  Back to Welcome Page
+                </Button>
                 <LoadingButton
                   type='submit'
                   id='btn-create-user-button'

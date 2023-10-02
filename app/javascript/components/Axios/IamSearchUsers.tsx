@@ -12,6 +12,7 @@ import { ErrorMessage, Form, Field, Formik, FormikValues } from 'formik';
 import { LoadingButton } from '@mui/lab';
 import axios from 'axios';
 import { searchIamUser } from '@app/queries/searchUsersIam';
+import Button from '@mui/material/Button';
 import '../../src/App.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -66,6 +67,14 @@ export function IamSearchUsers() {
                 </Stack>
               </CardContent>
               <CardActions className='card-actions'>
+                <Button
+                  variant='outlined'
+                  type='submit'
+                  id='btn-back-button'
+                  onClick={() => navigate(routes.ROOT)}
+                >
+                  Back to Welcome Page
+                </Button>
                 <LoadingButton
                   type='submit'
                   id='btn-create-user-button'
