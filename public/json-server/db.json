@@ -252,6 +252,29 @@
         "bs": "Default bs"
       },
       "id": 11
+    },
+    {
+      "name": "Test User",
+      "username": "test_user",
+      "email": "test_user@test_user.com",
+      "address": {
+        "street": "Test User 1",
+        "suite": "308",
+        "city": "Test User City",
+        "zipcode": "T5B4M1",
+        "geo": {
+          "lat": "39.0008378",
+          "lng": "59.0083779"
+        }
+      },
+      "phone": "4379851334",
+      "website": "https://testuserwebsite.com",
+      "company": {
+        "name": "Test User Company",
+        "catchPhrase": "Test User CatchPhrase",
+        "bs": "TestBS"
+      },
+      "id": 12
     }
   ],
   "todos": [

@@ -3,10 +3,11 @@ import { logger } from '@app/lib/Logger';
 import { useUserContext } from './UserContext';
 
 interface IProps {
-  parentProp: number;
+  parentProp: number | string;
 }
-export function Child({ parentProp }) {
+export function Child({ parentProp }: IProps) {
   const user = useUserContext();
+  let parentPropVal = parentProp;
   const [counter, setCounter] = useState<number>(0);
 
   const name = `${user.childFirstName} ${user.childLastName}`;
@@ -20,7 +21,9 @@ export function Child({ parentProp }) {
   };
 
   if (counter > 5) {
-    parentProp += ' Hi ';
+    if (typeof parentProp === 'string') {
+      parentPropVal += ' Hi ';
+    }
   }
 
   const reset = () => {
@@ -48,7 +51,7 @@ export function Child({ parentProp }) {
       <div id='childName'> Child User :: {name} </div>
       <div id='childEmail'> Child Email :: {user.childEmail} </div>
       <br /> <br />
-      <div id='parentProp'> Parent Props :: {parentProp} </div>
+      <div id='parentProp'> Parent Props :: {parentPropVal} </div>
       <br /> <br />
       <div>Child Component</div>
     </>

@@ -216,3 +216,8 @@
   align-self: center;
   flex-direction: column;
 }
+.navigation-button {
+  margin: 20px;
+  width: 150px;
+  height: 40px;
+}
