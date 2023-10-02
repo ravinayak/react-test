@@ -1,4 +1,5 @@
 export const DEFAULT_JSON_SERVER_ENDPOINT = 'http://localhost:3004/';
+export const IAM_URL = 'https://iam-cn.ingress.ooma.com/';
 
 export const usersApi = {
   create: 'users',
@@ -6,4 +7,9 @@ export const usersApi = {
   delete: 'users',
   update: 'users',
   patch: 'users',
+};
+
+export const iamApi = {
+  login: 'v2/login',
+  searchUsers: '/internal/user/search',
 };

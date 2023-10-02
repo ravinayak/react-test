@@ -1,7 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { AxiosResponse, AxiosError } from 'axios';
+import React, { useState } from 'react';
 import { routes } from '@app/config/routes';
-import Alert from '@mui/material/Alert';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -16,7 +14,6 @@ import { LoadingButton } from '@mui/lab';
 import { ICreateUserTypiCodePayload } from '@app/types/UserTypiCode';
 import { createUser } from '@app/queries/createUser';
 import { logger } from '@app/lib/Logger';
-import { AxiosUserCreatedForm } from './AxiosUserCreatedForm';
 import '../../src/App.css';
 import { useNavigate } from 'react-router-dom';
 

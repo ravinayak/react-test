@@ -38,6 +38,8 @@ import { AxiosLearning } from '@app/components/Axios/AxiosLearning';
 import { WelcomeUser } from '@app/components/Welcome/WelcomeUser';
 import { CircularColor } from '@app/components/ProgressIndicator/CircularColor';
 import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
+import { IamSearchUsers } from '@app/components/Axios/IamSearchUsers';
+import { IamSearchUserResult } from '@app/components/Axios/IamSearchUserResult';
 // import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
 
 export function AppTest() {
@@ -66,6 +68,8 @@ export function AppTest() {
     <BrowserRouter>
       <Routes>
         <Route path={routes.CREATE_USER} element={<AxiosLearning />} />
+        <Route path={routes.SEARCH_USER} element={<IamSearchUsers />} />
+        <Route path={routes.SEARCH_USER_RESULT} element={<IamSearchUserResult />} />
         <Route path={routes.USER_CREATED} element={<AxiosUserCreatedForm />} />
         <Route path={routes.CIRCULAR_COLOR} element={<CircularColor />} />
         <Route path={routes.ROOT} element={<WelcomeUser />} />

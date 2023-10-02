@@ -5,9 +5,11 @@
 // .svg: svg image
 
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const express = require('express');
 
 module.exports = {
+  plugins: [new Dotenv()],
   module: {
     rules: [
       {
