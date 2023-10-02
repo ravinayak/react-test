@@ -47,7 +47,7 @@ export function IamSearchUsers() {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       <Card variant='outlined' className='card'>
-        <CardHeader>Search User</CardHeader>
+        <CardHeader title='Search User' />
         <Divider />
         <Formik initialValues={initialValues} onSubmit={handleSubmit}>
           {({ errors, touched }) => (

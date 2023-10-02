@@ -35,7 +35,7 @@ import { logger } from '@app/lib/Logger';
 // const ParentMemoized = React.memo(Parent);
 // import { UseStateRender } from '@app/components/StateHooksImplementation/UseStateRender';
 // import { FlexContainer } from '@app/components/FlexDisplay/FlexContainer';
-import { AxiosLearning } from '@app/components/Axios/AxiosLearning';
+import { AxiosUserCreation } from '@app/components/Axios/AxiosUserCreation';
 import { WelcomeUser } from '@app/components/Welcome/WelcomeUser';
 import { CircularColor } from '@app/components/ProgressIndicator/CircularColor';
 import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
@@ -67,7 +67,7 @@ export function AppTest() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={routes.CREATE_USER} element={<AxiosLearning />} />
+        <Route path={routes.CREATE_USER} element={<AxiosUserCreation />} />
         <Route path={routes.SEARCH_USER} element={<IamSearchUsers />} />
         <Route path={routes.SEARCH_USER_RESULT} element={<IamSearchUserResult />} />
         <Route path={routes.USER_CREATED} element={<AxiosUserCreatedForm />} />

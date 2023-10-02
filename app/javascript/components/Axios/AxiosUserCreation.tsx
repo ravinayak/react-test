@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { CircularColor } from '@app/components/ProgressIndicator/CircularColor';
 import { ErrorMessage, Form, Field, Formik, FormikValues } from 'formik';
-import { FormikErrorsTouched } from '@app/types/axiosLearningForm';
+import { FormikErrorsTouched } from '@app/types/axiosUserCreationForm';
 import { LoadingButton } from '@mui/lab';
 import { createUser } from '@app/queries/createUser';
 import { logger } from '@app/lib/Logger';
@@ -20,7 +20,7 @@ import { useNavigate } from 'react-router-dom';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { ICreateUserTypiCodePayload } from '@app/types/UserTypiCode';
 
-export function AxiosLearning() {
+export function AxiosUserCreation() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const navigate = useNavigate();
 
@@ -88,7 +88,8 @@ export function AxiosLearning() {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       <Card variant='outlined' className='card'>
-        <CardHeader>Please enter your profile details to create your Profile</CardHeader>
+        <CardHeader title='Please enter your profile details to create your Profile' />
+        <Divider />
         {/* <Stack spacing={2} sx={{ mx: (theme) => theme.spacing(2) }}>
         <Typography>This is the Typography Element - 1</Typography>
         <Typography>This is the Typography Element - 2</Typography>
@@ -273,4 +274,4 @@ export function AxiosLearning() {
     </div>
   );
 }
-// AxiosLearning.whyDidYouRender = true;
+// AxiosUserCreation.whyDidYouRender = true;

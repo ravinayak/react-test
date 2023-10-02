@@ -173,6 +173,7 @@
 .card {
   width: 1600px;
   display: flex;
+  flex-direction: column;
   height: auto;
   margin: 40px;
   padding: 24px;
@@ -185,6 +186,8 @@
   display: flex;
   justify-content: flex-end;
   align-content: flex-end;
+  margin-bottom: 24px;
+  margin-right: 24px;
 }
 .form {
   display: flex;
@@ -220,4 +223,12 @@
   margin: 20px;
   width: 150px;
   height: 40px;
+}
+.card-result {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 900px;
+  width: 2000px;
 }

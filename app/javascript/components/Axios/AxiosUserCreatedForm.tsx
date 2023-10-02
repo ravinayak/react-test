@@ -1,11 +1,17 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Stack from '@mui/material/Stack';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import Button from '@mui/material/Button';
+import { routes } from '@app/config/routes';
 
 export function AxiosUserCreatedForm() {
   const location = useLocation();
   const error = location.state?.errorFlag;
   const userData = location.state?.data;
+  const navigate = useNavigate();
 
   if (error) {
     return (
@@ -43,21 +49,35 @@ export function AxiosUserCreatedForm() {
   });
 
   return (
-    <Stack className='stack user-details' spacing={2}>
-      <div className='user-details-div'>User Details</div>
-      <div>*******************************************************</div>
-      <div className='user-details-enclosing-div'>
-        <ul>
-          <li key='id'>Id :: {userData.id}</li>
-          <li key='name'>Name :: {userData.name}</li>
-          <li key='username'>Username :: {userData.username}</li>
-          <li key='email'>Email :: {userData.email}</li>
-          {userAddressData}
-          <li key='phone'>Phone :: {userData.phone}</li>
-          <li key='website'>Website :: {userData.website}</li>
-          {userCompanyData}
-        </ul>
-      </div>
-    </Stack>
+    <Card>
+      <CardContent>
+        <Stack className='stack user-details' spacing={2}>
+          <div className='user-details-div'>User Details</div>
+          <div>*******************************************************</div>
+          <div className='user-details-enclosing-div'>
+            <ul>
+              <li key='id'>Id :: {userData.id}</li>
+              <li key='name'>Name :: {userData.name}</li>
+              <li key='username'>Username :: {userData.username}</li>
+              <li key='email'>Email :: {userData.email}</li>
+              {userAddressData}
+              <li key='phone'>Phone :: {userData.phone}</li>
+              <li key='website'>Website :: {userData.website}</li>
+              {userCompanyData}
+            </ul>
+          </div>
+        </Stack>
+      </CardContent>
+      <CardActions>
+        <Button
+          variant='outlined'
+          type='submit'
+          id='btn-back-button'
+          onClick={() => navigate(routes.ROOT)}
+        >
+          Back to Welcome Page
+        </Button>
+      </CardActions>
+    </Card>
   );
 }
