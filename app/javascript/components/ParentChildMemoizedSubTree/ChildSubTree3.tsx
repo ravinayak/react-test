@@ -5,8 +5,6 @@ export function ChildSubTree3() {
   logger.info('Child SubTree3 Component Rendered');
 
   return (
-    <>
-      <div>Child Component SubTree 3</div>
-    </>
+    <div>Child Component SubTree 3</div>
   );
 }

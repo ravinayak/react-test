@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { CounterContext } from './CounterContext';
 import { logger } from '@app/lib/Logger';
+import { CounterContext } from './CounterContext';
 
 export function ChildSubTree2() {
   const counterContext = useContext(CounterContext);

@@ -4,7 +4,6 @@ import React from 'react';
 // import { render, screen, queryByRole, logRoles } from '@testing-library/react';
 import { render, screen, queryByRole, logRoles, renderHook, act } from '@app/tests/test-utils';
 import user from '@testing-library/user-event';
-import { Greet } from '../components/GreetTest/Greet';
 import { ScreenExplanation } from '@app/components/GreetTest/ScreenExplanation';
 // import { ScreenGrandParentContainer } from '@app/components/GreetTest/ScreenGrandParentContainer';
 // import { ScreenParentContainer } from '@app/components/GreetTest/ScreenParentContainer';
@@ -22,6 +21,7 @@ import { useCounterWithProps } from '@app/hooks/useCounterWithProps';
 import { CounterWithProps } from '@app/components/RenderHooksTest/CounterWithProps';
 import { UsersApi } from '@app/components/MockingHttpRequests/UsersApi';
 import { USERS_JSON } from '@app/shared/Constants';
+import { Greet } from '../components/GreetTest/Greet';
 
 describe('Greet', () => {
   test('Tests for rendering correctly with props', () => {
@@ -149,6 +149,7 @@ describe('Greet', () => {
   });
 
   test('Test for type of screen, container, manualQuery and how to use these in BaseQueries', () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { container, baseElement } = render(<ScreenExplanation />);
     const manualSelectedContainer = document.querySelector('#ScreenExplanation');
     // const { container } = render(<ScreenGrandParentContainer />);
@@ -291,7 +292,7 @@ describe('Greet', () => {
     expect(inputTextCopyCutElement).toHaveValue(content);
     await user.click(inputTextCopyCutElement);
     await user.cut();
-    //expect(inputTextCopyCutElement).toHaveValue('');
+    // expect(inputTextCopyCutElement).toHaveValue('');
     await user.click(inputTextPasteElement);
     await user.copy();
     await user.click(inputTextPasteElement);

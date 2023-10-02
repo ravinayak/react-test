@@ -1,7 +1,7 @@
 import React from 'react';
-import { UseStateImplementation } from './UseStateImplementation';
 import { logger } from '@app/lib/Logger';
 import { validateHeaderValue } from 'http';
+import { UseStateImplementation } from './UseStateImplementation';
 
 let resetIndexFunction;
 

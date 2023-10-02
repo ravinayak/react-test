@@ -61,8 +61,7 @@ export function Parent() {
   const name = () => `${user.parentFirstName} ${user.parentLastName}`;
 
   return (
-    <>
-      <div
+    <div
         style={{
           margin: 'auto',
           textAlign: 'center',
@@ -88,7 +87,6 @@ export function Parent() {
         {/* <ChildMemoized parentProp={parentProp} /> */}
         {children()}
       </div>
-    </>
   );
 }
 

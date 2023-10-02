@@ -9,9 +9,7 @@ export function Child() {
   logger.info('Child Component Rendered');
 
   return (
-    <>
-      <div>Child Component</div>
-    </>
+    <div>Child Component</div>
   );
 }
 Child.whyDidYouRender = true;

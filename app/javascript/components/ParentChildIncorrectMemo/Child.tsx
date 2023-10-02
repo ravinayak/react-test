@@ -13,7 +13,7 @@ export function Child({ arrayProp, carProp, handleClick }: IProps) {
   const date = new Date();
   let arrayElements: string = '';
   arrayProp?.forEach((_index, value) => {
-    arrayElements = arrayElements.concat(value + ' ');
+    arrayElements = arrayElements.concat(`${value  } `);
   });
   const name = `${user.childFirstName} ${user.childLastName}`;
 

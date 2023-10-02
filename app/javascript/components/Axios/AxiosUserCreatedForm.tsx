@@ -4,55 +4,60 @@ import Stack from '@mui/material/Stack';
 
 export function AxiosUserCreatedForm() {
   const location = useLocation();
-  const errorFlag = location.state?.errorFlag;
-  const userData = location.state?.userData;
+  const error = location.state?.errorFlag;
+  const userData = location.state?.data;
 
-  if (errorFlag) {
+  if (error) {
     return (
       <div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
         Error Occurred: No User Created
       </div>
     );
-  } else {
-    const userAddressData = [];
-    const userCompanyData = [];
-    Object.keys(userData.address).forEach((key) => {
-      typeof userData.address[key] === 'object'
-        ? Object.keys(userData.address[key]).forEach((objectKey) => {
-            userAddressData.push(
-              <div>
-                {objectKey} :: {userData.address[key][objectKey]}
-              </div>,
-            );
-          })
-        : userAddressData.push(
-            <div>
-              {key} :: {userData.address[key]}
-            </div>,
-          );
-    });
-    Object.keys(userData.company).forEach((key) => {
-      userCompanyData.push(
-        <div>
-          {key} :: {userData.company[key]}
-        </div>,
-      );
-    });
-    return (
-      <Stack className='stack user-details' spacing={2}>
-        <div className='user-details-div'>User Details</div>
-        <div>*******************************************************</div>
-        <div className='user-details-enclosing-div'>
-          <div>Id :: {userData.id}</div>
-          <div>Name :: {userData.name}</div>
-          <div>Username :: {userData.username}</div>
-          <div>Email :: {userData.email}</div>
-          {userAddressData}
-          <div>Phone :: {userData.phone}</div>
-          <div>Website :: {userData.website}</div>
-          {userCompanyData}
-        </div>
-      </Stack>
-    );
   }
+
+  const userAddressData: React.JSX.Element[] = [];
+  const userCompanyData: React.JSX.Element[] = [];
+
+  const populateUserInfo = (userInfo: React.JSX.Element[], key: string, value: string) => {
+    userInfo.push(
+      <li key={key}>
+        {key} :: {value}
+      </li>,
+    );
+  };
+  const processUserDataNestedKey = (userDataObject) => {
+    Object.keys(userDataObject).forEach((objectKey) => {
+      populateUserInfo(userAddressData, objectKey, userDataObject[objectKey]);
+    });
+  };
+
+  Object.keys(userData.address).forEach((key) => {
+    /*  eslint no-unused-expressions: ["error", { "allowTernary": true }]   */
+    typeof userData.address[key] === 'object'
+      ? processUserDataNestedKey(userData.address[key])
+      : populateUserInfo(userAddressData, key, userData.address[key]);
+  });
+
+  Object.keys(userData.company).forEach((key) => {
+    populateUserInfo(userCompanyData, key, userData.company[key]);
+  });
+
+  return (
+    <Stack className='stack user-details' spacing={2}>
+      <div className='user-details-div'>User Details</div>
+      <div>*******************************************************</div>
+      <div className='user-details-enclosing-div'>
+        <ul>
+          <li key='id'>Id :: {userData.id}</li>
+          <li key='name'>Name :: {userData.name}</li>
+          <li key='username'>Username :: {userData.username}</li>
+          <li key='email'>Email :: {userData.email}</li>
+          {userAddressData}
+          <li key='phone'>Phone :: {userData.phone}</li>
+          <li key='website'>Website :: {userData.website}</li>
+          {userCompanyData}
+        </ul>
+      </div>
+    </Stack>
+  );
 }

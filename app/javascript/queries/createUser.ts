@@ -19,23 +19,17 @@ export const createUser = async ({
   phone,
   website,
   company,
-}: ICreateUserTypiCodePayload) => {
+}: ICreateUserTypiCodePayload): Promise<AxiosError | AxiosResponse> => {
   let resp = null;
-  let errorFlag = false;
   try {
-    const { data } = await axios.post(
+    const axiosResponse = await axios.post(
       usersApi.create,
       { name, username, email, address, phone, website, company },
       postRequestConfig,
     );
-    resp = data;
-    console.log('Response Received');
+    resp = axiosResponse;
   } catch (error) {
-    resp = error.response.data;
-    errorFlag = true;
+    resp = error;
   }
-  return {
-    responseData: resp,
-    errorFlag: errorFlag,
-  };
+  return resp;
 };

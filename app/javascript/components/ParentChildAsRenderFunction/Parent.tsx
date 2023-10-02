@@ -47,8 +47,7 @@ export function Parent({ initialValue, children }: IProps) {
   logger.info('Parent Component Rendered');
 
   return (
-    <>
-      <div
+    <div
         style={{
           margin: 'auto',
           textAlign: 'center',
@@ -73,7 +72,6 @@ export function Parent({ initialValue, children }: IProps) {
         </div>
         {child}
       </div>
-    </>
   );
 }
 

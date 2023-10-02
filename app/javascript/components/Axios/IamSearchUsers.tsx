@@ -32,7 +32,6 @@ export function IamSearchUsers() {
 
   const handleSubmit = async (values: FormikValues) => {
     setIsLoading(true);
-    console.log(values.email);
     searchUserFunction(values.email);
   };
 

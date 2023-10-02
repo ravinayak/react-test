@@ -1,5 +1,4 @@
 import React from 'react';
-import { ProfileCard } from './ProfileCard';
 // When we are importing images or any files other than JS/JSX/TS/TSX we have to specify the file extension
 // Here we are importing images, so we have to specify the name of the image
 // Images are imported as default imports and not named imports
@@ -7,6 +6,7 @@ import { ProfileCard } from './ProfileCard';
 import AlexaImage from '@app/images/alexa.png';
 import CortonaImage from '@app/images/cortana.png';
 import SiriImage from '@app/images/siri.png';
+import { ProfileCard } from './ProfileCard';
 // When a developer is importing a file created by him/her, we specify directory path - @app (app/javascript/...)
 // When we are importing any library installed through yarn/npm, we simply specify the library - 'bulma/css/bulma.css' or 'react'
 //  -- By default, loader will look for these files in node_modules directory

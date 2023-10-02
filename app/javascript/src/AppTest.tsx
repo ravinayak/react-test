@@ -1,4 +1,5 @@
 import '../../../wdyr'; // <--- first import
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { routes } from '@app/config/routes';
@@ -43,7 +44,6 @@ import { IamSearchUserResult } from '@app/components/Axios/IamSearchUserResult';
 // import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
 
 export function AppTest() {
-  console.trace();
   // const [userDetails, setUserDetails] = useState<User | undefined>(undefined);
   // const [counter, setCounter] = useState<number>(0);
 

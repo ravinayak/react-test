@@ -10,9 +10,7 @@ export function Skills({ skills }: ISkillsProps) {
   return (
     <div id='Skills'>
       <ul>
-        {skills.map((skill: string) => {
-          return <li key={skill}> {skill}</li>;
-        })}
+        {skills.map((skill: string) => <li key={skill}> {skill}</li>)}
       </ul>
       {!loggedIn && (
         <button type='button' onClick={handleLogIn}>

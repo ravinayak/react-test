@@ -9,21 +9,21 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { CircularColor } from '@app/components/ProgressIndicator/CircularColor';
-import { ErrorMessage, Form, Field, Formik } from 'formik';
+import { ErrorMessage, Form, Field, Formik, FormikValues } from 'formik';
+import { FormikErrorsTouched } from '@app/types/axiosLearningForm';
 import { LoadingButton } from '@mui/lab';
-import { ICreateUserTypiCodePayload } from '@app/types/UserTypiCode';
 import { createUser } from '@app/queries/createUser';
 import { logger } from '@app/lib/Logger';
 import '../../src/App.css';
 import { useNavigate } from 'react-router-dom';
+import axios, { AxiosError, AxiosResponse } from 'axios';
+import { ICreateUserTypiCodePayload } from '@app/types/UserTypiCode';
 
 export function AxiosLearning() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [formValues, setFormValues] = useState<ICreateUserTypiCodePayload>(null);
-  const [createUserDataProcessed, setCreateUserDataProcessed] = useState<boolean>(false);
   const navigate = useNavigate();
 
-  const initialValues = {
+  const initialValues: ICreateUserTypiCodePayload = {
     name: 'Default Name',
     username: 'Default Username',
     email: 'Default Email',
@@ -46,21 +46,21 @@ export function AxiosLearning() {
     },
   };
 
-  const handleSubmit = async (formValues: ICreateUserTypiCodePayload) => {
-    setIsLoading(true);
-    setFormValues(formValues);
-  };
-
-  const processResponseData = (response) => {
+  const processResponseData = (response: AxiosError | AxiosResponse) => {
     setIsLoading(false);
-
-    navigate(routes.USER_CREATED, {
-      state: { userData: response.responseData, errorFlag: response.errorFlag },
-    });
+    if (axios.isAxiosError(response)) {
+      navigate(routes.USER_CREATED, {
+        state: { error: true, message: response.message },
+      });
+    } else {
+      navigate(routes.USER_CREATED, {
+        state: { error: false, data: response.data },
+      });
+    }
   };
-  const createUserFunc = async () => {
-    const { name, username, email, address, phone, website, company } = formValues;
-    const response = await createUser({
+  const createUserFunc = async (values: FormikValues) => {
+    const { name, username, email, address, phone, website, company } = values;
+    const response: AxiosResponse | AxiosError = await createUser({
       name,
       username,
       email,
@@ -74,10 +74,10 @@ export function AxiosLearning() {
     }
   };
 
-  if (formValues && !createUserDataProcessed) {
-    setCreateUserDataProcessed(true);
-    createUserFunc();
-  }
+  const handleSubmit = async (values: FormikValues) => {
+    setIsLoading(true);
+    createUserFunc(values);
+  };
 
   if (isLoading) {
     logger.info('Circular color');
@@ -93,7 +93,7 @@ export function AxiosLearning() {
         <Typography>This is the Typography Element - 2</Typography>
       </Stack> */}
         <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-          {({ errors, touched }) => (
+          {({ errors, touched }: FormikErrorsTouched) => (
             <Form className='form'>
               <CardContent className='card-content'>
                 <Stack spacing={2} className='stack'>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useUserContext } from './UserContext';
 import { logger } from '@app/lib/Logger';
+import { useUserContext } from './UserContext';
 
 interface IProps {
   parentProp: number;

@@ -8,6 +8,7 @@ export class ErrorComponentB extends Component {
     //
     this.state.toString();
   }
+
   render() {
     return <div> ErrorComponentB rendered</div>;
   }

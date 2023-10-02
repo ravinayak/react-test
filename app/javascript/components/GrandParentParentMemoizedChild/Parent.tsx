@@ -48,8 +48,7 @@ export function Parent({ children }: IProps) {
   const name = () => `${user.parentFirstName} ${user.parentLastName}`;
 
   return (
-    <>
-      <div
+    <div
         style={{
           margin: 'auto',
           textAlign: 'center',
@@ -74,7 +73,6 @@ export function Parent({ children }: IProps) {
         </div>
         {children}
       </div>
-    </>
   );
 }
 

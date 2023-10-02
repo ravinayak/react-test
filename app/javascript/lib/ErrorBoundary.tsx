@@ -8,6 +8,7 @@ export class ErrorBoundary extends Component {
       hasError: false,
     };
   }
+
   static getDerivedStateFromError(error) {
     // This method catches error and sets errorState for the component
     // which decides to render fallback UI in error or children components
@@ -26,8 +27,8 @@ export class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return <div>Error Boundary Fallback UI</div>;
-    } else {
+    } 
       return this.props.children;
-    }
+    
   }
 }

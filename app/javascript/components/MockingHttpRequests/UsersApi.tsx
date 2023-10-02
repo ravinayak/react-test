@@ -47,13 +47,11 @@ export function UsersApi() {
             {/* React Node would not accept any function which returns void, if we use forEach to iterate
 					over users, it would throw an error because it does not return any data
 					map returns data, so, we can use map to iterate over users and return JSX from it */}
-            {users.map((user) => {
-              return (
+            {users.map((user) => (
                 <li key={user.id}>
                   Name :: {user.name}, Id :: {user.id}
                 </li>
-              );
-            })}
+              ))}
           </ul>
         </div>
       )}

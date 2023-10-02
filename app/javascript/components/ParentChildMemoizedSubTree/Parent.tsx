@@ -58,8 +58,7 @@ export function Parent({ initialValue }: IProps) {
   logger.info('Parent Component Rendered');
 
   return (
-    <>
-      <div
+    <div
         style={{
           margin: 'auto',
           textAlign: 'center',
@@ -116,7 +115,6 @@ export function Parent({ initialValue }: IProps) {
         </div>
         <ChildMemoized childProps={childProps} />
       </div>
-    </>
   );
 }
 

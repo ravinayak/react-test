@@ -1,7 +1,7 @@
 import React, { useState, ReactElement, MemoExoticComponent } from 'react';
 import { logger } from '@app/lib/Logger';
-import { useUserContext } from './UserContext';
 import { Car } from '@app/types/Car';
+import { useUserContext } from './UserContext';
 import { Child } from './Child';
 
 interface IProps {
@@ -15,9 +15,9 @@ const printPropArray = (arr) => {
   if (arr.length === 3) {
     return;
   }
-  for (let index = 3; index < arr.length; index = index + 3) {
+  for (let index = 3; index < arr.length; index += 3) {
     logger.info(index);
-    let res: string = `${Object.is(arr[index - 3], arr[index])} - ${Object.is(
+    const res: string = `${Object.is(arr[index - 3], arr[index])} - ${Object.is(
       arr[index - 2],
       arr[index + 1],
     )} - ${Object.is(arr[index - 1], arr[index + 2])}`;
@@ -75,8 +75,7 @@ export function Parent({ initialValue }: IProps) {
   logger.info('Parent Component Rendered');
 
   return (
-    <>
-      <div
+    <div
         style={{
           margin: 'auto',
           textAlign: 'center',
@@ -102,7 +101,6 @@ export function Parent({ initialValue }: IProps) {
         <ChildMemoized carProp={carProp} arrayProp={arrayProp} handleClick={handleClick} />
         {/* <ChildMemoized /> */}
       </div>
-    </>
   );
 }
 
