@@ -211,3 +211,8 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 400;
 }
+.user-details-enclosing-div {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+}

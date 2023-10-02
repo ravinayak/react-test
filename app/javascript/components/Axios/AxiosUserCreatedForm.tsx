@@ -42,14 +42,16 @@ export function AxiosUserCreatedForm() {
       <Stack className='stack user-details' spacing={2}>
         <div className='user-details-div'>User Details</div>
         <div>*******************************************************</div>
-        <div>Id :: {userData.id}</div>
-        <div>Name :: {userData.name}</div>
-        <div>Username :: {userData.username}</div>
-        <div>Email :: {userData.email}</div>
-        {userAddressData}
-        <div>Phone :: {userData.phone}</div>
-        <div>Website :: {userData.website}</div>
-        {userCompanyData}
+        <div className='user-details-enclosing-div'>
+          <div>Id :: {userData.id}</div>
+          <div>Name :: {userData.name}</div>
+          <div>Username :: {userData.username}</div>
+          <div>Email :: {userData.email}</div>
+          {userAddressData}
+          <div>Phone :: {userData.phone}</div>
+          <div>Website :: {userData.website}</div>
+          {userCompanyData}
+        </div>
       </Stack>
     );
   }
