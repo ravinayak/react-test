@@ -1,5 +1,7 @@
 import '../../../wdyr'; // <--- first import
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { routes } from '@app/config/routes';
 // import { GrandParent } from './GrandParent';
 // import { Parent } from '@app/components/ParentChildAsProp/Parent';
 // import { Child } from '@app/components/ParentChildAsProp/Child';
@@ -31,9 +33,15 @@ import { logger } from '@app/lib/Logger';
 
 // const ParentMemoized = React.memo(Parent);
 // import { UseStateRender } from '@app/components/StateHooksImplementation/UseStateRender';
-import { FlexContainer } from '@app/components/FlexDisplay/FlexContainer';
+// import { FlexContainer } from '@app/components/FlexDisplay/FlexContainer';
+import { AxiosLearning } from '@app/components/Axios/AxiosLearning';
+import { WelcomeUser } from '@app/components/Welcome/WelcomeUser';
+import { CircularColor } from '@app/components/ProgressIndicator/CircularColor';
+import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
+// import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
 
 export function AppTest() {
+  console.trace();
   // const [userDetails, setUserDetails] = useState<User | undefined>(undefined);
   // const [counter, setCounter] = useState<number>(0);
 
@@ -55,7 +63,16 @@ export function AppTest() {
   // }
 
   return (
-    <FlexContainer />
+    <BrowserRouter>
+      <Routes>
+        <Route path={routes.CREATE_USER} element={<AxiosLearning />} />
+        <Route path={routes.USER_CREATED} element={<AxiosUserCreatedForm />} />
+        <Route path={routes.CIRCULAR_COLOR} element={<CircularColor />} />
+        <Route path={routes.ROOT} element={<WelcomeUser />} />
+      </Routes>
+    </BrowserRouter>
+    // <AxiosUserCreatedForm />
+    // <FlexContainer />
     // <UserContext.Provider value={userDetails}>
     //   <Parent>
     //     <Child />

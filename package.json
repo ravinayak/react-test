@@ -36,6 +36,7 @@
     "i18next-localstorage-backend": "^4.1.1",
     "immer": "^10.0.2",
     "js-cookie": "^3.0.0",
+    "json-server": "^0.17.4",
     "lodash.get": "^4.4.2",
     "lodash.groupby": "^4.6.0",
     "lodash.isobject": "^3.0.2",
@@ -104,7 +105,8 @@
     "check-format": "prettier --check 'app/javascript/**/*.js*' 'app/javascript/**/*.ts*'",
     "format-with-prettier": "prettier --write 'app/javascript/**/*.js*' 'app/javascript/**/*.ts*'",
     "test": "jest",
-    "start": "webpack-dev-server --mode development --open --hot"
+    "start": "webpack-dev-server --mode development --open --hot",
+    "start-json-server": "yarn json-server --watch public/json-server/db.json -p 3004"
   },
   "browserslist": {
     "production": [
