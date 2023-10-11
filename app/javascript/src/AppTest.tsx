@@ -41,6 +41,7 @@ import { CircularColor } from '@app/components/ProgressIndicator/CircularColor';
 import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
 import { IamSearchUsers } from '@app/components/Axios/IamSearchUsers';
 import { IamSearchUserResult } from '@app/components/Axios/IamSearchUserResult';
+import { FlexContainer } from '@app/components/FlexDisplay/FlexContainer';
 // import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
 
 export function AppTest() {
@@ -72,6 +73,7 @@ export function AppTest() {
         <Route path={routes.SEARCH_USER_RESULT} element={<IamSearchUserResult />} />
         <Route path={routes.USER_CREATED} element={<AxiosUserCreatedForm />} />
         <Route path={routes.CIRCULAR_COLOR} element={<CircularColor />} />
+        <Route path={routes.FLEXBOX_DISPLAY} element={<FlexContainer />} />
         <Route path={routes.ROOT} element={<WelcomeUser />} />
       </Routes>
     </BrowserRouter>

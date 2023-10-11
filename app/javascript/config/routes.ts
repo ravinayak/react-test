@@ -5,4 +5,5 @@ export const routes = {
   USER_CREATED: '/user_created',
   SEARCH_USER: '/search_user',
   SEARCH_USER_RESULT: '/search_user_result',
+  FLEXBOX_DISPLAY: '/flexbox_display',
 };

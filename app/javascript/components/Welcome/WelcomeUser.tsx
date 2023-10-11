@@ -26,33 +26,56 @@ export function WelcomeUser() {
         ****************************************************************************
       </div>
       <br />
-      <Stack spacing={4} mx={6}>
-        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline' }}>
-          <Typography variant='h6'>Navigate to Create User Page </Typography>
-          <Button
-            className='navigation-button'
-            type='submit'
-            variant='contained'
-            id='create-user-button'
-            sx={{ mx: 2 }}
-            onClick={() => handleNavigate(routes.CREATE_USER)}
-          >
-            Create User
-          </Button>
+      <div style={{ display: 'flex', flexDirection: 'row', alignContent: 'baseline' }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <Stack spacing={4} mx={6}>
+            <div>
+              <Typography variant='h6' sx={{ mt: '5px' }}>
+                Navigate to Create User Page{' '}
+              </Typography>
+            </div>
+            <div>
+              <Typography variant='h6' sx={{ mt: 1 }}>
+                Navigate to Search User Page{' '}
+              </Typography>
+            </div>
+            <div>
+              <Typography variant='h6' sx={{ mt: 1 }}>
+                Navigate to Flexbox Display
+              </Typography>
+            </div>
+          </Stack>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline' }}>
-          <Typography variant='h6'>Navigate to Search User Page </Typography>
-          <Button
-            className='navigation-button'
-            type='submit'
-            variant='contained'
-            sx={{ mx: 2 }}
-            onClick={() => handleNavigate(routes.SEARCH_USER)}
-          >
-            Search User
-          </Button>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <Stack spacing={4}>
+            <Button
+              className='navigation-button'
+              type='submit'
+              variant='contained'
+              id='create-user-button'
+              onClick={() => handleNavigate(routes.CREATE_USER)}
+            >
+              Create User
+            </Button>
+            <Button
+              className='navigation-button'
+              type='submit'
+              variant='contained'
+              onClick={() => handleNavigate(routes.SEARCH_USER)}
+            >
+              Search User
+            </Button>
+            <Button
+              className='navigation-button'
+              type='submit'
+              variant='contained'
+              onClick={() => handleNavigate(routes.FLEXBOX_DISPLAY)}
+            >
+              Flexbox Display
+            </Button>
+          </Stack>
         </div>
-      </Stack>
+      </div>
     </div>
   );
 }
