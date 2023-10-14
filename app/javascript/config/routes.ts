@@ -7,4 +7,5 @@ export const routes = {
   SEARCH_USER_RESULT: '/search_user_result',
   FLEXBOX_DISPLAY: '/flexbox_display',
   MODERN_REACT_WITH_ROUTER: '/modern_react_with_router',
+  DEEP_JS_FOUNDATIONS_OBJECT_IS: '/deep-js-foundations/object-is',
 };

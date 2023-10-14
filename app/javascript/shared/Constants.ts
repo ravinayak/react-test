@@ -30,3 +30,22 @@ export const ANIMALS_IMAGES_MAPPING = {
   gator: Gator,
   horse: Horse,
 };
+export const DEEP_JS_FOUNDATIONS_OBJECT_IS = [
+  [42, 42],
+  ['foo', 'foo'],
+  [false, false],
+  [null, null],
+  [undefined, undefined],
+  [NaN, NaN],
+  [-0, -0],
+  [0, 0],
+  [-0, 0],
+  [0, -0],
+  [0, NaN],
+  [NaN, 0],
+  [42, '42'],
+  ['foo', 'bar'],
+  [false, true],
+  [null, undefined],
+  [undefined, null],
+];

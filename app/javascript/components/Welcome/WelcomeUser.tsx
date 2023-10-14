@@ -49,6 +49,11 @@ export function WelcomeUser() {
                 Modern React With Router - Udemy Course
               </Typography>
             </div>
+            <div>
+              <Typography variant='h6' sx={{ mt: 1 }}>
+                Deep JS Foundations - Object Is Polyfill - FrontEnd Masters
+              </Typography>
+            </div>
           </Stack>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -85,6 +90,14 @@ export function WelcomeUser() {
               onClick={() => handleNavigate(routes.MODERN_REACT_WITH_ROUTER)}
             >
               Modern React with Router Course
+            </Button>
+            <Button
+              className='navigation-button'
+              type='submit'
+              variant='contained'
+              onClick={() => handleNavigate(routes.DEEP_JS_FOUNDATIONS_OBJECT_IS)}
+            >
+              Deep JS Foundation V3
             </Button>
           </Stack>
         </div>

@@ -236,6 +236,18 @@
   width: 2000px;
 }
 
+/* Deep JS Foundations V3 */
+.div-polyfill {
+  width: 700px;
+  height: 500px;
+  border-color:#B92F21;
+  border-style: ridge;
+  box-shadow: 0px 2px;
+  border-radius: 5px;
+  margin: 50px;
+  padding: 10px;
+}
+
 /* Modern React with Router Course CSS */
 .add-animal {
   width: 150px;
