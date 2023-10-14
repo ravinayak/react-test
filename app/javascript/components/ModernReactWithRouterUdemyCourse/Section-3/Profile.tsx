@@ -3,9 +3,13 @@ import React from 'react';
 // Here we are importing images, so we have to specify the name of the image
 // Images are imported as default imports and not named imports
 //
+import { routes } from '@app/config/routes';
+import { useNavigate } from 'react-router-dom';
+import Button from '@mui/material/Button';
 import AlexaImage from '@app/images/alexa.png';
 import CortonaImage from '@app/images/cortana.png';
 import SiriImage from '@app/images/siri.png';
+import '@app/src/App.css';
 import { ProfileCard } from './ProfileCard';
 // When a developer is importing a file created by him/her, we specify directory path - @app (app/javascript/...)
 // When we are importing any library installed through yarn/npm, we simply specify the library - 'bulma/css/bulma.css' or 'react'
@@ -15,8 +19,9 @@ import { ProfileCard } from './ProfileCard';
 import 'bulma/css/bulma.css';
 
 export function Profile() {
+  const navigate = useNavigate();
   return (
-    <div id='Profile'>
+    <div id='Profiles'>
       <section className='hero is-primary'>
         <div className='hero-body'>
           <p className='title'>Personal Digital Assistant</p>
@@ -51,6 +56,18 @@ export function Profile() {
             </div>
           </div>
         </div>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Button
+          variant='outlined'
+          type='submit'
+          id='btn-back-button'
+          onClick={() =>
+            navigate(routes.MODERN_REACT_WITH_ROUTER, { state: { displayWelcomePage: true } })
+          }
+        >
+          Back to Course Sections Listing Page
+        </Button>
       </div>
     </div>
   );

@@ -42,6 +42,10 @@ import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm
 import { IamSearchUsers } from '@app/components/Axios/IamSearchUsers';
 import { IamSearchUserResult } from '@app/components/Axios/IamSearchUserResult';
 import { FlexContainer } from '@app/components/FlexDisplay/FlexContainer';
+import { WelcomeToCourse } from '@app/components/ModernReactWithRouterUdemyCourse/WelcomeToCourse';
+import { courseRoutes } from '@app/components/ModernReactWithRouterUdemyCourse/courseRoutes';
+import { Profile } from '@app/components/ModernReactWithRouterUdemyCourse/Section-3/Profile';
+import { AnimalShow } from '@app/components/ModernReactWithRouterUdemyCourse/Section-4/AnimalShow';
 // import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
 
 export function AppTest() {
@@ -74,6 +78,10 @@ export function AppTest() {
         <Route path={routes.USER_CREATED} element={<AxiosUserCreatedForm />} />
         <Route path={routes.CIRCULAR_COLOR} element={<CircularColor />} />
         <Route path={routes.FLEXBOX_DISPLAY} element={<FlexContainer />} />
+        <Route path={routes.MODERN_REACT_WITH_ROUTER} element={<WelcomeToCourse />}>
+          <Route path={courseRoutes.SECTION_3} element={<Profile />} />
+          <Route path={courseRoutes.SECTION_4} element={<AnimalShow />} />
+        </Route>
         <Route path={routes.ROOT} element={<WelcomeUser />} />
       </Routes>
     </BrowserRouter>

@@ -6,13 +6,20 @@ import React from 'react';
 //			be the path where the file will be searched
 import 'bulma/css/bulma.css';
 
-export function ProfileCard({ title, handle, image, description }) {
+interface IProps {
+  title: string;
+  handle: string;
+  image: string;
+  description: string;
+}
+
+export function ProfileCard({ title, handle, image, description }: IProps) {
   return (
     <div id='ProfileCard'>
       <div className='card'>
         <div className='card-image'>
           <figure className='image-is-1by1'>
-            <img src={image} alt="pda logo" />
+            <img src={image} alt='pda logo' />
           </figure>
         </div>
       </div>

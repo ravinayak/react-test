@@ -2,8 +2,8 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { routes } from '@app/config/routes';
 import { useNavigate } from 'react-router-dom';
+import { routes } from '@app/config/routes';
 
 export function WelcomeUser() {
   const navigate = useNavigate();
@@ -44,6 +44,11 @@ export function WelcomeUser() {
                 Navigate to Flexbox Display
               </Typography>
             </div>
+            <div>
+              <Typography variant='h6' sx={{ mt: 1 }}>
+                Modern React With Router - Udemy Course
+              </Typography>
+            </div>
           </Stack>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -72,6 +77,14 @@ export function WelcomeUser() {
               onClick={() => handleNavigate(routes.FLEXBOX_DISPLAY)}
             >
               Flexbox Display
+            </Button>
+            <Button
+              className='navigation-button'
+              type='submit'
+              variant='contained'
+              onClick={() => handleNavigate(routes.MODERN_REACT_WITH_ROUTER)}
+            >
+              Modern React with Router Course
             </Button>
           </Stack>
         </div>
