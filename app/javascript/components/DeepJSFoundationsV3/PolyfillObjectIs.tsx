@@ -4,23 +4,23 @@ import { PolyfillTestResults } from './PolyfillTestResults';
 import '@app/src/App.css';
 
 export function PollyfillObjectIs() {
+  const negZero = (element) => typeof element == 'number' && 1 / element === -Infinity;
+
   const polyfillImplementation = (a: any, b: any): boolean => {
-    if (Number.isNaN(a) || Number.isNaN(b)) {
-      if (Number.isNaN(a) && Number.isNaN(b)) {
-        return true;
-      }
-      return false;
+    const aNegZero = negZero(a);
+    const bNegZero = negZero(b);
+    if (aNegZero || bNegZero) {
+      return aNegZero && bNegZero;
+      // eslint-disable-next-line no-else-return
+    } else if (Number.isNaN(a) && Number.isNaN(b)) {
+      return true;
+    } else {
+      return a === b;
     }
-    if (1 / a === -Infinity || 1 / b === -Infinity) {
-      if (1 / a === -Infinity && 1 / b === -Infinity) {
-        return true;
-      }
-      return false;
-    }
-    return a === b;
   };
 
   const polyfillTestArr = [];
+
   DEEP_JS_FOUNDATIONS_OBJECT_IS.forEach((paramArray) =>
     polyfillTestArr.push(
       <PolyfillTestResults
