@@ -261,11 +261,6 @@
   border-style: ridge;
   margin: 7px;
 }
-.heart-div {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
 .heart {
   position: absolute;
   bottom: 10%;

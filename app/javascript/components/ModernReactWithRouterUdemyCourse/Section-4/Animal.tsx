@@ -8,27 +8,18 @@ import '@app/src/App.css';
 
 interface IProps {
   animal: string;
-  key: string;
   animalName: string;
 }
-export function Animal({ animal, key, animalName }: IProps) {
+export function Animal({ animal, animalName }: IProps) {
   const [clicks, setClicks] = useState<number>(0);
   const handleClick = () => {
     setClicks(clicks + 1);
   };
 
   return (
-    <div
-      key={key}
-      onClick={handleClick}
-      onKeyDown={handleClick}
-      role='presentation'
-      className='animal-div'
-    >
+    <div onClick={handleClick} onKeyDown={handleClick} role='presentation' className='animal-div'>
       <img alt={animalName} src={animal} className='animal-image' />
-      <div className='heart-div'>
-        <img alt='heart' className='heart' src={Heart} style={{ width: `${10 + 10 * clicks}px` }} />
-      </div>
+      <img alt='heart' className='heart' src={Heart} style={{ width: `${10 + 10 * clicks}px` }} />
     </div>
   );
 }
