@@ -1,11 +1,8 @@
 export const routes = {
-  CREATE_USER: '/create_user',
+  AXIOS: '/axios',
   ROOT: '/',
-  CIRCULAR_COLOR: '/circular_color',
-  USER_CREATED: '/user_created',
-  SEARCH_USER: '/search_user',
-  SEARCH_USER_RESULT: '/search_user_result',
   FLEXBOX_DISPLAY: '/flexbox_display',
   MODERN_REACT_WITH_ROUTER: '/modern_react_with_router',
-  DEEP_JS_FOUNDATIONS_OBJECT_IS: '/deep-js-foundations/object-is',
+  DEEP_JS_FOUNDATIONS: '/deep-js-foundations/',
+  MATERIAL_UI_COURSE: '/material-ui-course',
 };

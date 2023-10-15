@@ -19,6 +19,7 @@ import '../../src/App.css';
 import { useNavigate } from 'react-router-dom';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { ICreateUserTypiCodePayload } from '@app/types/UserTypiCode';
+import { courseRoutes } from './courseRoutes';
 
 export function AxiosUserCreation() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -50,11 +51,11 @@ export function AxiosUserCreation() {
   const processResponseData = (response: AxiosError | AxiosResponse) => {
     setIsLoading(false);
     if (axios.isAxiosError(response)) {
-      navigate(routes.USER_CREATED, {
+      navigate(courseRoutes.USER_CREATED, {
         state: { error: true, message: response.message },
       });
     } else {
-      navigate(routes.USER_CREATED, {
+      navigate(courseRoutes.USER_CREATED, {
         state: { error: false, data: response.data },
       });
     }
@@ -252,9 +253,9 @@ export function AxiosUserCreation() {
                   variant='outlined'
                   type='submit'
                   id='btn-back-button'
-                  onClick={() => navigate(routes.ROOT)}
+                  onClick={() => navigate(routes.AXIOS, { state: { displayWelcomePage: true } })}
                 >
-                  Back to Welcome Page
+                  Back to Practice Listings Page
                 </Button>
                 <LoadingButton
                   type='submit'

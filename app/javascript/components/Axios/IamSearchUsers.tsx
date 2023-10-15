@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { routes } from '@app/config/routes';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -13,8 +14,8 @@ import { LoadingButton } from '@mui/lab';
 import axios from 'axios';
 import { searchIamUser } from '@app/queries/searchUsersIam';
 import Button from '@mui/material/Button';
+import { courseRoutes } from './courseRoutes';
 import '../../src/App.css';
-import { useNavigate } from 'react-router-dom';
 
 export function IamSearchUsers() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -23,11 +24,13 @@ export function IamSearchUsers() {
   const searchUserFunction = async (email: string): Promise<void> => {
     const searchResponse = await searchIamUser({ email });
     if (axios.isAxiosError(searchResponse)) {
-      navigate(routes.SEARCH_USER_RESULT, {
+      navigate(courseRoutes.SEARCH_USER_RESULT, {
         state: { error: true, message: searchResponse.message },
       });
     } else {
-      navigate(routes.SEARCH_USER_RESULT, { state: { error: false, data: searchResponse.data } });
+      navigate(courseRoutes.SEARCH_USER_RESULT, {
+        state: { error: false, data: searchResponse.data },
+      });
     }
   };
 
@@ -71,9 +74,9 @@ export function IamSearchUsers() {
                   variant='outlined'
                   type='submit'
                   id='btn-back-button'
-                  onClick={() => navigate(routes.ROOT)}
+                  onClick={() => navigate(routes.AXIOS, { state: { displayWelcomePage: true } })}
                 >
-                  Back to Welcome Page
+                  Back to Practice Listings Page
                 </Button>
                 <LoadingButton
                   type='submit'

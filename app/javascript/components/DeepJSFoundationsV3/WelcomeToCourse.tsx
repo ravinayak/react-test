@@ -60,7 +60,7 @@ export function WelcomeToCourse() {
                 className='navigation-button'
                 type='submit'
                 variant='contained'
-                id='create-user-button'
+                id='object-is-polyfill-button'
                 onClick={() => handleNavigate(courseRoutes.OBJECT_IS)}
               >
                 Object Is Polyfill
@@ -69,6 +69,7 @@ export function WelcomeToCourse() {
                 className='navigation-button'
                 type='submit'
                 variant='contained'
+                id='equality-is-implementation-button'
                 onClick={() => handleNavigate(courseRoutes.EQUALITY_IMPLEMENTATION)}
               >
                 Equality Check Polyfill

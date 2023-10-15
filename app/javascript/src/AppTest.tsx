@@ -37,18 +37,20 @@ import { logger } from '@app/lib/Logger';
 // import { FlexContainer } from '@app/components/FlexDisplay/FlexContainer';
 import { AxiosUserCreation } from '@app/components/Axios/AxiosUserCreation';
 import { WelcomeUser } from '@app/components/Welcome/WelcomeUser';
-import { CircularColor } from '@app/components/ProgressIndicator/CircularColor';
-import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
 import { IamSearchUsers } from '@app/components/Axios/IamSearchUsers';
-import { IamSearchUserResult } from '@app/components/Axios/IamSearchUserResult';
 import { FlexContainer } from '@app/components/FlexDisplay/FlexContainer';
 import { WelcomeToCourse } from '@app/components/ModernReactWithRouterUdemyCourse/WelcomeToCourse';
 import { WelcomeToCourse as JSWelcomeToCourse } from '@app/components/DeepJSFoundationsV3/WelcomeToCourse';
+import { WelcomeToCourse as MaterialUiWelcomeToCourse } from '@app/components/MaterialUiCourse/WelcomeToCourse';
+import { courseRoutes as materialUiCourseRoutes } from '@app/components/MaterialUiCourse/courseRoutes';
+import { WelcomeToCourse as AxiosPractice } from '@app/components/Axios/WelcomeToCourse';
+import { courseRoutes as axiosCourseRoutes } from '@app/components/Axios/courseRoutes';
 import { courseRoutes } from '@app/components/ModernReactWithRouterUdemyCourse/courseRoutes';
 import { courseRoutes as deepJsCourseRoutes } from '@app/components/DeepJSFoundationsV3/courseRoutes';
 import { Profile } from '@app/components/ModernReactWithRouterUdemyCourse/Section-3/Profile';
 import { AnimalShow } from '@app/components/ModernReactWithRouterUdemyCourse/Section-4/AnimalShow';
 import { PollyfillObjectIs } from '@app/components/DeepJSFoundationsV3/PolyfillObjectIs';
+import { Section1 } from '@app/components/MaterialUiCourse/Section1';
 // import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
 
 export function AppTest() {
@@ -75,14 +77,16 @@ export function AppTest() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={routes.CREATE_USER} element={<AxiosUserCreation />} />
-        <Route path={routes.SEARCH_USER} element={<IamSearchUsers />} />
-        <Route path={routes.SEARCH_USER_RESULT} element={<IamSearchUserResult />} />
-        <Route path={routes.USER_CREATED} element={<AxiosUserCreatedForm />} />
-        <Route path={routes.CIRCULAR_COLOR} element={<CircularColor />} />
+        <Route path={routes.AXIOS} element={<AxiosPractice />}>
+          <Route path={axiosCourseRoutes.SEARCH_USER} element={<IamSearchUsers />} />
+          <Route path={axiosCourseRoutes.CREATE_USER} element={<AxiosUserCreation />} />
+        </Route>
         <Route path={routes.FLEXBOX_DISPLAY} element={<FlexContainer />} />
-        <Route path={routes.DEEP_JS_FOUNDATIONS_OBJECT_IS} element={<JSWelcomeToCourse />}>
+        <Route path={routes.DEEP_JS_FOUNDATIONS} element={<JSWelcomeToCourse />}>
           <Route path={deepJsCourseRoutes.OBJECT_IS} element={<PollyfillObjectIs />} />
+        </Route>
+        <Route path={routes.MATERIAL_UI_COURSE} element={<MaterialUiWelcomeToCourse />}>
+          <Route path={materialUiCourseRoutes.SECTION_1} element={<Section1 />} />
         </Route>
         <Route path={routes.MODERN_REACT_WITH_ROUTER} element={<WelcomeToCourse />}>
           <Route path={courseRoutes.SECTION_3} element={<Profile />} />

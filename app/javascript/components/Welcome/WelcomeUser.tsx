@@ -26,32 +26,32 @@ export function WelcomeUser() {
         ****************************************************************************
       </div>
       <br />
-      <div style={{ display: 'flex', flexDirection: 'row', alignContent: 'baseline' }}>
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline' }}>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <Stack spacing={4} mx={6}>
             <div>
               <Typography variant='h6' sx={{ mt: '5px' }}>
-                Navigate to Create User Page{' '}
+                Axios Practice
               </Typography>
             </div>
             <div>
               <Typography variant='h6' sx={{ mt: 1 }}>
-                Navigate to Search User Page{' '}
+                Flexbox Display
               </Typography>
             </div>
             <div>
               <Typography variant='h6' sx={{ mt: 1 }}>
-                Navigate to Flexbox Display
+                React - Udemy
               </Typography>
             </div>
             <div>
               <Typography variant='h6' sx={{ mt: 1 }}>
-                Modern React With Router - Udemy Course
+                Deep Js - FE
               </Typography>
             </div>
             <div>
               <Typography variant='h6' sx={{ mt: 1 }}>
-                Deep JS Foundations - Object Is Polyfill - FrontEnd Masters
+                Material UI - CE
               </Typography>
             </div>
           </Stack>
@@ -62,42 +62,47 @@ export function WelcomeUser() {
               className='navigation-button'
               type='submit'
               variant='contained'
-              id='create-user-button'
-              onClick={() => handleNavigate(routes.CREATE_USER)}
+              id='axios-practice-button'
+              style={{ marginBottom: '5px' }}
+              onClick={() => handleNavigate(routes.AXIOS)}
             >
-              Create User
+              Axios
             </Button>
             <Button
               className='navigation-button'
               type='submit'
               variant='contained'
-              onClick={() => handleNavigate(routes.SEARCH_USER)}
-            >
-              Search User
-            </Button>
-            <Button
-              className='navigation-button'
-              type='submit'
-              variant='contained'
+              id='flexbox-display-button'
               onClick={() => handleNavigate(routes.FLEXBOX_DISPLAY)}
             >
-              Flexbox Display
+              Flexbox
             </Button>
             <Button
               className='navigation-button'
               type='submit'
               variant='contained'
+              id='modern-react-with-router-course-button'
+              style={{ marginBottom: '5px' }}
               onClick={() => handleNavigate(routes.MODERN_REACT_WITH_ROUTER)}
             >
-              Modern React with Router Course
+              React
             </Button>
             <Button
               className='navigation-button'
               type='submit'
               variant='contained'
-              onClick={() => handleNavigate(routes.DEEP_JS_FOUNDATIONS_OBJECT_IS)}
+              id='deep-js-foundations-course'
+              onClick={() => handleNavigate(routes.DEEP_JS_FOUNDATIONS)}
             >
-              Deep JS Foundation V3
+              Deep JS
+            </Button>
+            <Button
+              className='navigation-button'
+              type='submit'
+              variant='contained'
+              onClick={() => handleNavigate(routes.MATERIAL_UI_COURSE)}
+            >
+              Material UI
             </Button>
           </Stack>
         </div>

@@ -33,7 +33,7 @@ export function WelcomeToCourse() {
         }}
       >
         <div style={{ marginLeft: '100px', fontSize: 'x-large' }}>
-          Welcome To React with Router - Udemy Course
+          Welcome To Material Course - CodeEvolution
         </div>
         <div style={{ marginLeft: '20px' }}>
           ****************************************************************************
@@ -44,12 +44,7 @@ export function WelcomeToCourse() {
             <Stack spacing={4} mx={6}>
               <div>
                 <Typography variant='h6' sx={{ mt: '5px' }}>
-                  Section 3 - Building with Reusable Components
-                </Typography>
-              </div>
-              <div>
-                <Typography variant='h6' sx={{ mt: 1 }}>
-                  Section 4 - How to Change Your App
+                  Section 1 - Fill in when you start
                 </Typography>
               </div>
             </Stack>
@@ -60,19 +55,10 @@ export function WelcomeToCourse() {
                 className='navigation-button'
                 type='submit'
                 variant='contained'
-                id='section-3-button'
-                onClick={() => handleNavigate(courseRoutes.SECTION_3)}
+                id='section-1-button'
+                onClick={() => handleNavigate(courseRoutes.SECTION_1)}
               >
-                Building with Reusable Components
-              </Button>
-              <Button
-                className='navigation-button'
-                type='submit'
-                variant='contained'
-                id='section-4-button'
-                onClick={() => handleNavigate(courseRoutes.SECTION_4)}
-              >
-                How to Change Your App
+                Fill In
               </Button>
             </Stack>
           </div>

@@ -32,9 +32,7 @@ export function WelcomeToCourse() {
           flexDirection: 'column',
         }}
       >
-        <div style={{ marginLeft: '100px', fontSize: 'x-large' }}>
-          Welcome To React with Router - Udemy Course
-        </div>
+        <div style={{ marginLeft: '100px', fontSize: 'x-large' }}>Welcome To Axios Practice</div>
         <div style={{ marginLeft: '20px' }}>
           ****************************************************************************
         </div>
@@ -44,12 +42,12 @@ export function WelcomeToCourse() {
             <Stack spacing={4} mx={6}>
               <div>
                 <Typography variant='h6' sx={{ mt: '5px' }}>
-                  Section 3 - Building with Reusable Components
+                  Create User
                 </Typography>
               </div>
               <div>
-                <Typography variant='h6' sx={{ mt: 1 }}>
-                  Section 4 - How to Change Your App
+                <Typography variant='h6' sx={{ mt: '5px' }}>
+                  Search User
                 </Typography>
               </div>
             </Stack>
@@ -60,19 +58,19 @@ export function WelcomeToCourse() {
                 className='navigation-button'
                 type='submit'
                 variant='contained'
-                id='section-3-button'
-                onClick={() => handleNavigate(courseRoutes.SECTION_3)}
+                id='create-user-button'
+                onClick={() => handleNavigate(courseRoutes.CREATE_USER)}
               >
-                Building with Reusable Components
+                Create User
               </Button>
               <Button
                 className='navigation-button'
                 type='submit'
                 variant='contained'
-                id='section-4-button'
-                onClick={() => handleNavigate(courseRoutes.SECTION_4)}
+                id='search-user-button'
+                onClick={() => handleNavigate(courseRoutes.SEARCH_USER)}
               >
-                How to Change Your App
+                Search user
               </Button>
             </Stack>
           </div>

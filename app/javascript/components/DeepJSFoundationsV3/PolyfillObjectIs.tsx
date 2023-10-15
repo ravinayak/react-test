@@ -63,7 +63,7 @@ export function PollyfillObjectIs() {
           id='btn-back-button'
           sx={{ mt: 8 }}
           onClick={() =>
-            navigate(routes.DEEP_JS_FOUNDATIONS_OBJECT_IS, { state: { displayWelcomePage: true } })
+            navigate(routes.DEEP_JS_FOUNDATIONS, { state: { displayWelcomePage: true } })
           }
         >
           Back to Course Sections Listing Page
