@@ -52,6 +52,11 @@ export function WelcomeToCourse() {
                   Section 4 - How to Change Your App
                 </Typography>
               </div>
+              <div>
+                <Typography variant='h6' sx={{ mt: 1 }}>
+                  Section 5 - Using API with React
+                </Typography>
+              </div>
             </Stack>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -73,6 +78,15 @@ export function WelcomeToCourse() {
                 onClick={() => handleNavigate(courseRoutes.SECTION_4)}
               >
                 How to Change Your App
+              </Button>
+              <Button
+                className='navigation-button'
+                type='submit'
+                variant='contained'
+                id='section-5-button'
+                onClick={() => handleNavigate(courseRoutes.SECTION_5)}
+              >
+                Using API with React
               </Button>
             </Stack>
           </div>

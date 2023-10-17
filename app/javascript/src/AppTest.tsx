@@ -51,6 +51,7 @@ import { Profile } from '@app/components/ModernReactWithRouterUdemyCourse/Sectio
 import { AnimalShow } from '@app/components/ModernReactWithRouterUdemyCourse/Section-4/AnimalShow';
 import { PollyfillObjectIs } from '@app/components/DeepJSFoundationsV3/PolyfillObjectIs';
 import { Section1 } from '@app/components/MaterialUiCourse/Section1';
+import { DisplayImages } from '@app/components/ModernReactWithRouterUdemyCourse/Section-5/DisplayImages';
 // import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
 
 export function AppTest() {
@@ -91,6 +92,7 @@ export function AppTest() {
         <Route path={routes.MODERN_REACT_WITH_ROUTER} element={<WelcomeToCourse />}>
           <Route path={courseRoutes.SECTION_3} element={<Profile />} />
           <Route path={courseRoutes.SECTION_4} element={<AnimalShow />} />
+          <Route path={courseRoutes.SECTION_5} element={<DisplayImages />} />
         </Route>
         <Route path={routes.ROOT} element={<WelcomeUser />} />
       </Routes>
