@@ -9,5 +9,5 @@ export function ImageList({ images }: IProps) {
   const renderedImages = images.map((imageData) => (
     <ImageShow key={imageData.id} alt={imageData.alt_description} url={imageData.urls.small} />
   ));
-  return <div>{renderedImages}</div>;
+  return <div className='display-images'>{renderedImages}</div>;
 }

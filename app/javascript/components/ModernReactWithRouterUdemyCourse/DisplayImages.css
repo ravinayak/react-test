@@ -1,0 +1,25 @@
+.display-images-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 1800px;
+	height: 700px;
+}
+.search-bar {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.card {
+	width: 600px;
+	display: flex;
+}
+.search-bar-button {
+	justify-content: flex-end;
+}
+.display-images {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 1600px;
+}

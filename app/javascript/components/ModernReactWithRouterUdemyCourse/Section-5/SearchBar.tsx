@@ -7,6 +7,7 @@ import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { SearchImagesFormikErrorsTouched } from '@app/types/searchImages';
+import '../DisplayImages.css';
 
 interface IProps {
   handleClick: (term: string) => void;
@@ -17,7 +18,7 @@ export function SearchBar({ handleClick }: IProps) {
   };
 
   return (
-    <Card component='main'>
+    <Card component='main' className='card'>
       <CardHeader title='Search for Images' />
       <Formik
         initialValues={{
@@ -33,8 +34,9 @@ export function SearchBar({ handleClick }: IProps) {
                 as={TextField}
                 id='searchTerm'
                 name='searchTerm'
+                fullWidth
                 inputProps={{ 'data-test-id': 'search-bar' }}
-                label='Enter Search Term :: '
+                label='Enter Search Term'
                 helperText={<ErrorMessage name='searchTerm' />}
                 error={!!touched.searchTerm && errors.searchTerm}
               />
@@ -44,6 +46,7 @@ export function SearchBar({ handleClick }: IProps) {
                 color='primary'
                 variant='contained'
                 type='submit'
+                className='search-bar-button'
                 data-test-id='search-bar-submit-button'
               >
                 Search

@@ -1,6 +1,7 @@
-import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 import { searchPhotosApi, UNSPLASH_URL } from '@app/api/routes';
 import { ISearchImagePayload } from '@app/types/searchImages';
+import { IUnsplashImages } from '@app/types/unsplashImages';
 
 const getRequestConfig: AxiosRequestConfig = {
   baseURL: UNSPLASH_URL,
@@ -11,16 +12,16 @@ const getRequestConfig: AxiosRequestConfig = {
 
 export const searchImages = async ({
   searchTerm,
-}: ISearchImagePayload): Promise<AxiosResponse | AxiosError> => {
-  let resp: AxiosResponse | AxiosError;
+}: ISearchImagePayload): Promise<IUnsplashImages | AxiosError> => {
+  let resp: IUnsplashImages | AxiosError;
   try {
-    const axiosResponse = await axios.get(searchPhotosApi.searchPhotos, {
+    const { data } = await axios.get(searchPhotosApi.searchPhotos, {
       params: {
         query: searchTerm,
       },
       ...getRequestConfig,
     });
-    resp = axiosResponse;
+    resp = data;
   } catch (error) {
     resp = error;
   }
