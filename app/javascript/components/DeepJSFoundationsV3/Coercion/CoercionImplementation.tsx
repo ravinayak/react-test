@@ -40,7 +40,7 @@ export function CoercionImplementation() {
     ) {
       const aNum = Number(a);
       const bNum = Number(b);
-      if (aNum > 0 && bNum > 0 && Number.isInteger(a) && Number.isInteger(b) && aNum < bNum) {
+      if (aNum > 0 && bNum > 0 && Number.isInteger(aNum) && Number.isInteger(bNum) && aNum < bNum) {
         return true;
       }
       return false;
