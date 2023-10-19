@@ -25,6 +25,8 @@ export function PollyfillObjectIs() {
 
   const polyfillTestArr = DEEP_JS_FOUNDATIONS_OBJECT_IS.map((paramArray) => (
     <PolyfillTestResults
+      // eslint-disable-next-line react/no-array-index-key
+      key={`${paramArray[0]}${paramArray[1]}`}
       param1={paramArray[0]}
       param2={paramArray[1]}
       result={polyfillImplementation(paramArray[0], paramArray[1]).toString()}

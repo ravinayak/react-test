@@ -49,7 +49,7 @@ export function WelcomeToCourse() {
               </div>
               <div>
                 <Typography variant='h6' sx={{ mt: 1 }}>
-                  Section 1 - Equality Implementation
+                  Section 2 - Coercion Test - String + StringNumber
                 </Typography>
               </div>
             </Stack>
@@ -70,9 +70,9 @@ export function WelcomeToCourse() {
                 type='submit'
                 variant='contained'
                 id='equality-is-implementation-button'
-                onClick={() => handleNavigate(courseRoutes.EQUALITY_IMPLEMENTATION)}
+                onClick={() => handleNavigate(courseRoutes.COERCION_TEST)}
               >
-                Equality Check Polyfill
+                Coercion Test
               </Button>
             </Stack>
           </div>
