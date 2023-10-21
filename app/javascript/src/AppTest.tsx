@@ -50,9 +50,9 @@ import { courseRoutes as deepJsCourseRoutes } from '@app/components/DeepJSFounda
 import { Profile } from '@app/components/ModernReactWithRouterUdemyCourse/Section-3/Profile';
 import { AnimalShow } from '@app/components/ModernReactWithRouterUdemyCourse/Section-4/AnimalShow';
 import { PollyfillObjectIs } from '@app/components/DeepJSFoundationsV3/PolyfillObjectIs';
-import { Section1 } from '@app/components/MaterialUiCourse/Section1';
 import { DisplayImages } from '@app/components/ModernReactWithRouterUdemyCourse/Section-5/DisplayImages';
 import { CoercionImplementation } from '@app/components/DeepJSFoundationsV3/Coercion/CoercionImplementation';
+import { TypographyImplementation } from '@app/components/MaterialUiCourse/InputsFormControls/TypographyImplementation';
 // import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
 
 export function AppTest() {
@@ -89,7 +89,7 @@ export function AppTest() {
           <Route path={deepJsCourseRoutes.COERCION_TEST} element={<CoercionImplementation />} />
         </Route>
         <Route path={routes.MATERIAL_UI_COURSE} element={<MaterialUiWelcomeToCourse />}>
-          <Route path={materialUiCourseRoutes.SECTION_1} element={<Section1 />} />
+          <Route path={materialUiCourseRoutes.SECTION_1} element={<TypographyImplementation />} />
         </Route>
         <Route path={routes.MODERN_REACT_WITH_ROUTER} element={<WelcomeToCourse />}>
           <Route path={courseRoutes.SECTION_3} element={<Profile />} />

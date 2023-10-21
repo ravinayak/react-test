@@ -1,3 +1,3 @@
 export const courseRoutes = {
-  SECTION_1: 'section-1',
+  SECTION_1: 'inputs-form-controls',
 };

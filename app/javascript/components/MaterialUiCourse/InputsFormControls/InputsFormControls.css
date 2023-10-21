@@ -1,0 +1,17 @@
+.flex-display{
+	display: flex;
+}
+.column-flex{
+	flex-direction: column;
+}
+.typography-heading {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.stack-h1-subtitle2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

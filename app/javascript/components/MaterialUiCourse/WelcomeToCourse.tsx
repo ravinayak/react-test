@@ -42,9 +42,9 @@ export function WelcomeToCourse() {
         <div style={{ display: 'flex', flexDirection: 'row', alignContent: 'baseline' }}>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <Stack spacing={4} mx={6}>
-              <div>
+              <div style={{ display: 'flex' }}>
                 <Typography variant='h6' sx={{ mt: '5px' }}>
-                  Section 1 - Fill in when you start
+                  Typography Implementation
                 </Typography>
               </div>
             </Stack>
@@ -58,7 +58,7 @@ export function WelcomeToCourse() {
                 id='section-1-button'
                 onClick={() => handleNavigate(courseRoutes.SECTION_1)}
               >
-                Fill In
+                Typography
               </Button>
             </Stack>
           </div>
