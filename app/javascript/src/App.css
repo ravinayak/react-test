@@ -46,10 +46,10 @@
   padding: 10px;
   /* justify-content: center; */
   align-content: flex-end;
-  width: 1800px;
+  width: 95vw;
   /* align-items: flex-start; */
   /* flex-wrap: wrap; */
-  height: 850px;
+  height: 80vh;
 }
 .flex-item {
   color: white;

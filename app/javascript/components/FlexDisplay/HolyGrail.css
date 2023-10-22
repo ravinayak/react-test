@@ -1,7 +1,7 @@
-.container {
+.header-container {
 	display: flex;
 	flex-direction: column;
-	height: 95vh;
+	height: 80vh;
 }
 #holy-grail {
 	border: 5px solid orchid;
@@ -15,15 +15,16 @@
 	flex-grow: 1;
 }
 .flex-header {
+	display: flex;
 	margin: 5px;
 	border: 5px solid firebrick;
 	background-color: burlywood;
 	font-size: x-large;
 	font-weight: bold;
 	color: white;
-	height: 5vh;
 }
 .flex-nav {
+	display: flex;
 	margin: 0 5px 0 5px;
 	border: 5px solid firebrick;
 	background-color: burlywood;
@@ -33,6 +34,7 @@
 	flex-grow: 1;
 }
 .flex-article {
+	display: flex;
 	border: 5px solid firebrick;
 	background-color: burlywood;
 	font-size: x-large;
@@ -41,6 +43,7 @@
 	flex-grow: 1;
 }
 .flex-aside {
+	display: flex;
 	margin: 0 5px 0 5px;
 	border: 5px solid firebrick;
 	background-color: burlywood;
@@ -50,6 +53,7 @@
 	flex-grow: 1;
 }
 .flex-footer {
+	display: flex;
 	margin: 5px;
 	border: 5px solid firebrick;
 	background-color: burlywood;
@@ -57,4 +61,8 @@
 	font-weight: bold;
 	color: white;
 	height: 5vh;
+}
+.justify-align-center {
+	justify-content: center;
+	align-items: center;
 }

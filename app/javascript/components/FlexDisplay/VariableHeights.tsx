@@ -13,7 +13,7 @@ export function VariableHeights() {
         <div>Variable Heights Component</div>
         <div>*************************************</div>
       </div>
-      <div className='container'>
+      <div className='item-container'>
         <div className='item1'>This is a span tag</div>
         <div className='item2'>
           Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece

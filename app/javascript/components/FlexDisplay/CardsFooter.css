@@ -1,6 +1,8 @@
 .cards {
 	display: flex;
 	border: 7px solid orange;
+	width: 95vw;
+	margin-left: 15px;
 }
 .card {
 	border: 2px solid black;

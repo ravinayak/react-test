@@ -3,21 +3,20 @@ import { useNavigate } from 'react-router-dom';
 import { routes } from '@app/config/routes';
 import Button from '@mui/material/Button';
 import './HolyGrail.css';
-import '@app/src/App.css';
 
 export function HolyGrail() {
   const navigate = useNavigate();
   return (
     <>
       <div id='holy-grail'>
-        <div className='container'>
-          <header className='flex-header'>HEADER</header>
+        <div className='header-container'>
+          <header className='flex-header justify-align-center'>HEADER</header>
           <main className='flex-main'>
-            <nav className='flex-nav'>SIDENAV</nav>
-            <article className='flex-article'>MAIN CONTENT</article>
-            <aside className='flex-aside'>SIDENAV</aside>
+            <nav className='flex-nav justify-align-center'>SIDENAV</nav>
+            <article className='flex-article justify-align-center'>MAIN CONTENT</article>
+            <aside className='flex-aside justify-align-center'>SIDENAV</aside>
           </main>
-          <footer className='flex-footer'>FOOTER</footer>
+          <footer className='flex-footer justify-align-center'>FOOTER</footer>
         </div>
       </div>
       <div

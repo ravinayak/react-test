@@ -1,9 +1,21 @@
-.container {
+.item-container {
 	display: flex;
+	margin: 15px;
+	padding: 5px;
 }
 .item1 {
-	background-color: firebrick;
+	background-color: oldlace;
+	border: 5px solid black;
+	padding: 5px;
 }
 .item2 {
-	background-color: forestgreen;
+	background-color: lightblue;
+	border-width: 5px 5px 5px 0px;
+	border-style: solid;
+	border-color: black;
+	padding: 5px;
+}
+#variable-heights {
+	display: flex;
+	flex-direction: column;
 }
