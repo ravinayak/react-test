@@ -38,7 +38,6 @@ import { logger } from '@app/lib/Logger';
 import { AxiosUserCreation } from '@app/components/Axios/AxiosUserCreation';
 import { WelcomeUser } from '@app/components/Welcome/WelcomeUser';
 import { IamSearchUsers } from '@app/components/Axios/IamSearchUsers';
-import { FlexContainer } from '@app/components/FlexDisplay/FlexContainer';
 import { WelcomeToCourse } from '@app/components/ModernReactWithRouterUdemyCourse/WelcomeToCourse';
 import { WelcomeToCourse as JSWelcomeToCourse } from '@app/components/DeepJSFoundationsV3/WelcomeToCourse';
 import { WelcomeToCourse as MaterialUiWelcomeToCourse } from '@app/components/MaterialUiCourse/WelcomeToCourse';
@@ -47,12 +46,20 @@ import { WelcomeToCourse as AxiosPractice } from '@app/components/Axios/WelcomeT
 import { courseRoutes as axiosCourseRoutes } from '@app/components/Axios/courseRoutes';
 import { courseRoutes } from '@app/components/ModernReactWithRouterUdemyCourse/courseRoutes';
 import { courseRoutes as deepJsCourseRoutes } from '@app/components/DeepJSFoundationsV3/courseRoutes';
+import { courseRoutes as flexboxCourseRoutes } from '@app/components/FlexDisplay/courseRoutes';
+import { WelcomeToCourse as FlexboxPractice } from '@app/components/FlexDisplay/WelcomeToCourse';
+import { FlexContainerDisplay } from '@app/components/FlexDisplay/FlexContainerDisplay';
 import { Profile } from '@app/components/ModernReactWithRouterUdemyCourse/Section-3/Profile';
 import { AnimalShow } from '@app/components/ModernReactWithRouterUdemyCourse/Section-4/AnimalShow';
 import { PollyfillObjectIs } from '@app/components/DeepJSFoundationsV3/PolyfillObjectIs';
 import { DisplayImages } from '@app/components/ModernReactWithRouterUdemyCourse/Section-5/DisplayImages';
 import { CoercionImplementation } from '@app/components/DeepJSFoundationsV3/Coercion/CoercionImplementation';
 import { TypographyImplementation } from '@app/components/MaterialUiCourse/InputsFormControls/TypographyImplementation';
+import { CenteringItem } from '@app/components/FlexDisplay/CenteringItem';
+import { HolyGrail } from '@app/components/FlexDisplay/HolyGrail';
+import { ResponsiveNavbar } from '@app/components/FlexDisplay/ResponsiveNavbar';
+import { VariableHeights } from '@app/components/FlexDisplay/VariableHeights';
+import { CardsFooter } from '@app/components/FlexDisplay/CardsFooter';
 // import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
 
 export function AppTest() {
@@ -83,7 +90,17 @@ export function AppTest() {
           <Route path={axiosCourseRoutes.SEARCH_USER} element={<IamSearchUsers />} />
           <Route path={axiosCourseRoutes.CREATE_USER} element={<AxiosUserCreation />} />
         </Route>
-        <Route path={routes.FLEXBOX_DISPLAY} element={<FlexContainer />} />
+        <Route path={routes.FLEXBOX_DISPLAY} element={<FlexboxPractice />}>
+          <Route
+            path={flexboxCourseRoutes.FLEXBOX_CONTAINER_DISPLAY}
+            element={<FlexContainerDisplay />}
+          />
+          <Route path={flexboxCourseRoutes.CENTERING_ITEMS} element={<CenteringItem />} />
+          <Route path={flexboxCourseRoutes.HOLYGRAIL} element={<HolyGrail />} />
+          <Route path={flexboxCourseRoutes.RESPONSIVE_NAVBAR} element={<ResponsiveNavbar />} />
+          <Route path={flexboxCourseRoutes.VARIABLE_HEIGHTS} element={<VariableHeights />} />
+          <Route path={flexboxCourseRoutes.CARDS_FOOTER} element={<CardsFooter />} />
+        </Route>
         <Route path={routes.DEEP_JS_FOUNDATIONS} element={<JSWelcomeToCourse />}>
           <Route path={deepJsCourseRoutes.OBJECT_IS} element={<PollyfillObjectIs />} />
           <Route path={deepJsCourseRoutes.COERCION_TEST} element={<CoercionImplementation />} />

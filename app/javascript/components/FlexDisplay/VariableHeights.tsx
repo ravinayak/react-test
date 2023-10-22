@@ -1,11 +1,18 @@
 import React from 'react';
-import '@app/stylesheets/VariableHeights.css';
+import { useNavigate } from 'react-router-dom';
+import { routes } from '@app/config/routes';
+import Button from '@mui/material/Button';
+import './VariableHeights.css';
+import '@app/src/App.css';
 
 export function VariableHeights() {
+  const navigate = useNavigate();
   return (
     <div id='variable-heights'>
-      <div>Variable Heights Component</div>
-      <div>*************************************</div>
+      <div className='heading-introduction'>
+        <div>Variable Heights Component</div>
+        <div>*************************************</div>
+      </div>
       <div className='container'>
         <div className='item1'>This is a span tag</div>
         <div className='item2'>
@@ -39,6 +46,20 @@ export function VariableHeights() {
           generated Lorem Ipsum is therefore always free from repetition, injected humour, or
           non-characteristic words etc.
         </div>
+      </div>
+      <div
+        style={{ display: 'flex', justifyContent: 'center' }}
+        className='margin-course-section-button'
+      >
+        <Button
+          variant='outlined'
+          type='submit'
+          id='btn-back-button'
+          sx={{ mt: 8 }}
+          onClick={() => navigate(routes.FLEXBOX_DISPLAY, { state: { displayWelcomePage: true } })}
+        >
+          Back to Course Sections Listing Page
+        </Button>
       </div>
     </div>
   );
