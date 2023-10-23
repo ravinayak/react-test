@@ -23,7 +23,7 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
-    'loadash',
+    '@types/lodash.add',
     'jest',
     'jsx-a11y',
     'testing-library',
