@@ -36,7 +36,7 @@ export function WelcomeToCourse() {
           Welcome To Material Course - CodeEvolution
         </div>
         <div style={{ marginLeft: '20px' }}>
-          ****************************************************************************
+          ************************************************************************************************
         </div>
         <br />
         <div style={{ display: 'flex', flexDirection: 'row', alignContent: 'baseline' }}>
