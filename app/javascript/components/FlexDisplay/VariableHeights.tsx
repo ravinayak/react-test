@@ -47,15 +47,12 @@ export function VariableHeights() {
           non-characteristic words etc.
         </div>
       </div>
-      <div
-        style={{ display: 'flex', justifyContent: 'center' }}
-        className='margin-course-section-button'
-      >
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Button
           variant='outlined'
           type='submit'
           id='btn-back-button'
-          sx={{ mt: 8 }}
+          sx={{ mt: 4 }}
           onClick={() => navigate(routes.FLEXBOX_DISPLAY, { state: { displayWelcomePage: true } })}
         >
           Back to Course Sections Listing Page

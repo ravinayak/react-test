@@ -285,9 +285,6 @@
 .row-flex-direction {
   flex-direction: row;
 }
-.margin-course-section-button {
-  margin-bottom: 45px;
-}
 .heading-introduction {
   display: flex;
   flex-direction: column;

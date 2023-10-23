@@ -47,10 +47,7 @@ export function CardsFooter() {
           <div className='footer'>Footer</div>
         </div>
       </div>
-      <div
-        style={{ display: 'flex', justifyContent: 'center' }}
-        className='margin-course-section-button'
-      >
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Button
           variant='outlined'
           type='submit'

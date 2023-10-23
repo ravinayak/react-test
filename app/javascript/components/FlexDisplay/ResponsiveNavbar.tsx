@@ -21,10 +21,7 @@ export function ResponsiveNavbar() {
           <li key='contact'>Contact</li>
         </ul>
       </nav>
-      <div
-        style={{ display: 'flex', justifyContent: 'center' }}
-        className='margin-course-section-button'
-      >
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Button
           variant='outlined'
           type='submit'
