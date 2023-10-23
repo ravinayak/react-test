@@ -66,11 +66,43 @@ export function EqualityImplementation() {
     return result;
   };
 
+  const strCoerciveMatchFromFE = (inputValue: any, arrayValue: any) => {
+    const ret = [];
+    if (Object.is(inputValue, arrayValue)) {
+      ret.push(arrayValue);
+    } else if (inputValue == null && arrayValue == null) {
+      ret.push(arrayValue);
+    } else if (typeof inputValue == 'boolean' && typeof arrayValue == 'boolean') {
+      if (inputValue == arrayValue) {
+        ret.push(arrayValue);
+      }
+    } else if (
+      typeof inputValue == 'string' &&
+      inputValue.trim() != '' &&
+      !nanInfinitycheck(Number(inputValue)) &&
+      typeof arrayValue == 'number'
+    ) {
+      if (Object.is(Number(inputValue), arrayValue)) {
+        ret.push(arrayValue);
+      }
+    } else if (
+      typeof inputValue == 'number' &&
+      !nanInfinitycheck(inputValue) &&
+      typeof arrayValue == 'string' &&
+      arrayValue.trim() != ''
+    ) {
+      if (Object.is(inputValue, Number(arrayValue))) {
+        ret.push(arrayValue);
+      }
+    }
+    return ret;
+  };
+
   DEEP_JS_EQUALITY_TEST.forEach((givenObject) => {
     const result = [];
     DEEP_JS_EQUALITY_ARRAY.forEach((arrayElement) => {
       let match = [];
-      match = strCoerciveMatch(givenObject.input, arrayElement);
+      match = strCoerciveMatchFromFE(givenObject.input, arrayElement);
       if (match.length == 1) {
         result.push(match[0]);
       }
