@@ -75,15 +75,8 @@ export function CoercionImplementation() {
         width: '1800px',
       }}
     >
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          flexDirection: 'column',
-          alignContent: 'center',
-        }}
-      >
-        <div style={{ marginLeft: '120px' }}>
+      <div className='flex-column-justify-align-center'>
+        <div className='heading-introduction'>
           Coercion Test - a. String Test b. StringNumber Test - Results{' '}
         </div>
         <div>
@@ -99,7 +92,7 @@ export function CoercionImplementation() {
           variant='outlined'
           type='submit'
           id='btn-back-button'
-          sx={{ mt: 8, mb: 8 }}
+          sx={{ mt: 4, mb: 8 }}
           onClick={() =>
             navigate(routes.DEEP_JS_FOUNDATIONS, { state: { displayWelcomePage: true } })
           }

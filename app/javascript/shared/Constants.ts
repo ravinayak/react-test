@@ -94,3 +94,143 @@ export const DEEP_JS_FOUNDATIONS_COERCION_NUMBER_STRING_TEST = [
   ['6.1', 10],
   ['6.1', '10.1'],
 ];
+const myobj = {
+  a: 2,
+  get [Symbol.toStringTag]() {
+    return 'a: 2';
+  },
+};
+export const DEEP_JS_EQUALITY_ARRAY = [
+  null,
+  undefined,
+  -0,
+  0,
+  13,
+  42,
+  NaN,
+  -Infinity,
+  Infinity,
+  '',
+  '0',
+  '42',
+  '42hello',
+  'true',
+  'NaN',
+  true,
+  false,
+  myobj,
+];
+export const DEEP_JS_EQUALITY_TEST = [
+  {
+    input: null,
+    testArray: [null, undefined],
+  },
+  {
+    input: undefined,
+    testArray: [null, undefined],
+  },
+  {
+    input: 0,
+    testArray: [0, '0'],
+  },
+  {
+    input: -0,
+    testArray: [-0],
+  },
+  {
+    input: 13,
+    testArray: [13],
+  },
+  {
+    input: 42,
+    testArray: [42, '42'],
+  },
+  {
+    input: NaN,
+    testArray: [NaN],
+  },
+  {
+    input: -Infinity,
+    testArray: [-Infinity],
+  },
+  {
+    input: Infinity,
+    testArray: [Infinity],
+  },
+  {
+    input: '',
+    testArray: [''],
+  },
+  {
+    input: '0',
+    testArray: [0, '0'],
+  },
+  {
+    input: '42',
+    testArray: [42, '42'],
+  },
+  {
+    input: '42hello',
+    testArray: ['42hello'],
+  },
+  {
+    input: 'true',
+    testArray: ['true'],
+  },
+  {
+    input: true,
+    testArray: [true],
+  },
+  {
+    input: false,
+    testArray: [false],
+  },
+  {
+    input: myobj,
+    testArray: [myobj],
+  },
+  {
+    input: null,
+    testArray: [null, 0],
+  },
+  {
+    input: undefined,
+    testArray: [NaN, 0],
+  },
+  {
+    input: 0,
+    testArray: [0, -0],
+  },
+  {
+    input: 42,
+    testArray: [42, '42hello'],
+  },
+  {
+    input: 25,
+    testArray: [25],
+  },
+  {
+    input: Infinity,
+    testArray: [Infinity, -Infinity],
+  },
+  {
+    input: '',
+    testArray: ['', 0],
+  },
+  {
+    input: 'false',
+    testArray: [false],
+  },
+  {
+    input: true,
+    testArray: [true, 'true'],
+  },
+  {
+    input: true,
+    testArray: [true, 1],
+  },
+  {
+    input: false,
+    testArray: [false, 0],
+  },
+];

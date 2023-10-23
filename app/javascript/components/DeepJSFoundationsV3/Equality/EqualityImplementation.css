@@ -1,0 +1,12 @@
+.equality-results-div {
+	border: 5px solid rebeccapurple;
+	margin: 15px;
+	padding: 15px;
+}
+.border-below-div {
+	border-bottom: 2px;
+	border-color: black;
+	border-style: solid;
+	margin-bottom: 8px;
+	padding: 7px;
+}

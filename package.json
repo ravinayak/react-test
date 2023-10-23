@@ -38,6 +38,7 @@
     "immer": "^10.0.2",
     "js-cookie": "^3.0.0",
     "json-server": "^0.17.4",
+    "loadash": "^1.0.0",
     "lodash.get": "^4.4.2",
     "lodash.groupby": "^4.6.0",
     "lodash.isobject": "^3.0.2",

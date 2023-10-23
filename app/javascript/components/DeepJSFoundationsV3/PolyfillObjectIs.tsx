@@ -46,16 +46,11 @@ export function PollyfillObjectIs() {
         height: '900px',
       }}
     >
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          flexDirection: 'column',
-          alignContent: 'center',
-        }}
-      >
-        <div style={{ marginLeft: '30px' }}>Object.is Polyfill Implementation Tests Results </div>
-        <div>**********************************************************</div>
+      <div className='flex-column-justify-align-center'>
+        <div className='heading-introduction'>Object.is Polyfill Implementation Tests Results </div>
+        <div>
+          ****************************************************************************************************
+        </div>
       </div>
       <div className='div-polyfill'>{polyfillTestArr}</div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -63,7 +58,7 @@ export function PollyfillObjectIs() {
           variant='outlined'
           type='submit'
           id='btn-back-button'
-          sx={{ mt: 8 }}
+          sx={{ mt: 4 }}
           onClick={() =>
             navigate(routes.DEEP_JS_FOUNDATIONS, { state: { displayWelcomePage: true } })
           }

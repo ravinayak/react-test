@@ -54,6 +54,7 @@ import { AnimalShow } from '@app/components/ModernReactWithRouterUdemyCourse/Sec
 import { PollyfillObjectIs } from '@app/components/DeepJSFoundationsV3/PolyfillObjectIs';
 import { DisplayImages } from '@app/components/ModernReactWithRouterUdemyCourse/Section-5/DisplayImages';
 import { CoercionImplementation } from '@app/components/DeepJSFoundationsV3/Coercion/CoercionImplementation';
+import { EqualityImplementation } from '@app/components/DeepJSFoundationsV3/Equality/EqualityImplementation';
 import { TypographyImplementation } from '@app/components/MaterialUiCourse/InputsFormControls/TypographyImplementation';
 import { CenteringItem } from '@app/components/FlexDisplay/CenteringItem';
 import { HolyGrail } from '@app/components/FlexDisplay/HolyGrail';
@@ -104,6 +105,10 @@ export function AppTest() {
         <Route path={routes.DEEP_JS_FOUNDATIONS} element={<JSWelcomeToCourse />}>
           <Route path={deepJsCourseRoutes.OBJECT_IS} element={<PollyfillObjectIs />} />
           <Route path={deepJsCourseRoutes.COERCION_TEST} element={<CoercionImplementation />} />
+          <Route
+            path={deepJsCourseRoutes.EQUALITY_IMPLEMENTATION}
+            element={<EqualityImplementation />}
+          />
         </Route>
         <Route path={routes.MATERIAL_UI_COURSE} element={<MaterialUiWelcomeToCourse />}>
           <Route path={materialUiCourseRoutes.SECTION_1} element={<TypographyImplementation />} />

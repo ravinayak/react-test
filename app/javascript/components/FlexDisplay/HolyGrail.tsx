@@ -24,7 +24,7 @@ export function HolyGrail() {
           variant='outlined'
           type='submit'
           id='btn-back-button'
-          sx={{ mt: 8 }}
+          sx={{ mt: 4 }}
           onClick={() => navigate(routes.FLEXBOX_DISPLAY, { state: { displayWelcomePage: true } })}
         >
           Back to Course Sections Listing Page

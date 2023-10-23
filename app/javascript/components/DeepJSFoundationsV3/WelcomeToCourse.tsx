@@ -52,6 +52,11 @@ export function WelcomeToCourse() {
                   Section 2 - Coercion Test - String + StringNumber
                 </Typography>
               </div>
+              <div>
+                <Typography variant='h6' sx={{ mt: 1 }}>
+                  Section 3 - Equality Test - FindAll Implementation
+                </Typography>
+              </div>
             </Stack>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -73,6 +78,15 @@ export function WelcomeToCourse() {
                 onClick={() => handleNavigate(courseRoutes.COERCION_TEST)}
               >
                 Coercion Test
+              </Button>
+              <Button
+                className='navigation-button'
+                type='submit'
+                variant='contained'
+                id='find-all-implementation-button'
+                onClick={() => handleNavigate(courseRoutes.EQUALITY_IMPLEMENTATION)}
+              >
+                Equality Implementation
               </Button>
             </Stack>
           </div>

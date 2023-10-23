@@ -286,9 +286,13 @@
   flex-direction: row;
 }
 .heading-introduction {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.flex-column-justify-align-center{
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
   justify-content: center;
   align-items: center;
 }
