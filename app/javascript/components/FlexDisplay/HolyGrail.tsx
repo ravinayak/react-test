@@ -8,6 +8,10 @@ export function HolyGrail() {
   const navigate = useNavigate();
   return (
     <>
+      <div className='flex-column-justify-align-center margin-bottom-16'>
+        <div className='heading-introduction'>Holy Grail</div>
+        <div>*********************************************</div>
+      </div>
       <div id='holy-grail'>
         <div className='header-container'>
           <header className='flex-header justify-align-center'>HEADER</header>
@@ -24,7 +28,7 @@ export function HolyGrail() {
           variant='outlined'
           type='submit'
           id='btn-back-button'
-          sx={{ mt: 4 }}
+          sx={{ mt: 4, mb: 8 }}
           onClick={() => navigate(routes.FLEXBOX_DISPLAY, { state: { displayWelcomePage: true } })}
         >
           Back to Course Sections Listing Page

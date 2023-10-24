@@ -9,9 +9,9 @@ export function ResponsiveNavbar() {
   const navigate = useNavigate();
   return (
     <div id='responsive-navbar'>
-      <div className='heading-introduction'>
-        <div>Responsive Navbar Component</div>
-        <div>*************************************</div>
+      <div className='flex-column-justify-align-center margin-bottom-16'>
+        <div className='heading-introduction'>Responsive Navbar Component</div>
+        <div>***************************************************************</div>
       </div>
       <nav>
         <ul>

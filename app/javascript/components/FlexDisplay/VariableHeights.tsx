@@ -9,9 +9,9 @@ export function VariableHeights() {
   const navigate = useNavigate();
   return (
     <div id='variable-heights'>
-      <div className='heading-introduction'>
-        <div>Variable Heights Component</div>
-        <div>*************************************</div>
+      <div className='flex-column-justify-align-center margin-bottom-16'>
+        <div className='heading-introduction'>Variable Heights Component</div>
+        <div>***********************************************************</div>
       </div>
       <div className='item-container'>
         <div className='item1'>This is a span tag</div>

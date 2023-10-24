@@ -10,9 +10,9 @@ export function CardsFooter() {
   return (
     <div id='cards-footer'>
       <br />
-      <div className='heading-introduction'>
-        <div>Cards Footer Component</div>
-        <div>*************************************</div>
+      <div className='flex-column-justify-align-center margin-bottom-16'>
+        <div className='heading-introduction'>Cards Footer Component</div>
+        <div>**************************************************************</div>
       </div>
       <br />
       <br />
@@ -52,7 +52,7 @@ export function CardsFooter() {
           variant='outlined'
           type='submit'
           id='btn-back-button'
-          sx={{ mt: 4 }}
+          sx={{ mt: 4, mb: 8 }}
           onClick={() => navigate(routes.FLEXBOX_DISPLAY, { state: { displayWelcomePage: true } })}
         >
           Back to Course Sections Listing Page

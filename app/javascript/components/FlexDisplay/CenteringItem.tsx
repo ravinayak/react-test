@@ -8,12 +8,14 @@ import '@app/src/App.css';
 export function CenteringItem() {
   const navigate = useNavigate();
   return (
-    <div>
-      <div id='centering-item' className='heading-introduction'>
-        <div>Centering Item Component</div>
-        <div>****************************************</div>
+    <div className='flex-column-justify-align-center'>
+      <div id='centering-item'>
+        <div className='flex-column-justify-align-center margin-bottom-16'>
+          <div className='heading-introduction'>Centering Item Component</div>
+          <div>*************************************************************</div>
+        </div>
       </div>
-      <div className='container'>
+      <div className='items-container'>
         <div className='item'>
           <h1>Item</h1>
         </div>
