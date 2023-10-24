@@ -54,7 +54,7 @@ export function AnimalShow() {
           variant='outlined'
           type='submit'
           id='btn-back-button'
-          sx={{ mt: 8 }}
+          sx={{ mt: 4 }}
           onClick={() =>
             navigate(routes.MODERN_REACT_WITH_ROUTER, { state: { displayWelcomePage: true } })
           }

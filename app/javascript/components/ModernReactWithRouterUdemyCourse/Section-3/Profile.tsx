@@ -27,7 +27,7 @@ export function Profile() {
           <p className='title'>Personal Digital Assistant</p>
         </div>
       </section>
-      <div className='container'>
+      <div className='section-container'>
         <div className='section'>
           <div className='columns'>
             <div className='column is-4'>
