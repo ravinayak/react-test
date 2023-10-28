@@ -25,3 +25,58 @@
 	9. Update the application to implement Step 7 for updating state for array, objects
 	
 */
+import React, { useState } from 'react';
+import { IBook } from '@app/types/bookCreate';
+import { BookCreate } from './BookCreate';
+import { BookList } from './BookList';
+import './BookListShowEdit.css';
+
+export function BookListShowEdit() {
+  const [books, setBooks] = useState<IBook[]>([]);
+  const [id, setId] = useState<number>(12345);
+
+  const handleCreate = (title: string): void => {
+    setId(id + 1);
+    const updatedBooks = [
+      ...books,
+      {
+        id,
+        title: title,
+      },
+    ];
+    setBooks(updatedBooks);
+  };
+
+  const handleEdit = (title: string, id: number) => {
+    const updatedBooks = books.map((book) => {
+      if (book.id == id) {
+        return {
+          ...book,
+          title: title,
+        };
+      }
+      return book;
+    });
+    setBooks(updatedBooks);
+  };
+
+  const handleDelete = (id: number) => {
+    console.log(id);
+    const updatedBooks = books.filter((book) => book.id != id);
+    console.log(updatedBooks);
+    setBooks(updatedBooks);
+  };
+
+  return (
+    <div id='book-list-show-edit' className='book-list-show-edit-container flex-display'>
+      <div className='flex-column-justify-align-center flex-display margin-bottom-16'>
+        <div className='heading-introduction'>Display Book List - Add/Edit/Delete Books</div>
+        <div>
+          ******************************************************************************************************
+        </div>
+      </div>
+      <BookCreate handleCreate={handleCreate} />
+      <BookList books={books} handleEdit={handleEdit} handleDelete={handleDelete} />
+    </div>
+  );
+}

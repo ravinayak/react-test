@@ -61,6 +61,7 @@ import { HolyGrail } from '@app/components/FlexDisplay/HolyGrail';
 import { ResponsiveNavbar } from '@app/components/FlexDisplay/ResponsiveNavbar';
 import { VariableHeights } from '@app/components/FlexDisplay/VariableHeights';
 import { CardsFooter } from '@app/components/FlexDisplay/CardsFooter';
+import { BookListShowEdit } from '@app/components/ModernReactWithRouterUdemyCourse/Section-6/BookListShowEdit';
 // import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
 
 export function AppTest() {
@@ -117,6 +118,7 @@ export function AppTest() {
           <Route path={courseRoutes.SECTION_3} element={<Profile />} />
           <Route path={courseRoutes.SECTION_4} element={<AnimalShow />} />
           <Route path={courseRoutes.SECTION_5} element={<DisplayImages />} />
+          <Route path={courseRoutes.SECTION_6} element={<BookListShowEdit />} />
         </Route>
         <Route path={routes.ROOT} element={<WelcomeUser />} />
       </Routes>

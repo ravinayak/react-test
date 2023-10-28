@@ -57,6 +57,11 @@ export function WelcomeToCourse() {
                   Section 5 - Using API with React
                 </Typography>
               </div>
+              <div>
+                <Typography variant='h6' sx={{ mt: 1 }}>
+                  Section 6 - Handling Forms
+                </Typography>
+              </div>
             </Stack>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -87,6 +92,15 @@ export function WelcomeToCourse() {
                 onClick={() => handleNavigate(courseRoutes.SECTION_5)}
               >
                 Using API with React
+              </Button>
+              <Button
+                className='navigation-button'
+                type='submit'
+                variant='contained'
+                id='section-6-button'
+                onClick={() => handleNavigate(courseRoutes.SECTION_6)}
+              >
+                Handling Forms
               </Button>
             </Stack>
           </div>
