@@ -17,11 +17,11 @@
 	border: 3px solid forestgreen;
 }
 .book-show-card {
-  width: auto;
+  width: 350px;
   display: flex;
   flex-direction: row;
   height: auto;
-  margin: 10px;
+  margin: 15px 15px 15px 45px;
   padding: 10px;
 	border: 2px solid goldenrod;
 }
