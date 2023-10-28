@@ -69,6 +69,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/react-hooks": "^8.0.1",
     "@types/jest": "^28.1.7",
+    "@types/lodash": "^4.14.200",
     "@types/lodash.get": "^4.4.7",
     "@types/lodash.groupby": "^4.6.6",
     "@types/lodash.isobject": "^3.0.6",
