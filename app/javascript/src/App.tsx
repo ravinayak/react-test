@@ -32,11 +32,6 @@ export function App() {
       {/* <ProviderWrappedComponent /> */}
       {/* <Profile /> */}
       {/* <ParentCounterWithProps /> */}
-      {/* <ResponsiveNavbar /> */}
-      {/* <CenteringItem /> */}
-      {/* <VariableHeights /> */}
-      {/* <CardsFooter /> */}
-      {/* <HolyGrail /> */}
       <UsersApi />
     </div>
   );
