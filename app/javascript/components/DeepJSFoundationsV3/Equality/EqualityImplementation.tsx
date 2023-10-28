@@ -4,6 +4,7 @@ import { routes } from '@app/config/routes';
 import Button from '@mui/material/Button';
 import { DEEP_JS_EQUALITY_TEST, DEEP_JS_EQUALITY_ARRAY } from '@app/shared/Constants';
 import { formatForDisplay, keyGenerator } from '@app/shared/helpers';
+import { logger } from '@app/lib/Logger';
 import _ from 'lodash';
 import { EqualityResults } from './EqualityResults';
 import './EqualityImplementation.css';
@@ -20,6 +21,7 @@ export function EqualityImplementation() {
   const nanInfinitycheck = (value: any): boolean =>
     Object.is(value, NaN) || Object.is(value, Infinity) || Object.is(value, -Infinity);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const strCoerciveMatch = (inputValue: any, arrayValue: any): any[] => {
     const result = [];
     // eslint-disable-next-line eqeqeq
@@ -40,7 +42,7 @@ export function EqualityImplementation() {
       }
     }
     if (
-      typeof inputValue == 'number' &&
+      typeof inputValue === 'number' &&
       negZeroCheck(inputValue) &&
       (negZeroCheck(arrayValue) || Object.is(arrayValue, '-0'))
     ) {
@@ -49,7 +51,7 @@ export function EqualityImplementation() {
     }
     // eslint-disable-next-line eqeqeq
     if (
-      typeof inputValue == 'number' &&
+      typeof inputValue === 'number' &&
       !negZeroCheck(inputValue) &&
       !nanInfinitycheck(inputValue)
     ) {
@@ -72,23 +74,23 @@ export function EqualityImplementation() {
       ret.push(arrayValue);
     } else if (inputValue == null && arrayValue == null) {
       ret.push(arrayValue);
-    } else if (typeof inputValue == 'boolean' && typeof arrayValue == 'boolean') {
+    } else if (typeof inputValue === 'boolean' && typeof arrayValue === 'boolean') {
       if (inputValue == arrayValue) {
         ret.push(arrayValue);
       }
     } else if (
-      typeof inputValue == 'string' &&
+      typeof inputValue === 'string' &&
       inputValue.trim() != '' &&
       !nanInfinitycheck(Number(inputValue)) &&
-      typeof arrayValue == 'number'
+      typeof arrayValue === 'number'
     ) {
       if (Object.is(Number(inputValue), arrayValue)) {
         ret.push(arrayValue);
       }
     } else if (
-      typeof inputValue == 'number' &&
+      typeof inputValue === 'number' &&
       !nanInfinitycheck(inputValue) &&
-      typeof arrayValue == 'string' &&
+      typeof arrayValue === 'string' &&
       arrayValue.trim() != ''
     ) {
       if (Object.is(inputValue, Number(arrayValue))) {
@@ -111,11 +113,12 @@ export function EqualityImplementation() {
       formatForDisplay(result),
       formatForDisplay(givenObject.testArray),
     );
-    console.log(
+    logger.info(
       `Match :: ${formatForDisplay(result)} -- ${formatForDisplay(givenObject.testArray)}`,
     );
     equalityResults.push(
       <EqualityResults
+        // eslint-disable-next-line no-plusplus
         key={`${keyGenerator(num++)}`}
         inputValue={givenObject.input}
         testArray={givenObject.testArray}

@@ -1,4 +1,5 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
+// import { useContext } from 'react';
 import { User } from '@app/types/User';
 import { logger } from '@app/lib/Logger';
 import { UserObject } from '@app/shared/UserObject';
@@ -13,6 +14,7 @@ export function GrandParent() {
   let parentProp;
 
   if (counter > 5) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     parentProp = counter;
   }
 

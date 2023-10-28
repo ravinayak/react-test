@@ -5,10 +5,12 @@ import { ChildSubTree1 } from './ChildSubTree1';
 import { ChildSubTree2 } from './ChildSubTree2';
 import { ChildSubTree3 } from './ChildSubTree3';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface IProps {
   childProps: number;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, react/prop-types
 export function Child({ childProps }) {
   const user = useUserContext();
   const [counter, setCounter] = useState<number>(0);
@@ -17,6 +19,7 @@ export function Child({ childProps }) {
     setCounter(counter + 1);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const name = `${user.childFirstName} ${user.childLastName}`;
   logger.info('Child Component Rendered');
 

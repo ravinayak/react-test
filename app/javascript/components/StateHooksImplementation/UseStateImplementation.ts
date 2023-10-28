@@ -5,7 +5,7 @@ export const UseStateImplementation = () => {
 
   const useState = (initialValue) => {
     const localIndex = index;
-    index++;
+    index += 1;
 
     if (state[localIndex] === undefined) {
       state[localIndex] = initialValue;

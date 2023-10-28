@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import { logger } from '@app/lib/Logger';
 import { Car } from '@app/types/Car';
@@ -8,12 +9,13 @@ interface IProps {
   carProp?: Car;
   handleClick?: Function;
 }
-export function Child({ arrayProp, carProp, handleClick }: IProps) {
+
+export function Child({ arrayProp = [], carProp = null, handleClick }: IProps) {
   const user = useUserContext();
   const date = new Date();
   let arrayElements: string = '';
   arrayProp?.forEach((_index, value) => {
-    arrayElements = arrayElements.concat(`${value  } `);
+    arrayElements = arrayElements.concat(`${value} `);
   });
   const name = `${user.childFirstName} ${user.childLastName}`;
 
@@ -40,3 +42,9 @@ export function Child({ arrayProp, carProp, handleClick }: IProps) {
     </>
   );
 }
+
+Child.defaultProps = {
+  arrayProp: [],
+  carProp: null,
+  handleClick: null,
+};

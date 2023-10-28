@@ -23,7 +23,6 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
-    '@types/lodash.add',
     'jest',
     'jsx-a11y',
     'testing-library',
@@ -31,6 +30,7 @@ module.exports = {
   ],
   rules: {
     '@typescript-eslint/no-shadow': ['error'],
+    'eqeqeq': 'off',
     "@typescript-eslint/no-unused-vars": "error",
     "camelcase": ["error", {
       properties: "never",

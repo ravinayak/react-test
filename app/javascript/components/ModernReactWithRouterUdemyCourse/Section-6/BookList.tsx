@@ -1,10 +1,9 @@
 import React from 'react';
 import { IBook } from '@app/types/bookCreate';
-import { BookShow } from './BookShow';
 import '@app/src/App.css';
 import './BookListShowEdit.css';
-import { BookDisplay } from './BookDisplay';
 import { keyGenerator } from '@app/shared/helpers';
+import { BookDisplay } from './BookDisplay';
 
 interface IProps {
   books: IBook[];
@@ -15,18 +14,19 @@ interface IProps {
 export function BookList({ books, handleDelete, handleEdit }: IProps) {
   let num = 0;
   const renderedBooks = books.map((book) => {
-    const key = keyGenerator(num++);
+    num += 1;
+    const key = keyGenerator(num);
     return (
       <BookDisplay key={key} book={book} handleEdit={handleEdit} handleDelete={handleDelete} />
     );
   });
   return (
-    <>
+    <div>
       {renderedBooks.length > 0 && (
         <div id='book-list' className='book-list'>
           {renderedBooks}
         </div>
       )}
-    </>
+    </div>
   );
 }

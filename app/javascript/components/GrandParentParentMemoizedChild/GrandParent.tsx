@@ -1,4 +1,5 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
+// import { useContext } from 'react';
 import { User } from '@app/types/User';
 import { logger } from '@app/lib/Logger';
 import { UserObject } from '@app/shared/UserObject';

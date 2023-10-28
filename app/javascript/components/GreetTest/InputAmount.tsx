@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import user from '@testing-library/user-event';
+// import user from '@testing-library/user-event';
 
 export function InputAmount() {
   const initialValue = 0;
@@ -16,10 +16,15 @@ export function InputAmount() {
         {count}
       </div>
       <br />
-      <button autoFocus type='button' onClick={() => setAmount(amount + 1)}>
+      <button type='button' onClick={() => setAmount(amount + 1)}>
         Increment
       </button>
-      <input type='number' name='amount' value={amount} onChange={(e) => setAmount(parseInt(e.target.value))} />
+      <input
+        type='number'
+        name='amount'
+        value={amount}
+        onChange={(e) => setAmount(parseInt(e.target.value, 10))}
+      />
       <button type='button' onClick={() => setCount(amount)}>
         Set
       </button>

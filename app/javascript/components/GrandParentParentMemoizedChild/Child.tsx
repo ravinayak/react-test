@@ -5,7 +5,7 @@ import { useUserContext } from './UserContext';
 interface IProps {
   parentProp: number;
 }
-export function Child({ parentProp }) {
+export function Child({ parentProp }: IProps) {
   const user = useUserContext();
   const [counter, setCounter] = useState<number>(0);
 
@@ -20,6 +20,7 @@ export function Child({ parentProp }) {
   };
 
   if (counter > 5) {
+    // eslint-disable-next-line no-param-reassign
     parentProp += ' Hi ';
   }
 

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, ReactElement } from 'react';
 import { logger } from '@app/lib/Logger';
 import { Child } from './Child';
@@ -25,7 +26,7 @@ const printChildrenArray = (child) => {
 
 // Alternate syntax for receiving children through props directly
 // export function Parent(props) {
-export function Parent({ initialValue }: IProps) {
+export function Parent({ initialValue, children }: IProps) {
   // export function Parent({ initialValue, children }: IProps) {
   const [counter, setCounter] = useState<number>(0);
   let counterContext: number;
@@ -76,4 +77,5 @@ export function Parent({ initialValue }: IProps) {
 
 Parent.defaultProps = {
   initialValue: 0,
+  children: null,
 };

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { IBook } from '@app/types/bookCreate';
 import { BookShow } from './BookShow';
 import { BookEdit } from './BookEdit';
+
 interface IProps {
   handleEdit: (title: string, id: number) => void;
   handleDelete: (id: number) => void;

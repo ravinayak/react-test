@@ -33,15 +33,15 @@ import './BookListShowEdit.css';
 
 export function BookListShowEdit() {
   const [books, setBooks] = useState<IBook[]>([]);
-  const [id, setId] = useState<number>(12345);
+  const [bookId, setBookId] = useState<number>(12345);
 
   const handleCreate = (title: string): void => {
-    setId(id + 1);
+    setBookId(bookId + 1);
     const updatedBooks = [
       ...books,
       {
-        id,
-        title: title,
+        id: bookId,
+        title,
       },
     ];
     setBooks(updatedBooks);
@@ -52,7 +52,7 @@ export function BookListShowEdit() {
       if (book.id == id) {
         return {
           ...book,
-          title: title,
+          title,
         };
       }
       return book;
@@ -61,9 +61,7 @@ export function BookListShowEdit() {
   };
 
   const handleDelete = (id: number) => {
-    console.log(id);
     const updatedBooks = books.filter((book) => book.id != id);
-    console.log(updatedBooks);
     setBooks(updatedBooks);
   };
 

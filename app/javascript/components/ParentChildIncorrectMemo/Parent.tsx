@@ -1,4 +1,4 @@
-import React, { useState, ReactElement, MemoExoticComponent } from 'react';
+import React, { useState, MemoExoticComponent } from 'react';
 import { logger } from '@app/lib/Logger';
 import { Car } from '@app/types/Car';
 import { useUserContext } from './UserContext';
@@ -25,7 +25,7 @@ const printPropArray = (arr) => {
   }
 };
 
-const printArray = (arr, isProp = false) => {
+const printArray = (arr, isProp = false): void => {
   logger.info(arr);
   if (isProp) {
     return printPropArray(arr);
@@ -38,6 +38,7 @@ const printArray = (arr, isProp = false) => {
       );
     }
   });
+  return null;
 };
 
 const ChildMemoized = React.memo(Child);
@@ -76,31 +77,31 @@ export function Parent({ initialValue }: IProps) {
 
   return (
     <div
-        style={{
-          margin: 'auto',
-          textAlign: 'center',
-        }}
-      >
-        <br /> <br />
-        <div id='counter'>Parent Counter :: {counter} </div>
-        <br /> <br />
-        <button id='increment-button' type='button' onClick={() => increment()}>
-          Increment
-        </button>
-        <button id='decrement-button' type='button' onClick={() => decrement()}>
-          Decrement
-        </button>
-        <button id='reset-button' type='button' onClick={() => reset()}>
-          Reset
-        </button>
-        <br /> <br />
-        <div>
-          <div id='parent-user-name'> Parent User Name :: {name()}</div>
-          <div id='parent-user-email'> Parent User Email :: {user.parentEmail}</div>
-        </div>
-        <ChildMemoized carProp={carProp} arrayProp={arrayProp} handleClick={handleClick} />
-        {/* <ChildMemoized /> */}
+      style={{
+        margin: 'auto',
+        textAlign: 'center',
+      }}
+    >
+      <br /> <br />
+      <div id='counter'>Parent Counter :: {counter} </div>
+      <br /> <br />
+      <button id='increment-button' type='button' onClick={() => increment()}>
+        Increment
+      </button>
+      <button id='decrement-button' type='button' onClick={() => decrement()}>
+        Decrement
+      </button>
+      <button id='reset-button' type='button' onClick={() => reset()}>
+        Reset
+      </button>
+      <br /> <br />
+      <div>
+        <div id='parent-user-name'> Parent User Name :: {name()}</div>
+        <div id='parent-user-email'> Parent User Email :: {user.parentEmail}</div>
       </div>
+      <ChildMemoized carProp={carProp} arrayProp={arrayProp} handleClick={handleClick} />
+      {/* <ChildMemoized /> */}
+    </div>
   );
 }
 

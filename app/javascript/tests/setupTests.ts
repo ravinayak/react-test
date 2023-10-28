@@ -1,4 +1,3 @@
-import fetch from 'node-fetch';
 import { server } from '@app/__tests__/mocks/server';
 // jest-dom adds custom jest matchers for asserting on DOM nodes.
 // allows you to do things like:

@@ -9,12 +9,12 @@ export function CopyCutPasteKeyboardPress() {
       <div>*******************************************************</div>
       <label style={{ paddingRight: '10px' }} htmlFor='copy-cut-input'>
         Type In this box ::
+        <input type='text' id='copy-cut-input' style={{ paddingLeft: '10px' }} />
       </label>
-      <input type='text' id='copy-cut-input' style={{ paddingLeft: '10px' }} />
       <label style={{ paddingLeft: '50px', paddingRight: '10px' }} htmlFor='paste-input'>
         Input from Previous Input will be pasted here ::
+        <input type='text' id='paste-input' />
       </label>
-      <input type='text' id='paste-input' />
     </div>
   );
 }

@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unused-state */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { Component } from 'react';
 import { logger } from '@app/lib/Logger';
 
@@ -7,7 +9,7 @@ export class ChildMounting extends Component {
     this.state = {
       name: 'Child Component - State',
     };
-    console.log('ChildMounting - Constructor');
+    logger.info('ChildMounting - Constructor');
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -15,7 +17,15 @@ export class ChildMounting extends Component {
     return null;
   }
 
-  shouldComponentUpdate(nextProps: Readonly<{}>, nextState: Readonly<{}>, nextContext: any): boolean {
+  componentDidMount() {
+    logger.info('ChildMounting - componentDidMount');
+  }
+
+  shouldComponentUpdate(
+    nextProps: Readonly<{}>,
+    nextState: Readonly<{}>,
+    nextContext: any,
+  ): boolean {
     logger.info('ChildMounting :: shouldComponentUpdate');
     return true;
   }
@@ -27,10 +37,6 @@ export class ChildMounting extends Component {
 
   componentDidUpdate() {
     logger.info('ChildMounting :: componentDidUpdate');
-  }
-
-  componentDidMount() {
-    logger.info('ChildMounting - componentDidMount');
   }
 
   render() {

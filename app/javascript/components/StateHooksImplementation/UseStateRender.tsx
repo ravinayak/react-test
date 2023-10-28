@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react';
 import { logger } from '@app/lib/Logger';
-import { validateHeaderValue } from 'http';
+// import { validateHeaderValue } from 'http';
 import { UseStateImplementation } from './UseStateImplementation';
 
 let resetIndexFunction;

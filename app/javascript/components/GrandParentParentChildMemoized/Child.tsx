@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from 'react';
 import { logger } from '@app/lib/Logger';
 import { useUserContext } from './UserContext';
@@ -5,7 +6,7 @@ import { useUserContext } from './UserContext';
 interface IProps {
   parentProp: number;
 }
-export function Child({ parentProp }) {
+export function Child({ parentProp }: IProps) {
   const user = useUserContext();
   const [counter, setCounter] = useState<number>(0);
 
@@ -19,6 +20,7 @@ export function Child({ parentProp }) {
     setCounter(counter - 1);
   };
 
+  /* eslint-disable no-param-reassign */
   if (counter > 5) {
     parentProp += ' Hi ';
   }

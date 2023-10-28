@@ -1,7 +1,7 @@
 import React from 'react';
 import { logger } from '@app/lib/Logger';
 
-import { ChildSubTree1 } from './ChildSubtree1';
+import { ChildSubTree1 } from './ChildSubTree1';
 import { ChildSubTree2 } from './ChildSubTree2';
 
 export function Child() {

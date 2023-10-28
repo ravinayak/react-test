@@ -17,7 +17,7 @@ export const displayArray = (arr: any[]): string => {
     if (element === undefined) {
       str += 'undefined, ';
     }
-    if (typeof element == 'string') {
+    if (typeof element === 'string') {
       str += `"${element}", `;
     }
     if (Object.is(element, true)) {
@@ -32,10 +32,10 @@ export const displayArray = (arr: any[]): string => {
     if (Object.is(element, -0)) {
       str += `-0, `;
     }
-    if (typeof element == 'number' && !Object.is(element, -0) && !Object.is(element, NaN)) {
+    if (typeof element === 'number' && !Object.is(element, -0) && !Object.is(element, NaN)) {
       str += `${element}, `;
     }
-    if (typeof element == 'object' && !element === null) {
+    if (typeof element === 'object' && !element === null) {
       str += `${element}, `;
     }
   });
@@ -57,4 +57,4 @@ export const formatForDisplay = (element: any): any => {
   return element;
 };
 
-export const keyGenerator = (num: number): string => 'abc-key-' + num;
+export const keyGenerator = (num: number): string => `abc-key-${  num}`;

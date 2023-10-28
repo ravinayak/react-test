@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { Component } from 'react';
 import { logger } from '@app/lib/Logger';
 import { ChildMounting } from './ChildMounting';
@@ -5,7 +6,9 @@ import { ChildMounting } from './ChildMounting';
 export class ParentMounting extends Component {
   constructor(props) {
     super(props);
-    logger.info('ParentMounting Component :: Because super(props) has been called, we now have access to this.state');
+    logger.info(
+      'ParentMounting Component :: Because super(props) has been called, we now have access to this.state',
+    );
     this.state = {
       name: 'Test Constructor Lifecycle - ParentMounting Component State in constructor',
     };
@@ -21,6 +24,14 @@ export class ParentMounting extends Component {
     return {
       name: 'Test Constructor Lifecycle - ParentMounting state has been updated in getDerivedStateFromProps method',
     };
+  }
+
+  componentDidMount() {
+    logger.info('ParentMounting - componentDidMount');
+    logger.info(
+      'Verify if state was updatated - State in ParentMounting Component :: ',
+      this.state,
+    );
   }
 
   // For deciding whether a component should update or not, it must have latest props and state
@@ -45,11 +56,6 @@ export class ParentMounting extends Component {
     logger.info('ParentMounting :: componentDidUpdate');
   }
 
-  componentDidMount() {
-    logger.info('ParentMounting - componentDidMount');
-    logger.info('Verify if state was updatated - State in ParentMounting Component :: ', this.state);
-  }
-
   changeState() {
     this.setState({
       name: 'ParentMounting Component State has been updated upon button click ',
@@ -63,7 +69,9 @@ export class ParentMounting extends Component {
         <div>ParentMounting Component Rendered</div>
         <br />
         <br />
-        <button onClick={this.changeState}>Click Me to Update State!!</button>
+        <button type='submit' onClick={this.changeState}>
+          Click Me to Update State!!
+        </button>
         <br />
         <br />
         <ChildMounting />

@@ -1,11 +1,10 @@
 import React from 'react';
 import { Formik, Form, ErrorMessage, Field, FormikValues } from 'formik';
-import { BookCreateFormikErrorsTouched } from '@app/types/bookCreate';
+import { BookCreateFormikErrorsTouched, IBook } from '@app/types/bookCreate';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { IBook } from '@app/types/bookCreate';
 import * as Yup from 'yup';
 
 interface IProps {
@@ -74,3 +73,8 @@ export function BookForm({ handleSubmit, buttonName, setBookEdit, book }: IProps
     </Formik>
   );
 }
+
+BookForm.defaultProps = {
+  setBookEdit: null,
+  book: null,
+};

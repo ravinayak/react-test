@@ -18,7 +18,7 @@ export function UsersApi() {
         }));
         setUsers(userObjects);
       })
-      .catch((error) => setError(error.message));
+      .catch((errorAxios) => setError(errorAxios.message));
   }, []);
 
   return (
@@ -48,10 +48,10 @@ export function UsersApi() {
 					over users, it would throw an error because it does not return any data
 					map returns data, so, we can use map to iterate over users and return JSX from it */}
             {users.map((user) => (
-                <li key={user.id}>
-                  Name :: {user.name}, Id :: {user.id}
-                </li>
-              ))}
+              <li key={user.id}>
+                Name :: {user.name}, Id :: {user.id}
+              </li>
+            ))}
           </ul>
         </div>
       )}

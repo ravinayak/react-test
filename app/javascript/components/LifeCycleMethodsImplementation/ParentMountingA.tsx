@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unused-state */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { Component } from 'react';
 import { logger } from '@app/lib/Logger';
 import { ChildMountingA } from './ChildMountingA';
@@ -14,6 +16,10 @@ export class ParentMountingA extends Component {
   static getDerivedStateFromProps(props, state) {
     logger.info('ParentMountingA :: getDerivedStateFromProps');
     return null;
+  }
+
+  componentDidMount() {
+    logger.info('ParentMountingA :: componentDidMount');
   }
 
   // For deciding whether a component should update or not, it must have latest props and state
@@ -38,10 +44,6 @@ export class ParentMountingA extends Component {
     logger.info('ParentMountingA :: componentDidUpdate');
   }
 
-  componentDidMount() {
-    logger.info('ParentMountingA :: componentDidMount');
-  }
-
   changeState = () => {
     this.setState({
       name: 'ParentMounting Component State has been updated upon button click ',
@@ -56,7 +58,9 @@ export class ParentMountingA extends Component {
         <div>ParentMountingA Component Rendered</div>
         <br />
         <br />
-        <button onClick={this.changeState}>Click Me to Update State!!</button>
+        <button type='submit' onClick={this.changeState}>
+          Click Me to Update State!!
+        </button>
         <br />
         <br />
         <ChildMountingA />

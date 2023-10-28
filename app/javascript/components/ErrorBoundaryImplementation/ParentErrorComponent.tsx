@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import { ErrorBoundary } from '@app/lib/ErrorBoundary';
 import { ErrorComponentA } from './ErrorComponentA';

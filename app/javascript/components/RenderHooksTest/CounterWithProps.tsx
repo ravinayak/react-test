@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ICounterProps } from '@app/types/CounterProps';
 
 export function CounterWithProps(props: ICounterProps) {
