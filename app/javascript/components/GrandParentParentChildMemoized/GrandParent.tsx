@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 // import { useContext } from 'react';
-import { User } from '@app/types/User';
+import { Parent } from '@app/components/GrandParentParentChildMemoized/Parent';
 import { logger } from '@app/lib/Logger';
 import { UserObject } from '@app/shared/UserObject';
-import { Parent } from '@app/components/GrandParentParentChildMemoized/Parent';
+import { User } from '@app/types/User';
 // import { Child } from '@app/components/GrandParentParentChildMemoized/Child';
 import { UserContext } from '@app/components/GrandParentParentChildMemoized/UserContext';
 
