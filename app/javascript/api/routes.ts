@@ -10,6 +10,13 @@ export const usersApi = {
   patch: 'users',
 };
 
+export const booksApi = {
+  create: 'books',
+  edit: 'books',
+  delete: 'books',
+  get: 'books',
+};
+
 export const iamApi = {
   login: 'v2/login',
   searchUsers: '/internal/user/search',

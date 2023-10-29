@@ -109,7 +109,7 @@
     "check-format": "prettier --check 'app/javascript/**/*.js*' 'app/javascript/**/*.ts*'",
     "format-with-prettier": "prettier --write 'app/javascript/**/*.js*' 'app/javascript/**/*.ts*'",
     "test": "jest",
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "webpack serve --mode development --config webpack-dev-server.config.js",
     "start-json-server": "yarn json-server --watch public/json-server/db.json -p 3004"
   },
   "browserslist": {

@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useNavigate, Outlet, useLocation } from 'react-router-dom';
 import { routes } from '@app/config/routes';
 import { courseRoutes } from './courseRoutes';
+import { getNestedRoute } from '@app/shared/helpers';
 
 export function WelcomeToCourse() {
   const [displayWelcomePage, setDisplayWelcomePage] = useState<boolean>(true);
+  const [navigatedToNestedRoute, setNavigatedToNestedRoute] = useState<boolean>(false);
   const locationPath = useLocation();
   const navigate = useNavigate();
 
-  if (!displayWelcomePage && locationPath.state?.displayWelcomePage) {
+  const currentRoute = routes.DEEP_JS_FOUNDATIONS;
+  const nestedRoute = getNestedRoute(currentRoute, locationPath);
+
+  if (!displayWelcomePage && locationPath.state?.displayWelcomePage && !nestedRoute) {
     setDisplayWelcomePage(true);
   }
 
@@ -19,6 +24,13 @@ export function WelcomeToCourse() {
     setDisplayWelcomePage(false);
     navigate(navigationRoute);
   };
+
+  useEffect(() => {
+    if (nestedRoute && !navigatedToNestedRoute) {
+      handleNavigate(nestedRoute);
+      setNavigatedToNestedRoute(true);
+    }
+  }, []);
 
   if (displayWelcomePage) {
     return (

@@ -37,6 +37,7 @@ import { logger } from '@app/lib/Logger';
 // import { FlexContainer } from '@app/components/FlexDisplay/FlexContainer';
 import { AxiosUserCreation } from '@app/components/Axios/AxiosUserCreation';
 import { WelcomeUser } from '@app/components/Welcome/WelcomeUser';
+import { DefaultPage } from '@app/components/Welcome/DefaultPage';
 import { IamSearchUsers } from '@app/components/Axios/IamSearchUsers';
 import { WelcomeToCourse } from '@app/components/ModernReactWithRouterUdemyCourse/WelcomeToCourse';
 import { WelcomeToCourse as JSWelcomeToCourse } from '@app/components/DeepJSFoundationsV3/WelcomeToCourse';
@@ -62,6 +63,7 @@ import { ResponsiveNavbar } from '@app/components/FlexDisplay/ResponsiveNavbar';
 import { VariableHeights } from '@app/components/FlexDisplay/VariableHeights';
 import { CardsFooter } from '@app/components/FlexDisplay/CardsFooter';
 import { BookListShowEdit } from '@app/components/ModernReactWithRouterUdemyCourse/Section-6/BookListShowEdit';
+import { BookListShowEdit as PersistBookListShowEdit } from '@app/components/ModernReactWithRouterUdemyCourse/Section-7/BookListShowEdit';
 // import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
 
 export function AppTest() {
@@ -119,8 +121,10 @@ export function AppTest() {
           <Route path={courseRoutes.SECTION_4} element={<AnimalShow />} />
           <Route path={courseRoutes.SECTION_5} element={<DisplayImages />} />
           <Route path={courseRoutes.SECTION_6} element={<BookListShowEdit />} />
+          <Route path={courseRoutes.SECTION_7} element={<PersistBookListShowEdit />} />
         </Route>
         <Route path={routes.ROOT} element={<WelcomeUser />} />
+        <Route path='*' element={<DefaultPage />} />
       </Routes>
     </BrowserRouter>
     // <AxiosUserCreatedForm />

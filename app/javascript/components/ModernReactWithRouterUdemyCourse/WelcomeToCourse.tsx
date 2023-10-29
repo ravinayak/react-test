@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useNavigate, Outlet, useLocation } from 'react-router-dom';
 import { routes } from '@app/config/routes';
 import { courseRoutes } from './courseRoutes';
+import { getNestedRoute } from '@app/shared/helpers';
 
 export function WelcomeToCourse() {
   const [displayWelcomePage, setDisplayWelcomePage] = useState<boolean>(true);
+  const [navigatedToNestedRoute, setNavigatedToNestedRoute] = useState<boolean>(false);
   const locationPath = useLocation();
   const navigate = useNavigate();
 
-  if (!displayWelcomePage && locationPath.state?.displayWelcomePage) {
+  const currentRoute = routes.MODERN_REACT_WITH_ROUTER;
+  const nestedRoute = getNestedRoute(currentRoute, locationPath);
+
+  if (!displayWelcomePage && locationPath.state?.displayWelcomePage && !nestedRoute) {
     setDisplayWelcomePage(true);
   }
 
@@ -19,6 +24,13 @@ export function WelcomeToCourse() {
     setDisplayWelcomePage(false);
     navigate(navigationRoute);
   };
+
+  useEffect(() => {
+    if (nestedRoute && !navigatedToNestedRoute) {
+      handleNavigate(nestedRoute);
+      setNavigatedToNestedRoute(true);
+    }
+  }, []);
 
   if (displayWelcomePage) {
     return (
@@ -62,6 +74,11 @@ export function WelcomeToCourse() {
                   Section 6 - Handling Forms
                 </Typography>
               </div>
+              <div>
+                <Typography variant='h6' sx={{ mt: 1 }}>
+                  Section 7 - Persisting Data
+                </Typography>
+              </div>
             </Stack>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -101,6 +118,15 @@ export function WelcomeToCourse() {
                 onClick={() => handleNavigate(courseRoutes.SECTION_6)}
               >
                 Handling Forms
+              </Button>
+              <Button
+                className='navigation-button'
+                type='submit'
+                variant='contained'
+                id='section-7-button'
+                onClick={() => handleNavigate(courseRoutes.SECTION_7)}
+              >
+                Persisting Data
               </Button>
             </Stack>
           </div>

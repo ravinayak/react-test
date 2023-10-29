@@ -47,7 +47,7 @@ export function BookForm({ handleSubmit, buttonName, setBookEdit, book }: IProps
               autoFocus
               as={TextField}
               fullWidth
-              id='new-book-tile'
+              id='new-book-title'
               name='title'
               inputProps={{
                 'data-test-id': 'test-new-book-title',
@@ -57,12 +57,12 @@ export function BookForm({ handleSubmit, buttonName, setBookEdit, book }: IProps
               error={!!touched.title && errors.title != ''}
             />
           </CardContent>
-          <CardActions className='flex-display new-title-button'>
+          <CardActions className='flex-display new-book-button'>
             <Button
               color='primary'
               variant='outlined'
               type='submit'
-              data-test-id='test-new-title-button'
+              data-test-id='test-new-book-button'
               id='new-book-submit'
             >
               {buttonName}

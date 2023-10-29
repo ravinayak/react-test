@@ -57,4 +57,9 @@ export const formatForDisplay = (element: any): any => {
   return element;
 };
 
-export const keyGenerator = (num: number): string => `abc-key-${  num}`;
+export const keyGenerator = (num: number): string => `abc-key-${num}`;
+
+export const getNestedRoute = (currentRoute: string, locationPath): string | null => {
+  const pattern = new RegExp(`${currentRoute}/(.*)`);
+  return locationPath.pathname.match(pattern)[1];
+};
