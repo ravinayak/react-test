@@ -79,7 +79,7 @@ export function BookListShowEdit() {
       </div>
       <BookCreate handleCreate={handleCreate} />
       <BookList books={books} handleEdit={handleEdit} handleDelete={handleDelete} />
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', width: '90vw' }}>
         <Button
           variant='outlined'
           type='submit'

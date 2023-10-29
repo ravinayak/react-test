@@ -4,8 +4,8 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useNavigate, Outlet, useLocation } from 'react-router-dom';
 import { routes } from '@app/config/routes';
-import { courseRoutes } from './courseRoutes';
 import { getNestedRoute } from '@app/shared/helpers';
+import { courseRoutes } from './courseRoutes';
 
 export function WelcomeToCourse() {
   const [displayWelcomePage, setDisplayWelcomePage] = useState<boolean>(true);
@@ -13,13 +13,8 @@ export function WelcomeToCourse() {
   const locationPath = useLocation();
   const navigate = useNavigate();
 
-  const currentRoute = routes.AXIOS;
+  const currentRoute = routes.MODERN_REACT_WITH_ROUTER;
   const nestedRoute = getNestedRoute(currentRoute, locationPath);
-
-  if (!displayWelcomePage && locationPath.state?.displayWelcomePage && !nestedRoute) {
-    setDisplayWelcomePage(true);
-  }
-
   const handleNavigate = (navigationRoute: string) => {
     setDisplayWelcomePage(false);
     navigate(navigationRoute);
@@ -30,7 +25,12 @@ export function WelcomeToCourse() {
       handleNavigate(nestedRoute);
       setNavigatedToNestedRoute(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  if (!displayWelcomePage && locationPath.state?.displayWelcomePage && !nestedRoute) {
+    setDisplayWelcomePage(true);
+  }
 
   if (displayWelcomePage) {
     return (

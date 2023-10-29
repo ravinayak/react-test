@@ -7,12 +7,6 @@
       "id": 1
     },
     {
-      "title": "The Vampire Diaries",
-      "pages": "400",
-      "tag": "medium",
-      "id": 2
-    },
-    {
       "title": "Walk above Clouds",
       "pages": "300",
       "tag": "long",
@@ -25,10 +19,16 @@
       "id": 4
     },
     {
-      "title": "The Fountainhead Updated",
+      "title": "The Fountainhead",
       "pages": "100",
       "tag": "extremely short",
       "id": 5
+    },
+    {
+      "title": "The FountainHead",
+      "pages": "350",
+      "tag": "medium-large",
+      "id": 6
     }
   ],
   "users": [
