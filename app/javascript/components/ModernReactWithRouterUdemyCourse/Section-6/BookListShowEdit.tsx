@@ -202,7 +202,7 @@ contains property with specified value
     };
   };
 
-  b. Remove existing property of an object
+  b. Remove existing property of an object (Because we don't want to mutate argument, we return a new object with property removed)
 
   const removeProperty = (obj, property) => {
     let updatedObj = {};
@@ -276,7 +276,7 @@ removes object from array if it has a property with specified value
   updateObjectWithSpecifiedProperty('cost', 3000, 5000);
   updateObjectWithSpecifiedProperty('tag', 'large', 'large udpated');
   removeObjectWithSpecifiedProperty('area', 9000);
-  
+
 */
 
 import React, { useState } from 'react';
