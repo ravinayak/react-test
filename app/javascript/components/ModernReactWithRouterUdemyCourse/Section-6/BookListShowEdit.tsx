@@ -280,7 +280,10 @@ removes object from array if it has a property with specified value
 */
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { routes } from '@app/config/routes';
 import { IBook } from '@app/types/bookCreate';
+import Button from '@mui/material/Button';
 import { BookCreate } from './BookCreate';
 import { BookList } from './BookList';
 import './BookListShowEdit.css';
@@ -288,6 +291,7 @@ import './BookListShowEdit.css';
 export function BookListShowEdit() {
   const [books, setBooks] = useState<IBook[]>([]);
   const [bookId, setBookId] = useState<number>(12345);
+  const navigate = useNavigate();
 
   const handleCreate = (title: string): void => {
     setBookId(bookId + 1);
@@ -329,6 +333,19 @@ export function BookListShowEdit() {
       </div>
       <BookCreate handleCreate={handleCreate} />
       <BookList books={books} handleEdit={handleEdit} handleDelete={handleDelete} />
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Button
+          variant='outlined'
+          type='submit'
+          id='btn-back-button'
+          sx={{ mt: 4, mb: 8 }}
+          onClick={() =>
+            navigate(routes.MODERN_REACT_WITH_ROUTER, { state: { displayWelcomePage: true } })
+          }
+        >
+          Back to Course Sections Listing Page
+        </Button>
+      </div>
     </div>
   );
 }

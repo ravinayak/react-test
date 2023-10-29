@@ -1,5 +1,36 @@
 {
-  "books": [],
+  "books": [
+    {
+      "title": "Harry Potter",
+      "pages": "300",
+      "tag": "short",
+      "id": 1
+    },
+    {
+      "title": "The Vampire Diaries",
+      "pages": "400",
+      "tag": "medium",
+      "id": 2
+    },
+    {
+      "title": "Walk above Clouds",
+      "pages": "300",
+      "tag": "long",
+      "id": 3
+    },
+    {
+      "title": "The Matrix",
+      "pages": "500",
+      "tag": "small",
+      "id": 4
+    },
+    {
+      "title": "The Fountainhead Updated",
+      "pages": "100",
+      "tag": "extremely short",
+      "id": 5
+    }
+  ],
   "users": [
     {
       "id": 1,

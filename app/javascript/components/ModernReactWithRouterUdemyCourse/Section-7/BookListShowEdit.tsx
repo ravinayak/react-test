@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { routes } from '@app/config/routes';
+import Button from '@mui/material/Button';
 import axios, { AxiosError } from 'axios';
 import {
   IJsonServerBook,
@@ -18,6 +21,7 @@ import './BookListShowEdit.css';
 
 export function BookListShowEdit() {
   const [books, setBooks] = useState<IJsonServerBook[]>([]);
+  const navigate = useNavigate();
 
   const getAllBooks = async () => {
     const booksData: IJsonServerBook[] | AxiosError = await fetchBooks();
@@ -75,6 +79,19 @@ export function BookListShowEdit() {
       </div>
       <BookCreate handleCreate={handleCreate} />
       <BookList books={books} handleEdit={handleEdit} handleDelete={handleDelete} />
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Button
+          variant='outlined'
+          type='submit'
+          id='btn-back-button'
+          sx={{ mt: 4, mb: 8 }}
+          onClick={() =>
+            navigate(routes.MODERN_REACT_WITH_ROUTER, { state: { displayWelcomePage: true } })
+          }
+        >
+          Back to Course Sections Listing Page
+        </Button>
+      </div>
     </div>
   );
 }

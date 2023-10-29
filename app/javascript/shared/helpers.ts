@@ -60,6 +60,11 @@ export const formatForDisplay = (element: any): any => {
 export const keyGenerator = (num: number): string => `abc-key-${num}`;
 
 export const getNestedRoute = (currentRoute: string, locationPath): string | null => {
-  const pattern = new RegExp(`${currentRoute}/(.*)`);
-  return locationPath.pathname.match(pattern)[1];
+  // /\/modern_react_with_router\/?(.*)/
+  const pattern = new RegExp(`${currentRoute}/?(.*)`);
+  const match = locationPath.pathname.match(pattern);
+  if (match && match[1]) {
+    return match[1];
+  }
+  return null;
 };
