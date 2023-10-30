@@ -1,14 +1,8 @@
 {
   "books": [
     {
-      "title": "Harry Potter",
-      "pages": "300",
-      "tag": "short",
-      "id": 1
-    },
-    {
       "title": "Walk above Clouds",
-      "pages": "300",
+      "pages": "320",
       "tag": "long",
       "id": 3
     },
@@ -21,7 +15,7 @@
     {
       "title": "The Fountainhead",
       "pages": "100",
-      "tag": "extremely short",
+      "tag": "extremely short2",
       "id": 5
     },
     {
@@ -29,6 +23,12 @@
       "pages": "350",
       "tag": "medium-large",
       "id": 6
+    },
+    {
+      "title": "The Matrix Revolutions",
+      "pages": "480",
+      "tag": "large",
+      "id": 7
     }
   ],
   "users": [

@@ -9,7 +9,6 @@ import { courseRoutes } from './courseRoutes';
 
 export function WelcomeToCourse() {
   const [displayWelcomePage, setDisplayWelcomePage] = useState<boolean>(true);
-  const [navigatedToNestedRoute, setNavigatedToNestedRoute] = useState<boolean>(false);
   const locationPath = useLocation();
   const navigate = useNavigate();
 
@@ -21,9 +20,8 @@ export function WelcomeToCourse() {
   };
 
   useEffect(() => {
-    if (nestedRoute && !navigatedToNestedRoute) {
+    if (nestedRoute) {
       handleNavigate(nestedRoute);
-      setNavigatedToNestedRoute(true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

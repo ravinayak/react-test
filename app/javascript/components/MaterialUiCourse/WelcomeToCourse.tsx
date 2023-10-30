@@ -6,10 +6,10 @@ import { useNavigate, Outlet, useLocation } from 'react-router-dom';
 import { routes } from '@app/config/routes';
 import { getNestedRoute } from '@app/shared/helpers';
 import { courseRoutes } from './courseRoutes';
+import { AppSpinner } from '../AppSpinner';
 
 export function WelcomeToCourse() {
   const [displayWelcomePage, setDisplayWelcomePage] = useState<boolean>(true);
-  const [navigatedToNestedRoute, setNavigatedToNestedRoute] = useState<boolean>(false);
   const locationPath = useLocation();
   const navigate = useNavigate();
 
@@ -21,15 +21,18 @@ export function WelcomeToCourse() {
   };
 
   useEffect(() => {
-    if (nestedRoute && !navigatedToNestedRoute) {
+    if (nestedRoute) {
       handleNavigate(nestedRoute);
-      setNavigatedToNestedRoute(true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!displayWelcomePage && locationPath.state?.displayWelcomePage && !nestedRoute) {
     setDisplayWelcomePage(true);
+  }
+
+  if (displayWelcomePage && nestedRoute) {
+    return <AppSpinner />;
   }
 
   if (displayWelcomePage) {
