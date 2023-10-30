@@ -81,6 +81,11 @@ export function WelcomeToCourse() {
                   Section 7 - Persisting Data
                 </Typography>
               </div>
+              <div>
+                <Typography variant='h6' sx={{ mt: 1 }}>
+                  Section 8 - Using Context
+                </Typography>
+              </div>
             </Stack>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -129,6 +134,15 @@ export function WelcomeToCourse() {
                 onClick={() => handleNavigate(courseRoutes.SECTION_7)}
               >
                 Persisting Data
+              </Button>
+              <Button
+                className='navigation-button'
+                type='submit'
+                variant='contained'
+                id='section-8-button'
+                onClick={() => handleNavigate(courseRoutes.SECTION_8)}
+              >
+                Using Context
               </Button>
             </Stack>
           </div>

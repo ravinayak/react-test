@@ -3,14 +3,8 @@
     {
       "title": "Walk above Clouds",
       "pages": "320",
-      "tag": "long",
+      "tag": "long-updated",
       "id": 3
-    },
-    {
-      "title": "The Matrix",
-      "pages": "500",
-      "tag": "small",
-      "id": 4
     },
     {
       "title": "The Fountainhead",
@@ -19,16 +13,16 @@
       "id": 5
     },
     {
-      "title": "The FountainHead",
-      "pages": "350",
-      "tag": "medium-large",
-      "id": 6
-    },
-    {
       "title": "The Matrix Revolutions",
       "pages": "480",
       "tag": "large",
       "id": 7
+    },
+    {
+      "title": "Vampire Diaries",
+      "pages": "150",
+      "tag": "short",
+      "id": 8
     }
   ],
   "users": [

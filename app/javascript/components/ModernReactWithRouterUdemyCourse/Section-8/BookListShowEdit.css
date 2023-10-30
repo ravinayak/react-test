@@ -1,0 +1,42 @@
+.book-list-show-edit-container {
+	width: 80vw;
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+}
+.header-component {
+	display: flex;
+}
+.book-card {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 20px;
+  padding: 10px;
+	border: 3px solid forestgreen;
+}
+.book-show-card {
+  width: 350px;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  margin: 15px 15px 15px 45px;
+  padding: 10px;
+	border: 2px solid goldenrod;
+}
+.book-list {
+	width: 90vw;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	border: 3px solid olive;
+	margin: 20px;
+	padding: 10px;
+}
+.new-book-button {
+	justify-content: flex-end;
+}
+.book-details {
+	flex-grow: 1;
+}
