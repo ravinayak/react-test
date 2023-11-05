@@ -10,10 +10,15 @@ import './BookListShowEdit.css';
 export function BookListShowEdit() {
   const navigate = useNavigate();
   const { handleFetchAllBooks } = useBooksContext();
+
+  // If the handleFetchAllBooks function object points to same reference in memory across re-renders of component
+  // then the code inside useEffect should not go into an infinite loop. Because we are using useCallback function
+  // with any empty dependency array, it should return the same function object as in previous render of the
+  // component. This should prevent any infinite loop
+  //
   useEffect(() => {
     handleFetchAllBooks();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [handleFetchAllBooks]);
 
   return (
     <div id='book-list-show-edit' className='book-list-show-edit-container flex-display'>

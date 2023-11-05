@@ -7,6 +7,7 @@ import { routes } from '@app/config/routes';
 import { getNestedRoute } from '@app/shared/helpers';
 import { courseRoutes } from './courseRoutes';
 import { AppSpinner } from '../AppSpinner';
+import '@app/src/App.css';
 
 export function WelcomeToCourse() {
   const [displayWelcomePage, setDisplayWelcomePage] = useState<boolean>(true);
@@ -86,6 +87,22 @@ export function WelcomeToCourse() {
                   Section 8 - Using Context
                 </Typography>
               </div>
+              <div>
+                <Typography variant='h6' sx={{ mt: 1 }}>
+                  Section 9 - Part 1 - Custom Hooks
+                </Typography>
+                <Typography variant='h6' sx={{ mt: 1, ml: 21 }}>
+                  Stale Reference
+                </Typography>
+              </div>
+              <div>
+                <Typography variant='h6' sx={{ mt: 1 }}>
+                  Section 9 - Part 2 - Custom Hooks
+                </Typography>
+                <Typography variant='h6' sx={{ mt: 1, ml: 21 }}>
+                  Stale Reference Fixed + cleanUp
+                </Typography>
+              </div>
             </Stack>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -144,6 +161,26 @@ export function WelcomeToCourse() {
               >
                 Using Context
               </Button>
+              <Button
+                className='navigation-button'
+                type='submit'
+                variant='contained'
+                id='section-9-1-button'
+                style={{ marginTop: '55px' }}
+                onClick={() => handleNavigate(courseRoutes.SECTION_9_1)}
+              >
+                Deep Dive into Custom Hooks
+              </Button>
+              <Button
+                className='navigation-button'
+                type='submit'
+                variant='contained'
+                id='section-9-2-button'
+                style={{ marginTop: '75px' }}
+                onClick={() => handleNavigate(courseRoutes.SECTION_9_2)}
+              >
+                Deep Dive into Custom Hooks
+              </Button>
             </Stack>
           </div>
         </div>
@@ -161,7 +198,7 @@ export function WelcomeToCourse() {
   }
   if (!displayWelcomePage) {
     return (
-      <div style={{ width: '100%' }}>
+      <div style={{ width: '100%', display: 'flex' }}>
         <Outlet />
       </div>
     );

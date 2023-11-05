@@ -65,6 +65,8 @@ import { CardsFooter } from '@app/components/FlexDisplay/CardsFooter';
 import { BookListShowEdit } from '@app/components/ModernReactWithRouterUdemyCourse/Section-6/BookListShowEdit';
 import { BookListShowEdit as PersistBookListShowEdit } from '@app/components/ModernReactWithRouterUdemyCourse/Section-7/BookListShowEdit';
 import { BookListShowEditWrappedInProvider } from '@app/components/ModernReactWithRouterUdemyCourse/Section-8/BookListShowEditWrappedInProvider';
+import { UseEffectStaleReference } from '@app/components/ModernReactWithRouterUdemyCourse/Section-9/useEffectStaleReference';
+import { UseEffectStaleReferenceFixedWithCleanup } from '@app/components/ModernReactWithRouterUdemyCourse/Section-9/useEffectStaleReferenceFixedWithCleanup';
 // import { AxiosUserCreatedForm } from '@app/components/Axios/AxiosUserCreatedForm';
 
 export function AppTest() {
@@ -124,6 +126,11 @@ export function AppTest() {
           <Route path={courseRoutes.SECTION_6} element={<BookListShowEdit />} />
           <Route path={courseRoutes.SECTION_7} element={<PersistBookListShowEdit />} />
           <Route path={courseRoutes.SECTION_8} element={<BookListShowEditWrappedInProvider />} />
+          <Route path={courseRoutes.SECTION_9_1} element={<UseEffectStaleReference />} />
+          <Route
+            path={courseRoutes.SECTION_9_2}
+            element={<UseEffectStaleReferenceFixedWithCleanup />}
+          />
         </Route>
         <Route path={routes.ROOT} element={<WelcomeUser />} />
         <Route path='*' element={<DefaultPage />} />

@@ -7,6 +7,7 @@ import { routes } from '@app/config/routes';
 import { getNestedRoute } from '@app/shared/helpers';
 import { courseRoutes } from './courseRoutes';
 import { AppSpinner } from '../AppSpinner';
+import '@app/src/App.css';
 
 export function WelcomeToCourse() {
   const [displayWelcomePage, setDisplayWelcomePage] = useState<boolean>(true);
@@ -92,7 +93,7 @@ export function WelcomeToCourse() {
   }
   if (!displayWelcomePage) {
     return (
-      <div style={{ width: '100%' }}>
+      <div style={{ width: '100%', display: 'flex' }}>
         <Outlet />
       </div>
     );
